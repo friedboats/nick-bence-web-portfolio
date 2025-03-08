@@ -2,20 +2,351 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+/* How do I have the toggle switch and base it off user browser preferences */
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
   }
 }
+ */
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  /* foundation colors */
+  --color-primary-black: #000000;
+  --color-primary-black-50: #00000050;
+  --color-primary-black-85: #00000085;
+  --color-primary-white: #ffffff;
+  --color-primary-white-10: #ffffff10;
+  --color-primary-white-50: #ffffff50;
+  --color-primary-white-85: #ffffff85;
+  --color-primary-transparent: #ffffff00;
+  --color-focus-primary: #78fafa;
+  --color-brand-100: #f6d9dc;
+  --color-brand-200: #edb3ba;
+  --color-brand-300: #e58d97;
+  --color-brand-400: #dc6775;
+  --color-brand-500: #d34152;
+  --color-brand-600: #a93442;
+  --color-brand-700: #7f2731;
+  --color-brand-800: #541a21;
+  --color-brand-900: #2a0d10;
+  --color-complimentary-100: #d8dce5;
+  --color-complimentary-200: #b1b8cc;
+  --color-complimentary-300: #8995b2;
+  --color-complimentary-400: #627199;
+  --color-complimentary-500: #3b4e7f;
+  --color-complimentary-600: #2f3e66;
+  --color-complimentary-700: #232f4c;
+  --color-complimentary-800: #181f33;
+  --color-complimentary-900: #0c1019;
+  --color-neutral-100: #e3e1e1;
+  --color-neutral-200: #c9c5c5;
+  --color-neutral-300: #afa9aa;
+  --color-neutral-400: #968e8e;
+  --color-neutral-500: #7c7273;
+  --color-neutral-600: #625657;
+  --color-neutral-700: #483a3c;
+  --color-neutral-800: #2f1f21;
+  --color-neutral-900: #150305;
+  --color-warning-100: #fff1cc;
+  --color-warning-200: #ffe399;
+  --color-warning-300: #ffd466;
+  --color-warning-400: #ffc633;
+  --color-warning-500: #ffb800;
+  --color-warning-600: #cc9300;
+  --color-warning-700: #996e00;
+  --color-warning-800: #664a00;
+  --color-warning-900: #332500;
+  --color-error-100: #ffcccc;
+  --color-error-200: #ff9999;
+  --color-error-300: #ff6666;
+  --color-error-400: #ff3333;
+  --color-error-500: #ff0000;
+  --color-error-600: #cc0000;
+  --color-error-700: #990000;
+  --color-error-800: #660000;
+  --color-error-900: #330000;
+  --color-positive-100: #ccf3d4;
+  --color-positive-200: #99e6aa;
+  --color-positive-300: #66da7f;
+  --color-positive-400: #33cd55;
+  --color-positive-500: #00c12a;
+  --color-positive-600: #009a22;
+  --color-positive-700: #007419;
+  --color-positive-800: #004d11;
+  --color-positive-900: #002708;
+  --color-supplemental-primary: #eff7ff;
+
+  /* semantic colors */
+  --color-text-display-primary-light: var(--color-complimentary-600);
+  --color-text-display-primary-dark: var(--color-primary-white);
+  --color-text-display-secondary-light: var(--color-brand-400);
+  --color-text-display-secondary-dark: var(--color-brand-400);
+  --color-text-display-inverse-light: var(--color-primary-white);
+  --color-text-display-inverse-dark: var(--color-complimentary-600);
+  --color-text-header-primary-light: var(--color-complimentary-600);
+  --color-text-header-primary-dark: var(--color-primary-white);
+  --color-text-header-secondary-light: var(--color-complimentary-400);
+  --color-text-header-secondary-dark: var(--color-brand-400);
+  --color-text-header-tertiary-light: var(--color-brand-400);
+  --color-text-header-tertiary-dark: var(--color-brand-400);
+  --color-text-header-inverse-light: var(--color-primary-white);
+  --color-text-header-inverse-dark: var(--color-complimentary-600);
+  --color-text-body-primary-light: var(--color-complimentary-400);
+  --color-text-body-primary-dark: var(--color-primary-white);
+  --color-text-body-secondary-light: var(--color-brand-400);
+  --color-text-body-secondary-dark: var(--color-brand-400);
+  --color-text-body-inverse-light: var(--color-primary-white);
+  --color-text-body-inverse-dark: var(--color-complimentary-600);
+  --color-text-button-close-light: var(--color-primary-white);
+  --color-text-button-close-dark: var(--color-primary-white);
+  --color-text-button-primary-default-light: var(--color-primary-white);
+  --color-text-button-primary-default-dark: var(--color-primary-white);
+  --color-text-button-primary-hover-light: var(--color-primary-white);
+  --color-text-button-primary-hover-dark: var(--color-primary-white);
+  --color-text-button-primary-pressed-light: var(--color-primary-white);
+  --color-text-button-primary-pressed-dark: var(--color-primary-white);
+  --color-text-button-primary-focus-light: var(--color-primary-white);
+  --color-text-button-primary-focus-dark: var(--color-primary-white);
+  --color-text-button-secondary-default-light: var(--color-brand-500);
+  --color-text-button-secondary-default-dark: var(--color-brand-200);
+  --color-text-button-secondary-hover-light: var(--color-brand-600);
+  --color-text-button-secondary-hover-dark: var(--color-brand-800);
+  --color-text-button-secondary-pressed-light: var(--color-brand-700);
+  --color-text-button-secondary-pressed-dark: var(--color-brand-200);
+  --color-text-button-secondary-focus-light: var(--color-brand-800);
+  --color-text-button-secondary-focus-dark: var(--color-brand-300);
+  --color-text-button-link-default-light: var(--color-complimentary-500);
+  --color-text-button-link-default-dark: var(--color-complimentary-100);
+  --color-text-button-link-hover-light: var(--color-complimentary-600);
+  --color-text-button-link-hover-dark: var(--color-complimentary-200);
+  --color-text-button-link-pressed-light: var(--color-complimentary-500);
+  --color-text-button-link-pressed-dark: var(--color-complimentary-100);
+  --color-text-button-link-focus-light: var(--color-complimentary-600);
+  --color-text-button-link-focus-dark: var(--color-complimentary-200);
+  --color-text-placeholder-primary-default-light: var(
+    --color-complimentary-400
+  );
+  --color-text-placeholder-primary-default-dark: var(--color-neutral-400);
+  --color-text-placeholder-primary-hover-light: var(--color-complimentary-500);
+  --color-text-placeholder-primary-hover-dark: var(--color-neutral-500);
+  --color-text-placeholder-primary-pressed-light: var(
+    --color-complimentary-600
+  );
+  --color-text-placeholder-primary-pressed-dark: var(--color-neutral-600);
+  --color-text-placeholder-primary-focus-light: var(--color-complimentary-600);
+  --color-text-placeholder-primary-focus-dark: var(--color-neutral-600);
+  --color-border-primary-light: var();
+  --color-border-primary-dark: var();
+  --color-border-secondary-light: var();
+  --color-border-secondary-dark: var();
+  --color-border-positive-light: var();
+  --color-border-positive-dark: var();
+  --color-border-warning-light: var();
+  --color-border-warning-dark: var();
+  --color-border-negative-light: var();
+  --color-border-negative-dark: var();
+  --color-border-info-light: var();
+  --color-border-info-dark: var();
+  --color-border-button-primary-default-light: var();
+  --color-border-button-primary-default-dark: var();
+  --color-border-button-primary-hover-light: var();
+  --color-border-button-primary-hover-dark: var();
+  --color-border-button-primary-pressed-light: var();
+  --color-border-button-primary-pressed-dark: var();
+  --color-border-button-primary-focus-light: var();
+  --color-border-button-primary-focus-dark: var();
+  --color-border-button-secondary-default-light: var();
+  --color-border-button-secondary-default-dark: var();
+  --color-border-button-secondary-hover-light: var();
+  --color-border-button-secondary-hover-dark: var();
+  --color-border-button-secondary-pressed-light: var();
+  --color-border-button-secondary-pressed-dark: var();
+  --color-border-button-secondary-focus-light: var();
+  --color-border-button-secondary-focus-dark: var();
+  --color-border-button-link-default-light: var();
+  --color-border-button-link-default-dark: var();
+  --color-border-button-link-hover-light: var();
+  --color-border-button-link-hover-dark: var();
+  --color-border-button-link-pressed-light: var();
+  --color-border-button-link-pressed-dark: var();
+  --color-border-button-link-focus-light: var();
+  --color-border-button-link-focus-dark: var();
+  --color-border-input-default-light: var();
+  --color-border-input-default-dark: var();
+  --color-border-input-hover-light: var();
+  --color-border-input-hover-dark: var();
+  --color-border-input-pressed-light: var();
+  --color-border-input-pressed-dark: var();
+  --color-border-input-focus-light: var();
+  --color-border-input-focus-dark: var();
+  --color-icon-primary-light: var();
+  --color-icon-primary-dark: var();
+  --color-surface-primary-light: var();
+  --color-surface-primary-dark: var();
+  --color-surface-secondary-light: var();
+  --color-surface-secondary-dark: var();
+  --color-surface-tertiary-light: var();
+  --color-surface-tertiary-dark: var();
+  --color-surface-info-light: var();
+  --color-surface-info-dark: var();
+  --color-surface-supplemental-light: var();
+  --color-surface-supplemental-dark: var();
+  --color-surface-button-primary-default-light: var();
+  --color-surface-button-primary-default-dark: var();
+  --color-surface-button-primary-hover-light: var();
+  --color-surface-button-primary-hover-dark: var();
+  --color-surface-button-primary-pressed-light: var();
+  --color-surface-button-primary-pressed-dark: var();
+  --color-surface-button-primary-focus-light: var();
+  --color-surface-button-primary-focus-dark: var();
+  --color-surface-button-secondary-default-light: var();
+  --color-surface-button-secondary-default-dark: var();
+  --color-surface-button-secondary-hover-light: var();
+  --color-surface-button-secondary-hover-dark: var();
+  --color-surface-button-secondary-pressed-light: var();
+  --color-surface-button-secondary-pressed-dark: var();
+  --color-surface-button-secondary-focus-light: var();
+  --color-surface-button-secondary-focus-dark: var();
+  --color-surface-button-link-default-light: var();
+  --color-surface-button-link-default-dark: var();
+  --color-surface-button-link-hover-light: var();
+  --color-surface-button-link-hover-dark: var();
+  --color-surface-button-link-pressed-light: var();
+  --color-surface-button-link-pressed-dark: var();
+  --color-surface-button-link-focus-light: var();
+  --color-surface-button-link-focus-dark: var();
+  --color-surface-dot-primary-default-light: var();
+  --color-surface-dot-primary-default-dark: var();
+  --color-surface-dot-primary-hover-light: var();
+  --color-surface-dot-primary-hover-dark: var();
+  --color-surface-dot-primary-pressed-light: var();
+  --color-surface-dot-primary-pressed-dark: var();
+  --color-surface-dot-primary-focus-light: var();
+  --color-surface-dot-primary-focus-dark: var();
+  --color-surface-dot-secondary-default-light: var();
+  --color-surface-dot-secondary-default-dark: var();
+  --color-surface-dot-secondary-hover-light: var();
+  --color-surface-dot-secondary-hover-dark: var();
+  --color-surface-dot-secondary-pressed-light: var();
+  --color-surface-dot-secondary-pressed-dark: var();
+  --color-surface-dot-secondary-focus-light: var();
+  --color-surface-dot-secondary-focus-dark: var();
+  --color-surface-input-default-light: var();
+  --color-surface-input-default-dark: var();
+  --color-surface-input-hover-light: var();
+  --color-surface-input-hover-dark: var();
+  --color-surface-input-pressed-light: var();
+  --color-surface-input-pressed-dark: var();
+  --color-surface-input-focus-light: var();
+  --color-surface-input-focus-dark: var();
+  --color-overlay-50-light: var();
+  --color-overlay-50-dark: var();
+  --color-overlay-85-light: var();
+  --color-overlay-85-dark: var();
+  --color-overlay-inverse-50-light: var();
+  --color-overlay-inverse-50-dark: var();
+  --color-overlay-inverse-85-light: var();
+  --color-overlay-inverse-85-dark: var();
+
+  /* spacing */
+  --spacing-0: '0px';
+  --spacing-1: '8px';
+  --spacing-2: '16px';
+  --spacing-3: '24px';
+  --spacing-4: '32px';
+  --spacing-5: '40px';
+  --spacing-6: '48px';
+  --spacing-7: '56px';
+  --spacing-8: '64px';
+  --spacing-9: '72px';
+  --spacing-10: '80px';
+  --spacing-11: '88px';
+  --spacing-12: '96px';
+  --spacing-13: '104px';
+  --spacing-14: '112px';
+  --spacing-15: '120px';
+  --spacing-16: '160px';
+  --spacing-17: '320px';
+
+  /* border-radius */
+  --border-radius-sm: '4px';
+  --border-radius-md: '8px';
+  --border-radius-lg: '12px';
+  --border-radius-xl: '20px';
+
+  /* border-wieght */
+  --border-wieght-xs: '1px';
+  --border-wieght-sm: '2px';
+  --border-wieght-md: '4px';
+  --border-wieght-lg: '8px';
+
+  /* font family */
+  --font-primary: 'Quicksand', sans-serif;
+  --font-heading: 'MuseoModerno', sans-serif;
+  --font-serif: 'Georgia', serif;
+
+  /* font weight */
+  --font-weight-light: 'Light';
+  --font-weight-regular: 'Regular';
+  --font-weight-medium: 'Medium';
+  --font-weight-semi-bold: 'SemiBold';
+  --font-weight-bold: 'Bold';
+
+  /* font sizes mobile */
+  --font-size-display-mobile: '4.5rem';
+  --font-size-heading-xxl-mobile: '2.5rem';
+  --font-size-heading-xl-mobile: '1.75rem';
+  --font-size-heading-lg-mobile: '1.5rem';
+  --font-size-heading-md-mobile: '1.25rem';
+  --font-size-heading-sm-mobile: '1.125rem';
+  --font-size-heading-xs-mobile: '1rem';
+  --font-size-text-md-mobile: '1rem';
+  --font-size-text-sm-mobile: '0.875rem';
+  --font-size-text-xs-mobile: '0.75rem';
+  --font-size-block-quote-mobile: '1.5rem';
+
+  /* font sizes desktop */
+  --font-size-display-desktop: '7.5rem';
+  --font-size-heading-xxl-desktop: '3.5rem';
+  --font-size-heading-xl-desktop: '2.25rem';
+  --font-size-heading-lg-desktop: '2rem';
+  --font-size-heading-md-desktop: '1.5rem';
+  --font-size-heading-sm-desktop: '1.5rem';
+  --font-size-heading-xs-desktop: '1.25rem';
+  --font-size-text-md-desktop: '1.125rem';
+  --font-size-text-sm-desktop: '1rem';
+  --font-size-text-xs-desktop: '0.875rem';
+  --font-size-block-quote-desktop: '2rem';
+
+  /* line-height mobile */
+  --line-height-display-desktop: '1.33';
+  --line-height-heading-xxl-desktop: '1.4';
+  --line-height-heading-xl-desktop: '1.43';
+  --line-height-heading-lg-desktop: '1.33';
+  --line-height-heading-md-desktop: '1.6';
+  --line-height-heading-sm-desktop: '1.33';
+  --line-height-heading-xs-desktop: '1.5';
+  --line-height-text-md-desktop: '1.5';
+  --line-height-text-sm-desktop: '1.71';
+  --line-height-text-xs-desktop: '1.33';
+  --line-height-quote-desktop: '1.67';
+
+  /* line-height desktop */
+  --line-height-display-desktop: '1';
+  --line-height-heading-xxl-desktop: '1.43';
+  --line-height-heading-xl-desktop: '1.11';
+  --line-height-heading-lg-desktop: '1.25';
+  --line-height-heading-md-desktop: '1.33';
+  --line-height-heading-sm-desktop: '1.33';
+  --line-height-heading-xs-desktop: '1.6';
+  --line-height-text-md-desktop: '1.78';
+  --line-height-text-sm-desktop: '2';
+  --line-height-text-xs-desktop: '1.71';
+  --line-height-quote-desktop: '1.5';
 }
+
+.dark {
+}
+
+/* body {
+} */
