@@ -8,108 +8,262 @@ const config: Config = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {
-      fontFamily: {
-        moderno: 'var(--font-moderno)',
-        quicksand: 'var(--font-quicksand)',
-        serif: 'var(--font-serif)',
-      },
-      fontSize: {
-        display: ['7.5rem', { lineHeight: '1', fontWeight: '300' }],
-        h1: ['3.5rem', { lineHeight: '1.2', fontWeight: '300' }],
-        h2: ['2.25rem', { lineHeight: '1.2', fontWeight: '300' }],
-        h3: ['2rem', { lineHeight: '1.2', fontWeight: '300' }],
-        h4: ['1.5rem', { lineHeight: '1.2', fontWeight: '400' }],
-        h5: ['1.5rem', { lineHeight: '1.2', fontWeight: '500' }],
-        h6: ['1.25rem', { lineHeight: '1.4', fontWeight: '500' }],
-        p: ['1.125rem', { lineHeight: '1.6', fontWeight: '500' }],
-        'p-bold': ['1.125rem', { lineHeight: '1.6', fontWeight: '700' }],
-        small: ['1rem', { lineHeight: '1.8', fontWeight: '500' }],
-        'small-bold': ['1rem', { lineHeight: '1.8', fontWeight: '700' }],
-        'x-small': ['0.875rem', { lineHeight: '1.5', fontWeight: '400' }],
-        'x-small-bold': ['0.875rem', { lineHeight: '1.5', fontWeight: '700' }],
-      },
-      spacing: {
-        0: 'var(--spacing-0)',
-        1: 'var(--spacing-1)',
-        2: 'var(--spacing-2)',
-        3: 'var(--spacing-3)',
-        4: 'var(--spacing-4)',
-        5: 'var(--spacing-5)',
-        6: 'var(--spacing-6)',
-        7: 'var(--spacing-7)',
-        8: 'var(--spacing-8)',
-        9: 'var(--spacing-9)',
-        10: 'var(--spacing-10)',
-        11: 'var(--spacing-11)',
-        12: 'var(--spacing-12)',
-        13: 'var(--spacing-13)',
-        14: 'var(--spacing-14)',
-        15: 'var(--spacing-15)',
-        16: 'var(--spacing-16)',
-        17: 'var(--spacing-17)',
-      },
-      borderRadius: {
-        sm: '4px',
-        md: '8px',
-        lg: '12px',
-        xl: '20px',
-      },
-      borderWidth: {
-        xs: '1px',
-        sm: '2px',
-        md: '4px',
-        lg: '8px',
-      },
-      colors: {
+    textColor: {
+      // Display text
+      'display-primary': 'var(--text-display-primary)',
+      'display-secondary': 'var(--text-display-secondary)',
+      'display-inverse': 'var(--text-display-inverse)',
+
+      // Header text
+      'header-primary': 'var(--text-header-primary)',
+      'header-secondary': 'var(--text-header-secondary)',
+      'header-tertiary': 'var(--text-header-tertiary)',
+      'header-inverse': 'var(--text-header-inverse)',
+
+      // Body text
+      'body-primary': 'var(--text-body-primary)',
+      'body-secondary': 'var(--text-body-secondary)',
+      'body-inverse': 'var(--text-body-inverse)',
+
+      // Button text
+      'button-primary-default': 'var(--text-button-primary-default)',
+      'button-primary-hover': 'var(--text-button-primary-hover)',
+      'button-primary-active': 'var(--text-button-primary-active)',
+
+      'button-secondary-default': 'var(--text-button-secondary-default)',
+      'button-secondary-hover': 'var(--text-button-secondary-hover)',
+      'button-secondary-active': 'var(--text-button-secondary-active)',
+
+      'button-link-default': 'var(--text-button-link-default)',
+      'button-link-hover': 'var(--text-button-link-hover)',
+      'button-link-active': 'var(--text-button-link-active)',
+    },
+    fontFamily: {
+      heading: 'var(--font-heading)',
+      primary: 'var(--font-primary)',
+      serif: 'var(--font-serif)',
+    },
+    fontSize: {
+      'display-size': [
+        'var(--font-size-display-desktop)',
+        {
+          lineHeight: 'var(--line-height-display-desktop)',
+          fontWeight: 'var(--font-weight-light)',
+        },
+      ],
+      'display-size-mobile': [
+        'var(--font-size-display-mobile)',
+        {
+          lineHeight: 'var(--line-height-display-mobile)',
+          fontWeight: 'var(--font-weight-light)',
+        },
+      ],
+      h1: [
+        'var(--font-size-heading-xxl-desktop)',
+        {
+          lineHeight: 'var(--line-height-heading-xxl-desktop)',
+          fontWeight: 'var(--font-weight-light)',
+        },
+      ],
+      'h1-mobile': [
+        'var(--font-size-heading-xxl-mobile)',
+        {
+          lineHeight: 'var(--line-height-heading-xxl-mobile)',
+          fontWeight: 'var(--font-weight-light)',
+        },
+      ],
+      h2: [
+        'var(--font-size-heading-xl-desktop)',
+        {
+          lineHeight: 'var(--line-height-heading-xl-desktop)',
+          fontWeight: 'var(--font-weight-light)',
+        },
+      ],
+      'h2-mobile': [
+        'var(--font-size-heading-xl-mobile)',
+        {
+          lineHeight: 'var(--line-height-heading-xl-mobile)',
+          fontWeight: 'var(--font-weight-light)',
+        },
+      ],
+      h3: [
+        'var(--font-size-heading-lg-desktop)',
+        {
+          lineHeight: 'var(--line-height-heading-lg-desktop)',
+          fontWeight: 'var(--font-weight-light)',
+        },
+      ],
+      'h3-mobile': [
+        'var(--font-size-heading-lg-mobile)',
+        {
+          lineHeight: 'var(--line-height-heading-lg-mobile)',
+          fontWeight: 'var(--font-weight-light)',
+        },
+      ],
+      h4: [
+        'var(--font-size-heading-md-desktop)',
+        {
+          lineHeight: 'var(--line-height-heading-md-desktop)',
+          fontWeight: 'var(--font-weight-regular)',
+        },
+      ],
+      'h4-mobile': [
+        'var(--font-size-heading-md-mobile)',
+        {
+          lineHeight: 'var(--line-height-heading-md-mobile)',
+          fontWeight: 'var(--font-weight-regular)',
+        },
+      ],
+      h5: [
+        'var(--font-size-heading-sm-desktop)',
+        {
+          lineHeight: 'var(--line-height-heading-sm-desktop)',
+          fontWeight: 'var(--font-weight-medium)',
+        },
+      ],
+      'h5-mobile': [
+        'var(--font-size-heading-sm-mobile)',
+        {
+          lineHeight: 'var(--line-height-heading-sm-mobile)',
+          fontWeight: 'var(--font-weight-medium)',
+        },
+      ],
+      h6: [
+        'var(--font-size-heading-xs-desktop)',
+        {
+          lineHeight: 'var(--line-height-heading-xs-desktop)',
+          fontWeight: 'var(--font-weight-medium)',
+        },
+      ],
+      'h6-mobile': [
+        'var(--font-size-heading-xs-mobile)',
+        {
+          lineHeight: 'var(--line-height-heading-xs-mobile)',
+          fontWeight: 'var(--font-weight-medium)',
+        },
+      ],
+      p: [
+        'var(--font-size-text-md-desktop)',
+        {
+          lineHeight: 'var(--line-height-text-md-desktop)',
+          fontWeight: 'var(--font-weight-medium)',
+        },
+      ],
+      'p-mobile': [
+        'var(--font-size-text-md-mobile)',
+        {
+          lineHeight: 'var(--line-height-text-md-mobile)',
+          fontWeight: 'var(--font-weight-medium)',
+        },
+      ],
+      'p-bold': [
+        'var(--font-size-text-md-desktop)',
+        {
+          lineHeight: 'var(--line-height-text-md-desktop)',
+          fontWeight: 'var(--font-weight-bold)',
+        },
+      ],
+      'p-bold-mobile': [
+        'var(--font-size-text-md-mobile)',
+        {
+          lineHeight: 'var(--line-height-text-md-mobile)',
+          fontWeight: 'var(--font-weight-bold)',
+        },
+      ],
+      small: [
+        'var(--font-size-text-sm-desktop)',
+        {
+          lineHeight: 'var(--line-height-text-sm-desktop)',
+          fontWeight: 'var(--font-weight-medium)',
+        },
+      ],
+      'small-mobile': [
+        'var(--font-size-text-sm-mobile)',
+        {
+          lineHeight: 'var(--line-height-text-sm-mobile)',
+          fontWeight: 'var(--font-weight-medium)',
+        },
+      ],
+      'small-bold': [
+        'var(--font-size-text-sm-desktop)',
+        {
+          lineHeight: 'var(--line-height-text-sm-desktop)',
+          fontWeight: 'var(--font-weight-bold)',
+        },
+      ],
+      'small-bold-mobile': [
+        'var(--font-size-text-sm-mobile)',
+        {
+          lineHeight: 'var(--line-height-text-sm-mobile)',
+          fontWeight: 'var(--font-weight-bold)',
+        },
+      ],
+      'x-small': [
+        'var(--font-size-text-xs-desktop)',
+        {
+          lineHeight: 'var(--line-height-text-xs-desktop)',
+          fontWeight: 'var(--font-weight-regular)',
+        },
+      ],
+      'x-small-mobile': [
+        'var(--font-size-text-xs-mobile)',
+        {
+          lineHeight: 'var(--line-height-text-xs-mobile)',
+          fontWeight: 'var(--font-weight-regular)',
+        },
+      ],
+      'x-small-bold': [
+        'var(--font-size-text-xs-desktop)',
+        {
+          lineHeight: 'var(--line-height-text-xs-desktop)',
+          fontWeight: 'var(--font-weight-bold)',
+        },
+      ],
+      'x-small-bold-mobile': [
+        'var(--font-size-text-xs-mobile)',
+        {
+          lineHeight: 'var(--line-height-text-xs-mobile)',
+          fontWeight: 'var(--font-weight-bold)',
+        },
+      ],
+      'block-quote': [
+        'var(--font-size-block-quote-desktop)',
+        {
+          lineHeight: 'var(--line-height-block-quote-desktop)',
+          fontWeight: 'var(--font-weight-light)',
+        },
+      ],
+      'block-quote-mobile': [
+        'var(--font-size-block-quote-mobile)',
+        {
+          lineHeight: 'var(--line-height-block-quote-mobile)',
+          fontWeight: 'var(--font-weight-light)',
+        },
+      ],
+    },
+    spacing: {
+      0: 'var(--spacing-0)',
+      1: 'var(--spacing-1)',
+      2: 'var(--spacing-2)',
+      3: 'var(--spacing-3)',
+      4: 'var(--spacing-4)',
+      5: 'var(--spacing-5)',
+      6: 'var(--spacing-6)',
+      7: 'var(--spacing-7)',
+      8: 'var(--spacing-8)',
+      9: 'var(--spacing-9)',
+      10: 'var(--spacing-10)',
+      11: 'var(--spacing-11)',
+      12: 'var(--spacing-12)',
+      13: 'var(--spacing-13)',
+      14: 'var(--spacing-14)',
+      15: 'var(--spacing-15)',
+      16: 'var(--spacing-16)',
+      17: 'var(--spacing-17)',
+    },
+    /* colors: {
         // Semantic Tokens
         text: {
-          display: {
-            primary: {
-              light: 'var(--color-text-display-primary-light)',
-              dark: 'var(--color-text-display-primary-dark)',
-            },
-            secondary: {
-              light: 'var(--color-text-display-secondary-light)',
-              dark: 'var(--color-text-display-secondary-dark)',
-            },
-            inverse: {
-              light: 'var(--color-text-display-inverse-light)',
-              dark: 'var(--color-text-display-inverse-dark)',
-            },
-          },
-          header: {
-            primary: {
-              light: 'var(--color-text-header-primary-light)',
-              dark: 'var(--color-text-header-primary-dark)',
-            },
-            secondary: {
-              light: 'var(--color-text-header-secondary-light)',
-              dark: 'var(--color-text-header-secondary-dark)',
-            },
-            tertiary: {
-              light: 'var(--color-text-header-tertiary-light)',
-              dark: 'var(--color-text-header-tertiary-dark)',
-            },
-            inverse: {
-              light: 'var(--color-text-header-inverse-light)',
-              dark: 'var(--color-text-header-inverse-dark)',
-            },
-          },
-          body: {
-            primary: {
-              light: 'var(--color-text-body-primary-light)',
-              dark: 'var(--color-text-body-primary-dark)',
-            },
-            secondary: {
-              light: 'var(--color-text-body-secondary-light)',
-              dark: 'var(--color-text-body-secondary-dark)',
-            },
-            inverse: {
-              light: 'var(--color-text-body-inverse-light)',
-              dark: 'var(--color-text-body-inverse-dark)',
-            },
-          },
           button: {
             close: {
               light: 'var(--color-text-button-close-light)',
@@ -453,9 +607,32 @@ const config: Config = {
             dark: 'var(--color-overlay-inverse-85-dark)',
           },
         },
+      }, */
+    extend: {
+      colors: {
+        'btn-border-secondary-default':
+          'var(--border-button-secondary-default)',
+        'btn-border-secondary-hover': 'var(--border-button-secondary-hover)',
+        'btn-border-secondary-active': 'var(--border-button-secondary-active)',
+      },
+      borderRadius: {
+        '3xl': 'var(--border-radius-3xl)',
+      },
+      backgroundColor: {
+        'surface-button-primary-default':
+          'var(--surface-button-primary-default)',
+        'surface-button-primary-hover': 'var(--surface-button-primary-hover)',
+        'surface-button-primary-active': 'var(--surface-button-primary-active)',
+        'surface-button-secondary-default':
+          'var(--surface-button-secondary-default)',
+        'surface-button-secondary-hover':
+          'var(--surface-button-secondary-hover)',
+        'surface-button-secondary-active':
+          'var(--surface-button-secondary-active)',
       },
     },
   },
+
   plugins: [],
 };
 
