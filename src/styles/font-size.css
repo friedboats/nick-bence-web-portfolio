@@ -1,0 +1,27 @@
+:root {
+  /* font sizes mobile */
+  --font-size-display-mobile: 4.5rem;
+  --font-size-heading-xxl-mobile: 2.5rem;
+  --font-size-heading-xl-mobile: 1.75rem;
+  --font-size-heading-lg-mobile: 1.5rem;
+  --font-size-heading-md-mobile: 1.125rem;
+  --font-size-heading-sm-mobile: 1.25rem;
+  --font-size-heading-xs-mobile: 1rem;
+  --font-size-text-md-mobile: 1rem;
+  --font-size-text-sm-mobile: 0.875rem;
+  --font-size-text-xs-mobile: 0.75rem;
+  --font-size-block-quote-mobile: 1.5rem;
+
+  /* font sizes desktop */
+  --font-size-display-desktop: 7.5rem;
+  --font-size-heading-xxl-desktop: 3.5rem;
+  --font-size-heading-xl-desktop: 2.25rem;
+  --font-size-heading-lg-desktop: 2rem;
+  --font-size-heading-md-desktop: 1.5rem;
+  --font-size-heading-sm-desktop: 1.5rem;
+  --font-size-heading-xs-desktop: 1.25rem;
+  --font-size-text-md-desktop: 1.125rem;
+  --font-size-text-sm-desktop: 1rem;
+  --font-size-text-xs-desktop: 0.875rem;
+  --font-size-block-quote-desktop: 2rem;
+}

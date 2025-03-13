@@ -1,0 +1,27 @@
+:root {
+  /* line-height mobile */
+  --line-height-display-mobile: 1.33;
+  --line-height-heading-xxl-mobile: 1.4;
+  --line-height-heading-xl-mobile: 1.43;
+  --line-height-heading-lg-mobile: 1.33;
+  --line-height-heading-md-mobile: 1.77;
+  --line-height-heading-sm-mobile: 1.6;
+  --line-height-heading-xs-mobile: 1.5;
+  --line-height-text-md-mobile: 1.5;
+  --line-height-text-sm-mobile: 1.71;
+  --line-height-text-xs-mobile: 1.33;
+  --line-height-block-quote-mobile: 1.67;
+
+  /* line-height desktop */
+  --line-height-display-desktop: 1;
+  --line-height-heading-xxl-desktop: 1.43;
+  --line-height-heading-xl-desktop: 1.11;
+  --line-height-heading-lg-desktop: 1.25;
+  --line-height-heading-md-desktop: 1.33;
+  --line-height-heading-sm-desktop: 1.33;
+  --line-height-heading-xs-desktop: 1.6;
+  --line-height-text-md-desktop: 1.78;
+  --line-height-text-sm-desktop: 2;
+  --line-height-text-xs-desktop: 1.71;
+  --line-height-block-quote-desktop: 1.5;
+}
