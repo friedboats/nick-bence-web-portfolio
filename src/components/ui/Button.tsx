@@ -10,7 +10,8 @@ const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   ...props
 }) => {
-  const baseStyles = 'text-center text-small-bold leading-6 duration-200';
+  const baseStyles =
+    'text-center text-small-bold-mobile sm:text-small-bold leading-6 duration-200';
   const variantStyles = {
     primary:
       'px-4 py-2 rounded-xl text-button-primary-default hover:text-button-primary-hover active:text-button-primary-active bg-surface-button-primary-default hover:bg-surface-button-primary-hover active:bg-surface-button-primary-active',
