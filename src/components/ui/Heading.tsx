@@ -1,5 +1,3 @@
-import { JSX } from 'react';
-
 interface HeadingProps {
   as?: keyof typeof variantStyles;
   color?: string;
@@ -7,6 +5,7 @@ interface HeadingProps {
 }
 
 const variantStyles = {
+  display: 'font-heading text-display-size-mobile sm:text-display-size',
   h1: 'font-heading text-h1-mobile sm:text-h1',
   h2: 'font-heading text-h2-mobile sm:text-h2',
   h3: 'font-heading text-h3-mobile sm:text-h3',
@@ -20,8 +19,11 @@ const Heading = ({
   color = 'text-header-primary',
   children,
 }: HeadingProps) => {
+  const Component = Tag === 'display' ? 'h2' : Tag;
   return (
-    <Tag className={`${variantStyles[Tag] || ''} ${color}`}>{children}</Tag>
+    <Component className={`${variantStyles[Tag] || ''} ${color}`}>
+      {children}
+    </Component>
   );
 };
 

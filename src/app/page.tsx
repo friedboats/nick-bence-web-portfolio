@@ -7,9 +7,7 @@ export default function Home() {
   return (
     <div>
       <main className="p-10">
-        <p className="font-heading text-display-size-mobile sm:text-display-size text-display-secondary">
-          Testing 123
-        </p>
+        <Heading as="display">Display Testing 123</Heading>
         <Heading as="h1">h1 Testing 123</Heading>
         <Heading as="h2">h2 Testing 123</Heading>
         <Heading as="h3">h3 Testing 123</Heading>
