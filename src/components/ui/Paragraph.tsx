@@ -25,7 +25,7 @@ const variantStyles: Record<
 };
 
 const Paragraph = ({
-  variant = 'p', // default variant if not provided
+  variant = 'p',
   color = 'text-body-primary',
   children,
 }: ParagraphProps) => {
