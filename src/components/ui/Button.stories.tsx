@@ -19,6 +19,14 @@ export const Primary: Story = {
   args: {
     children: 'Click Me',
     variant: 'primary',
+    disabled: false
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'This is the primary button variant.',
+      },
+    },
   },
 };
 
@@ -27,11 +35,25 @@ export const Secondary: Story = {
     children: 'Click Me',
     variant: 'secondary',
   },
+  parameters: {
+    docs: {
+      description: {
+        story: 'This is the secondary button variant.',
+      },
+    },
+  },
 };
 
 export const Link: Story = {
   args: {
     children: 'Click Me',
     variant: 'link',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'This is the link button variant.',
+      },
+    },
   },
 };
