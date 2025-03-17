@@ -8,7 +8,7 @@ interface ParagraphProps {
     | 'small-bold'
     | 'x-small'
     | 'x-small-bold';
-  color?: string;
+  color?: 'text-body-primary' | 'text-body-secondary' | 'text-header-inverse';
   children: React.ReactNode;
 }
 
