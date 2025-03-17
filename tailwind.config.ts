@@ -9,11 +9,6 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     textColor: {
-      // Display text
-      'display-primary': 'var(--text-display-primary)',
-      'display-secondary': 'var(--text-display-secondary)',
-      'display-inverse': 'var(--text-display-inverse)',
-
       // Header text
       'header-primary': 'var(--text-header-primary)',
       'header-secondary': 'var(--text-header-secondary)',
@@ -104,28 +99,28 @@ const config: Config = {
         'var(--font-size-heading-md-desktop)',
         {
           lineHeight: 'var(--line-height-heading-md-desktop)',
-          fontWeight: 'var(--font-weight-regular)',
+          fontWeight: 'var(--font-weight-medium)',
         },
       ],
       'h4-mobile': [
         'var(--font-size-heading-md-mobile)',
         {
           lineHeight: 'var(--line-height-heading-md-mobile)',
-          fontWeight: 'var(--font-weight-regular)',
+          fontWeight: 'var(--font-weight-medium)',
         },
       ],
       h5: [
         'var(--font-size-heading-sm-desktop)',
         {
           lineHeight: 'var(--line-height-heading-sm-desktop)',
-          fontWeight: 'var(--font-weight-medium)',
+          fontWeight: 'var(--font-weight-regular)',
         },
       ],
       'h5-mobile': [
         'var(--font-size-heading-sm-mobile)',
         {
           lineHeight: 'var(--line-height-heading-sm-mobile)',
-          fontWeight: 'var(--font-weight-medium)',
+          fontWeight: 'var(--font-weight-regular)',
         },
       ],
       h6: [

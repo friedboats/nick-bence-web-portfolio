@@ -68,9 +68,6 @@
   /*** semantic colors ***/
   /** light mode **/
   /* text */
-  --text-display-primary: var(--color-complimentary-600);
-  --text-display-secondary: var(--color-brand-400);
-  --text-display-inverse: var(--color-primary-white);
   --text-header-primary: var(--color-complimentary-600);
   --text-header-secondary: var(--color-complimentary-400);
   --text-header-tertiary: var(--color-brand-400);
@@ -150,9 +147,6 @@
 /** dark mode **/
 .dark {
   /* text */
-  --text-display-primary: var(--color-primary-white);
-  --text-display-secondary: var(--color-brand-400);
-  --text-display-inverse: var(--color-complimentary-600);
   --text-header-primary: var(--color-primary-white);
   --text-header-secondary: var(--color-brand-400);
   --text-header-tertiary: var(--color-brand-400);
