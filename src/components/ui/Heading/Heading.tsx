@@ -1,10 +1,14 @@
 interface HeadingProps {
   as?: keyof typeof variantStyles;
-  color?: string;
+  color?:
+    | 'text-header-primary'
+    | 'text-header-secondary'
+    | 'text-header-tertiary'
+    | 'text-header-inverse';
   children: React.ReactNode;
 }
 
-const variantStyles = {
+export const variantStyles = {
   display: 'font-heading text-display-size-mobile sm:text-display-size',
   h1: 'font-heading text-h1-mobile sm:text-h1',
   h2: 'font-heading text-h2-mobile sm:text-h2',
