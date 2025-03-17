@@ -23,7 +23,7 @@
 # misc
 .DS_Store
 *.pem
-best-pratices.txt
+nick-notes.txt
 
 # debug
 npm-debug.log*
