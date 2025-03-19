@@ -4,8 +4,8 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
+    "strict": true, // Enforces strict type-checking
+    "noEmit": true, // Prevents generating JS files
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
@@ -13,7 +13,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["jest"],
+    "types": ["jest", "node"], // Add node types to help with Node.js type resolution
     "plugins": [
       {
         "name": "next"
