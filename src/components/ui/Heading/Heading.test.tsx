@@ -87,7 +87,11 @@ describe('Heading Component - Integration Tests', () => {
   });
 
   it('renders inside a section component with dynamic heading levels', () => {
-    const Section = ({ level }: { level: keyof typeof Heading }) => (
+    const Section = ({
+      level,
+    }: {
+      level: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+    }) => (
       <section>
         <Heading as={level}>Section Title</Heading>
       </section>
