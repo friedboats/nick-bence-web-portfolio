@@ -21,9 +21,9 @@ export default function Home() {
         <Paragraph variant="x-small">x small - Testing 123</Paragraph>
         <Paragraph variant="x-small-bold">x small bold - Testing 123</Paragraph>
         <BlockQuote>
-          I like how Nick embodies the idea of "We are the ultimate team sport."
-          He works wonderfully across teams, especially with the creative team
-          and within the ID team.
+          I like how Nick embodies the idea of &quot;We are the ultimate team
+          sport.&quot; He works wonderfully across teams, especially with the
+          creative team and within the ID team.
         </BlockQuote>
         <div className="flex gap-5">
           <Button variant="primary">Label</Button>
