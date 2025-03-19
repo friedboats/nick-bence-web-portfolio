@@ -50,7 +50,9 @@ describe('Paragraph Component - Integration Tests', () => {
 
   it('changes color dynamically when props update', async () => {
     const Wrapper = () => {
-      const [color, setColor] = useState('text-body-primary');
+      const [color, setColor] = useState<
+        'text-body-primary' | 'text-body-secondary'
+      >('text-body-primary');
       return (
         <div>
           <Paragraph color={color}>Dynamic Color</Paragraph>
