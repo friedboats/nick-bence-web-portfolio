@@ -1,5 +1,6 @@
 import BlockQuote from '@/components/ui/BlockQuote';
 import Button from '@/components/ui/Button';
+import CircleImage from '@/components/ui/CircleImage/CircleImage';
 import Heading from '@/components/ui/Heading';
 import Paragraph from '@/components/ui/Paragraph';
 
@@ -20,16 +21,15 @@ export default function Home() {
         <Paragraph variant="small-bold">smal bold - Testing 123</Paragraph>
         <Paragraph variant="x-small">x small - Testing 123</Paragraph>
         <Paragraph variant="x-small-bold">x small bold - Testing 123</Paragraph>
-        <BlockQuote>
-          I like how Nick embodies the idea of &quot;We are the ultimate team
-          sport.&quot; He works wonderfully across teams, especially with the
-          creative team and within the ID team.
-        </BlockQuote>
+        <BlockQuote quote="Design is not just what it looks like and feels like. Design is how it works." />
         <div className="flex gap-5">
           <Button variant="primary">Label</Button>
           <Button variant="secondary">Label</Button>
           <Button variant="link">Label</Button>
         </div>
+        <CircleImage type="starbucks" />
+        <CircleImage type="dynatrace" />
+        <CircleImage type="nathans" />
       </main>
     </div>
   );
