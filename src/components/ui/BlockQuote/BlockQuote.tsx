@@ -1,13 +1,13 @@
 import React from 'react';
 
 interface BlockQuoteProps {
-  children: React.ReactNode;
+  quote: string;
 }
 
-const BlockQuote = ({ children }: BlockQuoteProps) => {
+const BlockQuote = ({ quote }: BlockQuoteProps) => {
   return (
     <p className="text-block-quote-mobile sm:text-block-quote text-body-secondary text-center">
-      {children}
+      {`"${quote}"`}
     </p>
   );
 };
