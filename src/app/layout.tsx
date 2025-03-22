@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import '../styles/globals.css';
+import ThemeToggle from '@/components/ui/ThemeToggle/ThemeToggle';
 
 export const metadata: Metadata = {
   title: 'Nick Bence | Senior UX/UI Engineer & Front-End Developer',
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-primary">{children}</body>
+      <body className="font-primary bg-surface-background-primary">
+        <ThemeToggle />
+        {children}
+      </body>
     </html>
   );
 }
