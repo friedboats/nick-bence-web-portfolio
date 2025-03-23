@@ -257,6 +257,9 @@ const config: Config = {
       17: 'var(--spacing-17)',
     },
     extend: {
+      animation: {
+        'spin-slow': 'spin 45s linear infinite',
+      },
       colors: {
         'btn-border-secondary-default':
           'var(--border-button-secondary-default)',

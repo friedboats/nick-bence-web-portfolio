@@ -45,7 +45,7 @@ const CircleImage = ({ name, size = 'small' }: CircleImageProps) => {
           height={containerSize}
           viewBox={`0 0 ${containerSize} ${containerSize}`}
           xmlns="http://www.w3.org/2000/svg"
-          className="absolute"
+          className="absolute animate-spin-slow"
           style={{
             top: 0,
             left: 0,
