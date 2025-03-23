@@ -1,6 +1,7 @@
+import AvatarImage from '@/components/ui/AvatarImage';
 import BlockQuote from '@/components/ui/BlockQuote';
 import Button from '@/components/ui/Button';
-import CircleImage from '@/components/ui/CircleImage/CircleImage';
+import CircleImage from '@/components/ui/CircleImage';
 import Heading from '@/components/ui/Heading';
 import Paragraph from '@/components/ui/Paragraph';
 
@@ -27,9 +28,10 @@ export default function Home() {
           <Button variant="secondary">Label</Button>
           <Button variant="link">Label</Button>
         </div>
-        <CircleImage type="starbucks" />
-        <CircleImage type="dynatrace" />
-        <CircleImage type="nathans" />
+        <CircleImage name="starbucks" />
+        <CircleImage name="dynatrace" />
+        <CircleImage name="nathans" />
+        <CircleImage name="nick-bence" size="large" />
       </main>
     </div>
   );

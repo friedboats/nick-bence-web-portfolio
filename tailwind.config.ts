@@ -262,6 +262,7 @@ const config: Config = {
           'var(--border-button-secondary-default)',
         'btn-border-secondary-hover': 'var(--border-button-secondary-hover)',
         'btn-border-secondary-active': 'var(--border-button-secondary-active)',
+        'border-primary': 'var(--border-primary)',
       },
       borderRadius: {
         '3xl': 'var(--border-radius-3xl)',

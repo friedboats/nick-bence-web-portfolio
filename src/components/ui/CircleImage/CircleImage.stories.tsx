@@ -5,10 +5,16 @@ const meta: Meta<typeof CircleImage> = {
   title: 'Components/CircleImage',
   component: CircleImage,
   argTypes: {
-    type: {
+    name: {
       control: {
         type: 'select',
-        options: ['starbucks', 'dynatrace', 'nathans'],
+        options: ['nick-bence', 'starbucks', 'dynatrace', 'nathans'],
+      },
+    },
+    size: {
+      control: {
+        type: 'select',
+        options: ['small', 'large'],
       },
     },
   },
@@ -18,5 +24,5 @@ export default meta;
 type Story = StoryObj<typeof CircleImage>;
 
 export const Default: Story = {
-  args: { type: 'starbucks' }, // Default selection
+  args: { name: 'starbucks', size: 'small' }, // Default selection
 };
