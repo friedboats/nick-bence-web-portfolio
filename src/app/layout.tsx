@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import '../styles/globals.css';
-import ThemeToggle from '@/components/ui/ThemeToggle/ThemeToggle';
+import ThemeToggle from '@/components/ThemeToggle/ThemeToggle';
 
 export const metadata: Metadata = {
   title: 'Nick Bence | Senior UX/UI Engineer & Front-End Developer',
