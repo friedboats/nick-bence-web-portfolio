@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import ThemeToggle from './ThemeToggle';
 
 export default {
@@ -8,10 +8,6 @@ export default {
 } as Meta;
 
 // Template with background color applied
-const Template: Story = () => (
-  <div className="p-2 bg-surface-background-primary inline-flex w-fit h-fit">
-    <ThemeToggle />
-  </div>
-);
+const Template: StoryFn = () => <ThemeToggle />;
 
 export const Default = Template.bind({});

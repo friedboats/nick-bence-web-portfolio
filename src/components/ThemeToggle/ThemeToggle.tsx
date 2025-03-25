@@ -4,7 +4,14 @@ import { useEffect, useState } from 'react';
 import Button from '../Button';
 
 const ThemeToggle = () => {
+  const isStorybook =
+    typeof window !== 'undefined' && window.__STORYBOOK_PREVIEW__;
+
   const [isDark, setIsDark] = useState<boolean | null>(null);
+
+  const toggleTheme = () => {
+    setIsDark((prev) => !prev);
+  };
 
   useEffect(() => {
     // Ensure we are on the client before accessing localStorage
@@ -15,21 +22,19 @@ const ThemeToggle = () => {
   useEffect(() => {
     // Apply the dark class on body when theme changes
     if (isDark !== null) {
-      document.body.classList.toggle('dark', isDark);
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      if (!isStorybook) {
+        document.body.classList.toggle('dark', isDark);
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      }
     }
-  }, [isDark]);
+  }, [isDark, isStorybook]);
 
   if (isDark === null) {
     return null; // Return null or a loading state until the theme is set
   }
 
   return (
-    <Button
-      onClick={() => setIsDark((prev) => !prev)}
-      variant="link"
-      aria-label="Toggle Dark Mode"
-    >
+    <Button onClick={toggleTheme} variant="link" aria-label="Toggle Dark Mode">
       {isDark ? (
         <svg
           role="img"
