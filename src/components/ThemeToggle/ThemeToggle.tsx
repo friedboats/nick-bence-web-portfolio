@@ -4,17 +4,25 @@ import { useEffect, useState } from 'react';
 import Button from '../Button';
 
 const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') === 'dark';
-    }
-    return false;
-  });
+  const [isDark, setIsDark] = useState<boolean | null>(null);
 
   useEffect(() => {
-    document.body.classList.toggle('dark', isDark);
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    // Ensure we are on the client before accessing localStorage
+    const savedTheme = localStorage.getItem('theme');
+    setIsDark(savedTheme === 'dark');
+  }, []);
+
+  useEffect(() => {
+    // Apply the dark class on body when theme changes
+    if (isDark !== null) {
+      document.body.classList.toggle('dark', isDark);
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    }
   }, [isDark]);
+
+  if (isDark === null) {
+    return null; // Return null or a loading state until the theme is set
+  }
 
   return (
     <Button
