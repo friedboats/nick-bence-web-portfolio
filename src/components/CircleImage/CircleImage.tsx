@@ -18,7 +18,9 @@ const imageSizeMap = {
 
 const CircleImage = ({ name, size = 'small' }: CircleImageProps) => {
   const src = `/circle-${name}.png`;
-  const alt = `${name.charAt(0).toUpperCase() + name.slice(1)} logo`;
+  const alt = `${
+    name.charAt(0).toUpperCase() + name.slice(1).replace('-', ' ')
+  } logo`;
   const isLarge = size === 'large';
   const containerSize = containerSizeMap[size];
   const imageSize = imageSizeMap[size];
