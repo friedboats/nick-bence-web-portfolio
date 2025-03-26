@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
 
 const meta: Meta<typeof Button> = {
-  title: 'UI/Button',
+  title: 'Components/Button',
   component: Button,
   argTypes: {
     variant: {
@@ -19,7 +19,7 @@ export const Primary: Story = {
   args: {
     children: 'Click Me',
     variant: 'primary',
-    disabled: false
+    disabled: false,
   },
   parameters: {
     docs: {

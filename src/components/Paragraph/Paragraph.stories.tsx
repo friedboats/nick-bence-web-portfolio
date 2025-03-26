@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Paragraph from './Paragraph';
 
 const meta: Meta<typeof Paragraph> = {
-  title: 'UI/Paragraph',
+  title: 'Components/Paragraph',
   component: Paragraph,
   argTypes: {
     variant: {
