@@ -260,6 +260,9 @@ const config: Config = {
       animation: {
         'spin-slow': 'spin 45s linear infinite',
       },
+      fill: {
+        'header-primary': 'var(--text-header-primary)',
+      },
       colors: {
         'btn-border-secondary-default':
           'var(--border-button-secondary-default)',
@@ -282,6 +285,12 @@ const config: Config = {
           'var(--surface-button-secondary-hover)',
         'surface-button-secondary-active':
           'var(--surface-button-secondary-active)',
+        'surface-dot-primary-default': 'var(--surface-dot-primary-default)',
+        'surface-dot-primary-hover': 'var(--surface-dot-primary-hover)',
+        'surface-dot-primary-active': 'var(--surface-dot-primary-active)',
+        'surface-dot-secondary-default': 'var(--surface-dot-secondary-default)',
+        'surface-dot-secondary-hover': 'var(--surface-dot-secondary-hover)',
+        'surface-dot-secondary-active': 'var(--surface-dot-secondary-active)',
       },
     },
   },

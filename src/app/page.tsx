@@ -1,14 +1,15 @@
-import AvatarImage from '@/components/ui/AvatarImage';
-import BlockQuote from '@/components/ui/BlockQuote';
-import Button from '@/components/ui/Button';
-import CircleImage from '@/components/ui/CircleImage';
-import Heading from '@/components/ui/Heading';
-import Paragraph from '@/components/ui/Paragraph';
+import BlockQuote from '@/components/BlockQuote';
+import Button from '@/components/Button';
+import CircleImage from '@/components/CircleImage';
+import Heading from '@/components/Heading';
+import Paragraph from '@/components/Paragraph';
+import PersonalLogo from '@/components/PersonalLogo';
 
 export default function Home() {
   return (
     <div>
       <main className="p-10">
+        <PersonalLogo />
         <Heading as="display">Display Testing 123</Heading>
         <Heading as="h1">h1 Testing 123</Heading>
         <Heading as="h2">h2 Testing 123</Heading>
