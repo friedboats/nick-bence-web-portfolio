@@ -1,13 +1,14 @@
-import React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import ThemeToggle from './ThemeToggle';
 
-export default {
+const meta: Meta<typeof ThemeToggle> = {
   title: 'Components/ThemeToggle',
   component: ThemeToggle,
-} as Meta;
+};
 
-// Template with background color applied
-const Template: StoryFn = () => <ThemeToggle />;
+export default meta;
+type Story = StoryObj<typeof ThemeToggle>;
 
-export const Default = Template.bind({});
+export const Default: Story = {
+  args: {},
+};
