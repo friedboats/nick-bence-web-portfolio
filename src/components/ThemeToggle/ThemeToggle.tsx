@@ -34,7 +34,11 @@ const ThemeToggle = () => {
   }
 
   return (
-    <Button onClick={toggleTheme} variant="link" aria-label="Toggle Dark Mode">
+    <Button
+      onClick={toggleTheme}
+      variant="link"
+      aria-label="Toggle light and dark themes"
+    >
       {isDark ? (
         <svg
           role="img"
