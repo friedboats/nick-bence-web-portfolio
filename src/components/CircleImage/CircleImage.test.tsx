@@ -32,7 +32,7 @@ describe('CircleImage Component', () => {
 
     render(<CircleImage name={type} size="large" />);
 
-    const image = screen.getByAltText('Nick-bence logo');
+    const image = screen.getByAltText('Nick bence logo');
 
     // Check if the image src is correct
     expect(image).toHaveAttribute(
