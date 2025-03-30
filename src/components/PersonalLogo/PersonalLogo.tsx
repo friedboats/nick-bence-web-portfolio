@@ -8,7 +8,7 @@ const PersonalLogo = ({ clickURL = '' }: PersonalLogoProps) => {
   return (
     <a
       href={clickURL}
-      className={`relative flex group`}
+      className="relative flex group mt-2 mb-2"
       aria-label="Nick Bence Logo"
       role="link"
     >
