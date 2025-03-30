@@ -1,3 +1,4 @@
+import AssetContainer from '@/components/AssetContainer';
 import BlockQuote from '@/components/BlockQuote';
 import Button from '@/components/Button';
 import CircleImage from '@/components/CircleImage';
@@ -10,6 +11,16 @@ export default function Home() {
     <div>
       <main className="p-10">
         <PersonalLogo />
+        <AssetContainer
+          src="/01_sb_holiday_intro.jpg"
+          alt="Starbucks"
+          size="small"
+        />
+        <AssetContainer
+          src="/01_sb_holiday_intro.jpg"
+          alt="Starbucks"
+          size="large"
+        />
         <Heading as="display">Display Testing 123</Heading>
         <Heading as="h1">h1 Testing 123</Heading>
         <Heading as="h2">h2 Testing 123</Heading>
