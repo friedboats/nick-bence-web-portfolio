@@ -5,20 +5,27 @@ import CircleImage from '@/components/CircleImage';
 import Heading from '@/components/Heading';
 import Paragraph from '@/components/Paragraph';
 import PersonalLogo from '@/components/PersonalLogo';
+import ThumbGrid from '@/components/ThumbGrid';
 
 export default function Home() {
+  const THUMB_GRID_DATA = [
+    { src: '/dt-nav-home-screen.jpg', alt: 'Dynatrace' },
+    { src: '/dt-nav-home-screen.jpg', alt: 'Dynatrace' },
+    { src: '/dt-nav-home-screen.jpg', alt: 'Dynatrace' },
+    { src: '/dt-nav-home-screen.jpg', alt: 'Dynatrace' },
+    { src: '/dt-nav-home-screen.jpg', alt: 'Dynatrace' },
+    { src: '/dt-nav-home-screen.jpg', alt: 'Dynatrace' },
+    { src: '/dt-nav-home-screen.jpg', alt: 'Dynatrace' },
+  ];
   return (
     <div>
-      <main className="p-10">
+      <main className="p-2 sm:p-11">
         <PersonalLogo />
+        <ThumbGrid items={THUMB_GRID_DATA} />
+        <div className="mt-4"></div>
         <AssetContainer
-          src="/01_sb_holiday_intro.jpg"
-          alt="Starbucks"
-          size="small"
-        />
-        <AssetContainer
-          src="/01_sb_holiday_intro.jpg"
-          alt="Starbucks"
+          src="/dt-nav-home-screen.jpg"
+          alt="Dynatrace"
           size="large"
         />
         <Heading as="display">Display Testing 123</Heading>
