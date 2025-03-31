@@ -48,7 +48,7 @@ describe('AssetContainer', () => {
 
     const container = screen.getByRole('img');
     expect(container).toHaveClass(
-      'relative rounded-3xl border-2 border-border-primary w-fill',
+      'relative rounded-3xl border-2 border-border-primary w-full',
     );
   });
 });
