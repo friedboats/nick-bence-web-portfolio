@@ -16,6 +16,7 @@ export default function Home() {
     { src: '/dt-nav-home-screen.jpg', alt: 'Dynatrace' },
     { src: '/dt-nav-home-screen.jpg', alt: 'Dynatrace' },
     { src: '/dt-nav-home-screen.jpg', alt: 'Dynatrace' },
+    { src: '/dt-nav-home-screen.jpg', alt: 'Dynatrace' },
   ];
   return (
     <div>
