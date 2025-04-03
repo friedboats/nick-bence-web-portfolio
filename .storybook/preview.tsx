@@ -8,7 +8,7 @@ const ThemeDecorator = (Story: any, context: any) => {
     const html = document.documentElement;
     const body = document.body;
 
-    body.classList.add('bg-surface-background-primary');
+    body.classList.add('bg-surface-background-primary', 'font-primary');
 
     if (context.globals.theme === 'dark') {
       html.classList.add('dark');
