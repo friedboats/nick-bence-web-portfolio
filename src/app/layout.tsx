@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import '../styles/globals.css';
-import ThemeToggle from '@/components/ThemeToggle/ThemeToggle';
+import Navigation from '@/components/Navigation';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Nick Bence | Senior UX/UI Engineer & Front-End Developer',
@@ -16,8 +17,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-primary bg-surface-background-primary">
-        <ThemeToggle />
-        {children}
+        <div className="px-3">
+          <div className="mx-auto md:max-w-[1138px]">
+            <Navigation />
+          </div>
+          <Link href="/">Home</Link>
+          <Link href="/starbucks">Starbucks</Link>
+          {children}
+        </div>
       </body>
     </html>
   );
