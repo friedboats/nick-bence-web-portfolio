@@ -8,7 +8,7 @@ const PersonalLogo = ({ clickURL = '' }: PersonalLogoProps) => {
   return (
     <a
       href={clickURL}
-      className="relative flex group mt-2 mb-2"
+      className="relative inline-flex group mt-2 mb-2"
       aria-label="Nick Bence Logo"
       role="link"
     >
@@ -37,7 +37,7 @@ const PersonalLogo = ({ clickURL = '' }: PersonalLogoProps) => {
       <div
         className={`absolute w-[7px] h-[7px] bg-surface-dot-secondary-default rounded-full transition-transform duration-300 group-hover:translate-y-[3px] group-hover:bg-surface-dot-secondary-hover group-active:bg-surface-dot-secondary-active
         }`}
-        style={{ bottom: '-10px', left: '-1px' }}
+        style={{ top: '33px', left: '-1px' }}
       />
     </a>
   );
