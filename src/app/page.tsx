@@ -4,7 +4,6 @@ import Button from '@/components/Button';
 import CircleImage from '@/components/CircleImage';
 import Heading from '@/components/Heading';
 import Paragraph from '@/components/Paragraph';
-import PersonalLogo from '@/components/PersonalLogo';
 import ThumbGrid from '@/components/ThumbGrid';
 
 export default function Home() {
@@ -20,8 +19,7 @@ export default function Home() {
   ];
   return (
     <div>
-      <main className="p-2 sm:p-11">
-        <PersonalLogo />
+      <main>
         <ThumbGrid items={THUMB_GRID_DATA} />
         <div className="mt-4"></div>
         <AssetContainer
