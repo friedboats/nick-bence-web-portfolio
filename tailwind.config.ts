@@ -261,7 +261,9 @@ const config: Config = {
         'spin-slow': 'spin 45s linear infinite',
       },
       fill: {
+        primary: 'var(--surface-primary)',
         'header-primary': 'var(--text-header-primary)',
+        supplemental: 'var(--surface-supplemental)',
       },
       colors: {
         'btn-border-secondary-default':

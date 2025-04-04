@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '../styles/globals.css';
 import Navigation from '@/components/Navigation';
 import Link from 'next/link';
+import SvgAnimatedBackground from '@/components/SVGComponents/SvgAnimatedBackground';
 
 export const metadata: Metadata = {
   title: 'Nick Bence | Senior UX/UI Engineer & Front-End Developer',
@@ -17,13 +18,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-primary bg-surface-background-primary">
-        <div className="px-3">
-          <div className="mx-auto md:max-w-[1138px]">
-            <Navigation />
+        <div className="relative">
+          <SvgAnimatedBackground className="w-full h-screen fixed top-0 left-0" />
+          <div className="px-3 relative z-5">
+            <div className="mx-auto md:max-w-[1138px]">
+              <Navigation />
+            </div>
+            <Link href="/">Home</Link>
+            <Link href="/starbucks">Starbucks</Link>
+            {children}
           </div>
-          <Link href="/">Home</Link>
-          <Link href="/starbucks">Starbucks</Link>
-          {children}
         </div>
       </body>
     </html>
