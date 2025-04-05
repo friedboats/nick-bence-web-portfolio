@@ -13,13 +13,13 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    'text-center text-small-bold-mobile sm:text-small-bold leading-6 duration-200';
+    'text-center text-small-bold-mobile sm:text-small-bold duration-200';
   const variantStyles = {
     primary:
-      'px-4 py-2 rounded-xl text-button-primary-default hover:text-button-primary-hover active:text-button-primary-active bg-surface-button-primary-default hover:bg-surface-button-primary-hover active:bg-surface-button-primary-active',
+      'px-4 py-1 h-7 rounded-xl text-button-primary-default hover:text-button-primary-hover active:text-button-primary-active bg-surface-button-primary-default hover:bg-surface-button-primary-hover active:bg-surface-button-primary-active',
     secondary:
-      'px-4 py-2 rounded-xl text-button-secondary-default hover:text-button-secondary-hover active:text-button-secondary-active bg-surface-button-secondary-default hover:bg-surface-button-secondary-hover active:bg-surface-button-secondary-active border-2 border-solid border-btn-border-secondary-default hover:border-btn-border-secondary-hover active:border-btn-border-secondary-active',
-    link: 'px-0 py-1 text-button-link-default hover:text-button-link-hover active:text-button-link-active hover:underline',
+      'px-4 py-1 h-7 rounded-xl text-button-secondary-default hover:text-button-secondary-hover active:text-button-secondary-active bg-surface-button-secondary-default hover:bg-surface-button-secondary-hover active:bg-surface-button-secondary-active border-2 border-solid border-btn-border-secondary-default hover:border-btn-border-secondary-hover active:border-btn-border-secondary-active',
+    link: 'px-0 py-1 h-5 text-button-link-default hover:text-button-link-hover active:text-button-link-active hover:underline',
   };
   const disabledStyles = 'cursor-not-allowed opacity-50';
 
