@@ -1,4 +1,4 @@
-interface HeadingProps {
+interface HeadingProps extends React.HTMLAttributes<HTMLElement> {
   as?: keyof typeof variantStyles;
   color?:
     | 'text-header-primary'
@@ -21,11 +21,16 @@ export const variantStyles = {
 const Heading = ({
   as: Tag = 'h1',
   color = 'text-header-primary',
+  className,
   children,
+  ...rest
 }: HeadingProps) => {
   const Component = Tag === 'display' ? 'h2' : Tag;
   return (
-    <Component className={`${variantStyles[Tag] || ''} ${color}`}>
+    <Component
+      className={`${variantStyles[Tag] || ''} ${color} ${className}`}
+      {...rest}
+    >
       {children}
     </Component>
   );
