@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-interface CircleImageProps {
+interface CircleImageProps extends React.HTMLAttributes<HTMLDivElement> {
   name: 'nick-bence' | 'starbucks' | 'dynatrace' | 'nathans';
   size?: 'small' | 'large';
 }
@@ -16,7 +16,7 @@ const imageSizeMap = {
   large: 377,
 };
 
-const CircleImage = ({ name, size = 'small' }: CircleImageProps) => {
+const CircleImage = ({ name, size = 'small', ...rest }: CircleImageProps) => {
   const src = `/circle-${name}.png`;
   const alt = `${
     name.charAt(0).toUpperCase() + name.slice(1).replace('-', ' ')
@@ -25,14 +25,18 @@ const CircleImage = ({ name, size = 'small' }: CircleImageProps) => {
   const containerSize = containerSizeMap[size];
   const imageSize = imageSizeMap[size];
 
+  const largeStyles = 'pl-3 pr-3 max-[475px]:pl-[5.3vw] max-[475px]:pr-[5.3vw]';
+
   return (
     <div
-      className="relative flex items-center justify-center overflow-hidden"
+      className={`relative flex items-center justify-center overflow-hidden aspect-square ${
+        isLarge ? largeStyles : ''
+      }`}
       style={{
         width: containerSize,
-        height: containerSize,
         borderRadius: '50%',
       }}
+      {...rest}
     >
       <Image
         src={src}
@@ -43,15 +47,16 @@ const CircleImage = ({ name, size = 'small' }: CircleImageProps) => {
       />
       {isLarge && (
         <svg
-          width={containerSize}
-          height={containerSize}
           viewBox={`0 0 ${containerSize} ${containerSize}`}
           xmlns="http://www.w3.org/2000/svg"
           className="absolute animate-spin-slow"
           style={{
             top: 0,
             left: 0,
+            width: '100%',
+            height: '100%',
           }}
+          preserveAspectRatio="xMidYMid meet"
         >
           <path
             fillRule="evenodd"
