@@ -5,6 +5,7 @@ import CircleImage from '@/components/CircleImage';
 import Heading from '@/components/Heading';
 import Paragraph from '@/components/Paragraph';
 import ThumbGrid from '@/components/ThumbGrid';
+import Link from 'next/link';
 
 export default function Home() {
   const THUMB_GRID_DATA = [
@@ -20,6 +21,38 @@ export default function Home() {
   return (
     <div>
       <main>
+        {/* <Link href="/">Home</Link>
+        <Link href="/starbucks">Starbucks</Link> */}
+
+        <div
+          className="flex justify-center p-11 flex-col-reverse lg:flex-row
+"
+        >
+          <div className="pr-0 lg:pr-8 pt-0 lg:pt-10">
+            <Heading
+              className="text-[64px] sm:text-[64px] text-center lg:text-left"
+              as="h1"
+            >
+              Nick Bence
+            </Heading>
+            <Heading className="pb-1 text-center lg:text-left" as="h2">
+              Senior UI / UX Engineer
+            </Heading>
+            <Heading
+              className="text-header-tertiary mb-3 text-center lg:text-left"
+              as="h3"
+            >
+              Based in Detroit, Mi
+            </Heading>
+            <Button className="mt-3" variant="secondary">
+              See my work
+            </Button>
+          </div>
+          <div className="mb-4">
+            <CircleImage name="nick-bence" size="large" />
+          </div>
+        </div>
+
         <ThumbGrid items={THUMB_GRID_DATA} />
         <div className="mt-4"></div>
         <AssetContainer
