@@ -1,7 +1,9 @@
+import CircleImage from '@/components/CircleImage';
+
 export default function Starbucks() {
   return (
-    <div>
-      <main className="p-2 sm:p-11">Hi</main>
-    </div>
+    <main className="fade-in flex justify-center p-0 sm:px-11 w-full max-w-[1120px] mx-auto">
+      <CircleImage name="starbucks"></CircleImage>
+    </main>
   );
 }
