@@ -1,13 +1,10 @@
 'use client';
+import Link from 'next/link';
 
-interface PersonalLogoProps {
-  clickURL?: string;
-}
-
-const PersonalLogo = ({ clickURL = '' }: PersonalLogoProps) => {
+const PersonalLogo = () => {
   return (
-    <a
-      href={clickURL}
+    <Link
+      href="/"
       className="relative inline-flex group mt-2 mb-2"
       aria-label="Nick Bence Logo"
       role="link"
@@ -39,7 +36,7 @@ const PersonalLogo = ({ clickURL = '' }: PersonalLogoProps) => {
         }`}
         style={{ top: '33px', left: '-1px' }}
       />
-    </a>
+    </Link>
   );
 };
 
