@@ -1,19 +1,36 @@
-import React from 'react';
+'use client';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+import React from 'react';
+import Link from 'next/link';
+
+type ButtonVariants = 'primary' | 'secondary' | 'link';
+
+interface BaseProps {
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'link';
+  variant?: ButtonVariants;
+  href?: string;
   disabled?: boolean;
+  onClick?: React.MouseEventHandler<HTMLElement>;
+  className?: string;
 }
+
+type ButtonProps = BaseProps &
+  (
+    | React.ButtonHTMLAttributes<HTMLButtonElement>
+    | React.AnchorHTMLAttributes<HTMLAnchorElement>
+  );
 
 const Button: React.FC<ButtonProps> = ({
   children,
   variant = 'primary',
+  href,
   disabled = false,
-  ...props
+  onClick,
+  className = '',
+  ...rest
 }) => {
   const baseStyles =
-    'text-center text-small-bold-mobile sm:text-small-bold duration-200';
+    'inline-flex items-center justify-center text-center text-small-bole  d-mobile sm:text-small-bold duration-200';
   const variantStyles = {
     primary:
       'px-4 py-1 h-7 rounded-xl text-button-primary-default hover:text-button-primary-hover active:text-button-primary-active bg-surface-button-primary-default hover:bg-surface-button-primary-hover active:bg-surface-button-primary-active',
@@ -23,14 +40,49 @@ const Button: React.FC<ButtonProps> = ({
   };
   const disabledStyles = 'cursor-not-allowed opacity-50';
 
+  const finalClassName = `${baseStyles} ${variantStyles[variant]} ${
+    disabled ? disabledStyles : ''
+  } ${className}`;
+
+  const isExternal = href?.startsWith('http');
+
+  if (href && isExternal) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={onClick}
+        className={finalClassName}
+        aria-disabled={disabled}
+        {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+      >
+        {children}
+      </a>
+    );
+  }
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        onClick={onClick}
+        className={finalClassName}
+        aria-disabled={disabled}
+        {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+      >
+        {children}
+      </Link>
+    );
+  }
+
   return (
     <button
       type="button"
-      onClick={props.onClick}
-      className={`${baseStyles} ${variantStyles[variant]} ${
-        disabled ? disabledStyles : ''
-      }`}
       disabled={disabled}
+      onClick={onClick}
+      className={finalClassName}
+      {...(rest as React.ButtonHTMLAttributes<HTMLButtonElement>)}
     >
       {children}
     </button>
