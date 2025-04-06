@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Link from 'next/link';
 
 type ButtonVariants = 'primary' | 'secondary' | 'link';
@@ -12,6 +12,8 @@ interface BaseProps {
   disabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLElement>;
   className?: string;
+  iconLeft?: ReactNode;
+  iconRight?: ReactNode;
 }
 
 type ButtonProps = BaseProps &
@@ -27,6 +29,8 @@ const Button: React.FC<ButtonProps> = ({
   disabled = false,
   onClick,
   className = '',
+  iconLeft,
+  iconRight,
   ...rest
 }) => {
   const baseStyles =
@@ -46,6 +50,14 @@ const Button: React.FC<ButtonProps> = ({
 
   const isExternal = href?.startsWith('http');
 
+  const content = (
+    <>
+      {iconLeft && <span className="mr-2 flex items-center">{iconLeft}</span>}
+      <span>{children}</span>
+      {iconRight && <span className="ml-2 flex items-center">{iconRight}</span>}
+    </>
+  );
+
   if (href && isExternal) {
     return (
       <a
@@ -57,7 +69,7 @@ const Button: React.FC<ButtonProps> = ({
         aria-disabled={disabled}
         {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
       >
-        {children}
+        {content}
       </a>
     );
   }
@@ -71,7 +83,7 @@ const Button: React.FC<ButtonProps> = ({
         aria-disabled={disabled}
         {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
       >
-        {children}
+        {content}
       </Link>
     );
   }
@@ -84,7 +96,7 @@ const Button: React.FC<ButtonProps> = ({
       className={finalClassName}
       {...(rest as React.ButtonHTMLAttributes<HTMLButtonElement>)}
     >
-      {children}
+      {content}
     </button>
   );
 };

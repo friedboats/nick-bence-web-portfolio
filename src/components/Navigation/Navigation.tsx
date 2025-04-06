@@ -5,6 +5,7 @@ import Button from '../Button';
 import ThemeToggle from '../ThemeToggle';
 import PersonalLogo from '../PersonalLogo';
 import { usePathname, useRouter } from 'next/navigation';
+import { ArrowLeft, LinkedIn } from '../SVGComponents';
 
 const Navigation = () => {
   const pathname = usePathname();
@@ -28,18 +29,25 @@ const Navigation = () => {
                 className="items-center"
                 onClick={seeMoreWorkClick}
                 variant="link"
+                iconLeft={<ArrowLeft />}
               >
                 See more work
               </Button>
             </div>
           ) : null}
           <ThemeToggle />
-          <Button variant="primary">{"Let's chat!"}</Button>
+          <Button variant="primary" iconRight={<LinkedIn />}>
+            {"Let's chat!"}
+          </Button>
         </div>
       </div>
       {showBackButton ? (
         <div className="flex sm:hidden mt-2">
-          <Button onClick={seeMoreWorkClick} variant="link">
+          <Button
+            onClick={seeMoreWorkClick}
+            variant="link"
+            iconLeft={<ArrowLeft />}
+          >
             See more work
           </Button>
         </div>

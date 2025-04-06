@@ -1,6 +1,7 @@
 import Button from '@/components/Button';
 import CircleImage from '@/components/CircleImage';
 import Heading from '@/components/Heading';
+import { ArrowDoubleDown } from '@/components/SVGComponents';
 
 export default function Home() {
   return (
@@ -25,7 +26,9 @@ export default function Home() {
           >
             Based in Detroit, Mi
           </Heading>
-          <Button variant="secondary">See my work</Button>
+          <Button variant="secondary" iconRight={<ArrowDoubleDown />}>
+            See my work
+          </Button>
         </div>
         <div className="mb-4 flex justify-center">
           <CircleImage name="nick-bence" size="large" />
