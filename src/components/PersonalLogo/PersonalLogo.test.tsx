@@ -7,17 +7,9 @@ describe('PersonalLogo', () => {
     expect(screen.getByRole('link')).toBeInTheDocument();
   });
 
-  it('has correct href', () => {
-    render(<PersonalLogo clickURL="https://www.google.com" />);
-    expect(screen.getByRole('link')).toHaveAttribute(
-      'href',
-      'https://www.google.com',
-    );
-  });
-
-  it('has blank href by default', () => {
+  it('has the correct href', () => {
     render(<PersonalLogo />);
-    expect(screen.getByRole('link')).toHaveAttribute('href', '');
+    expect(screen.getByRole('link')).toHaveAttribute('href', '/');
   });
 
   it('contains an image inside the link', () => {
@@ -25,8 +17,8 @@ describe('PersonalLogo', () => {
     expect(screen.getByRole('link').querySelector('svg')).toBeInTheDocument();
   });
 
-  it('has an accessible name if provided', () => {
-    render(<PersonalLogo aria-label="Personal Logo" />);
+  it('has an accessible name', () => {
+    render(<PersonalLogo />);
     expect(
       screen.getByRole('link', { name: 'Nick Bence Logo' }),
     ).toBeInTheDocument();
