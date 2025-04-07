@@ -13,7 +13,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": ["jest", "node"], // Add node types to help with Node.js type resolution
+    "types": ["jest", "node", "@testing-library/jest-dom"], // Add node types to help with Node.js type resolution
     "plugins": [
       {
         "name": "next"
