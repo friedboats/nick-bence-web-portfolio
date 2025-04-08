@@ -1,19 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ArrowRight, Instagram } from '../SVGComponents';
-import Button from './Button';
+import { ArrowDoubleDown, Instagram } from '../SVGComponents'; // Assuming you have an icon component
+import LinkButton from './LinkButton';
 
-const meta: Meta<typeof Button> = {
-  title: 'Components/Button',
-  component: Button,
+const meta: Meta<typeof LinkButton> = {
+  title: 'Components/LinkButton',
+  component: LinkButton,
   argTypes: {
     variant: {
       control: 'select',
       options: ['primary', 'secondary', 'link'],
     },
     iconLeft: {
+      control: 'object',
       description: 'Left icon for the button',
     },
     iconRight: {
+      control: 'object',
       description: 'Right icon for the button',
     },
     className: {
@@ -24,22 +26,28 @@ const meta: Meta<typeof Button> = {
       control: 'boolean',
       description: 'Disables the button',
     },
+    href: {
+      control: 'text',
+      description: 'The destination URL for the link',
+    },
   },
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof LinkButton>;
 
 export const Primary: Story = {
   args: {
-    children: 'Click Me',
+    children: 'Primary Link',
     variant: 'primary',
+    href: 'https://example.com', // External link
   },
   parameters: {
     docs: {
       description: {
-        story: 'This is the primary button variant.',
+        story:
+          'This is a primary variant link button that opens an external URL.',
       },
     },
   },
@@ -47,27 +55,29 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    children: 'Click Me',
+    children: 'Secondary Link',
     variant: 'secondary',
+    href: 'https://example.com', // External link
   },
   parameters: {
     docs: {
       description: {
-        story: 'This is the secondary button variant.',
+        story: 'This is a secondary variant link button with an external URL.',
       },
     },
   },
 };
 
-export const Link: Story = {
+export const InternalLink: Story = {
   args: {
-    children: 'Click Me',
-    variant: 'link',
+    children: 'Internal Link',
+    variant: 'primary',
+    href: '/about',
   },
   parameters: {
     docs: {
       description: {
-        story: 'This is the link button variant.',
+        story: 'This is a link button that routes internally within the app.',
       },
     },
   },
@@ -78,12 +88,13 @@ export const WithIcons: Story = {
     children: 'Button with Icons',
     variant: 'primary',
     iconLeft: <Instagram />,
-    iconRight: <ArrowRight />,
+    iconRight: <ArrowDoubleDown />,
+    href: 'https://example.com',
   },
   parameters: {
     docs: {
       description: {
-        story: 'This button has both left and right icons.',
+        story: 'This button includes both left and right icons.',
       },
     },
   },
@@ -91,14 +102,15 @@ export const WithIcons: Story = {
 
 export const Disabled: Story = {
   args: {
-    children: 'Disabled Button',
-    variant: 'primary',
+    children: 'Disabled Link',
+    variant: 'secondary',
+    href: 'https://example.com',
     disabled: true,
   },
   parameters: {
     docs: {
       description: {
-        story: 'This is a disabled button.',
+        story: 'This link button is disabled and cannot be clicked.',
       },
     },
   },
