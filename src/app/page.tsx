@@ -1,3 +1,5 @@
+'use client';
+
 import Button from '@/components/Button';
 import CircleImage from '@/components/CircleImage';
 import Heading from '@/components/Heading';
@@ -30,6 +32,7 @@ export default function Home() {
             See my work
           </Button>
         </div>
+
         <div className="mb-4 flex justify-center">
           <CircleImage name="nick-bence" size="large" />
         </div>
