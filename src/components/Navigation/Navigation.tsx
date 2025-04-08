@@ -1,11 +1,11 @@
 'use client';
 
-import React from 'react';
-import Button from '../Button';
-import ThemeToggle from '../ThemeToggle';
-import PersonalLogo from '../PersonalLogo';
 import { usePathname, useRouter } from 'next/navigation';
+import Button from '../Button';
+import LinkButton from '../Button/LinkButton';
+import PersonalLogo from '../PersonalLogo';
 import { ArrowLeft, LinkedIn } from '../SVGComponents';
+import ThemeToggle from '../ThemeToggle';
 
 const Navigation = () => {
   const pathname = usePathname();
@@ -36,9 +36,13 @@ const Navigation = () => {
             </div>
           ) : null}
           <ThemeToggle />
-          <Button variant="primary" iconRight={<LinkedIn />}>
+          <LinkButton
+            variant="primary"
+            href="https://www.linkedin.com/in/nicholasbence/"
+            iconRight={<LinkedIn />}
+          >
             {"Let's chat!"}
-          </Button>
+          </LinkButton>
         </div>
       </div>
       {showBackButton ? (
