@@ -1,4 +1,3 @@
-import React from 'react';
 import AssetContainer from '../AssetContainer';
 
 interface Item {
