@@ -22,7 +22,7 @@ const Navigation = () => {
     <div>
       <div className="flex justify-between items-center h-11">
         <PersonalLogo />
-        <div className="flex items-center justify-content lg:flex-end gap-2 min-[350px]:gap-4 sm:gap-7">
+        <div className="flex items-center justify-content lg:flex-end pl-2 gap-2 sm:gap-7">
           {showBackButton ? (
             <div className="hidden sm:block">
               <Button
@@ -40,6 +40,7 @@ const Navigation = () => {
             variant="primary"
             href="https://www.linkedin.com/in/nicholasbence/"
             iconRight={<LinkedIn />}
+            className="whitespace-nowrap"
           >
             {"Let's chat!"}
           </LinkButton>
