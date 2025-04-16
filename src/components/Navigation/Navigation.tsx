@@ -22,9 +22,9 @@ const Navigation = () => {
     <div>
       <div className="flex justify-between items-center h-11">
         <PersonalLogo />
-        <div className="flex items-center justify-content lg:flex-end pl-2 gap-2 sm:gap-7">
+        <div className="flex items-center justify-content lg:flex-end pl-2 gap-5 sm:gap-7">
           {showBackButton ? (
-            <div className="hidden sm:block">
+            <div className="hidden sm:flex">
               <Button
                 className="items-center"
                 onClick={seeMoreWorkClick}
@@ -40,10 +40,18 @@ const Navigation = () => {
             variant="primary"
             href="https://www.linkedin.com/in/nicholasbence/"
             iconRight={<LinkedIn />}
-            className="whitespace-nowrap"
+            className="whitespace-nowrap hidden sm:flex"
           >
             {"Let's chat!"}
           </LinkButton>
+          <LinkButton
+            variant="primary"
+            href="https://www.linkedin.com/in/nicholasbence/"
+            iconRight={<LinkedIn />}
+            isIconOnly={true}
+            aria-label={`Redirects to Nick Bence's LinkedIn page`}
+            className="whitespace-nowrap block sm:hidden"
+          ></LinkButton>
         </div>
       </div>
       {showBackButton ? (
