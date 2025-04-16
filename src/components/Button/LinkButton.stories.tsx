@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ArrowDoubleDown, Instagram } from '../SVGComponents'; // Assuming you have an icon component
+import { ArrowDoubleDown, Instagram } from '../SVGComponents';
 import LinkButton from './LinkButton';
 
 const meta: Meta<typeof LinkButton> = {
@@ -9,14 +9,6 @@ const meta: Meta<typeof LinkButton> = {
     variant: {
       control: 'select',
       options: ['primary', 'secondary', 'link'],
-    },
-    iconLeft: {
-      control: 'object',
-      description: 'Left icon for the button',
-    },
-    iconRight: {
-      control: 'object',
-      description: 'Right icon for the button',
     },
     className: {
       control: 'text',
@@ -30,6 +22,14 @@ const meta: Meta<typeof LinkButton> = {
       control: 'text',
       description: 'The destination URL for the link',
     },
+    isIconOnly: {
+      control: 'boolean',
+      description: 'Only show icon, no text (requires aria-label)',
+    },
+    'aria-label': {
+      control: 'text',
+      description: 'Accessibility label (required for icon-only buttons)',
+    },
   },
 };
 
@@ -41,15 +41,7 @@ export const Primary: Story = {
   args: {
     children: 'Primary Link',
     variant: 'primary',
-    href: 'https://example.com', // External link
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'This is a primary variant link button that opens an external URL.',
-      },
-    },
+    href: 'https://example.com',
   },
 };
 
@@ -57,29 +49,15 @@ export const Secondary: Story = {
   args: {
     children: 'Secondary Link',
     variant: 'secondary',
-    href: 'https://example.com', // External link
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'This is a secondary variant link button with an external URL.',
-      },
-    },
+    href: 'https://example.com',
   },
 };
 
 export const InternalLink: Story = {
   args: {
     children: 'Internal Link',
-    variant: 'primary',
+    variant: 'link',
     href: '/about',
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'This is a link button that routes internally within the app.',
-      },
-    },
   },
 };
 
@@ -91,10 +69,22 @@ export const WithIcons: Story = {
     iconRight: <ArrowDoubleDown />,
     href: 'https://example.com',
   },
+};
+
+export const IconOnly: Story = {
+  args: {
+    isIconOnly: true,
+    'aria-label': 'Open Instagram',
+    iconLeft: <Instagram />,
+    href: 'https://instagram.com',
+    variant: 'primary',
+    className: 'p-2',
+  },
   parameters: {
     docs: {
       description: {
-        story: 'This button includes both left and right icons.',
+        story:
+          'This is an icon-only button. Ensure `aria-label` is provided for accessibility.',
       },
     },
   },
@@ -110,7 +100,7 @@ export const Disabled: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'This link button is disabled and cannot be clicked.',
+        story: 'This is a disabled button.',
       },
     },
   },

@@ -4,10 +4,17 @@ interface ButtonStyleOptions {
   variant: ButtonVariants;
   disabled?: boolean;
   className?: string;
+  isIconOnly?: boolean;
 }
 
 export const baseStyles =
   'inline-flex items-center justify-center text-center text-small-bold d-mobile sm:text-small-bold duration-200';
+
+export const iconBtnOnlyStyles: Record<ButtonVariants, string> = {
+  primary: '!px-2',
+  secondary: '!px-2',
+  link: '!px-2',
+};
 
 export const variantStyles: Record<ButtonVariants, string> = {
   primary:
@@ -23,12 +30,14 @@ export function getButtonClassNames({
   variant,
   disabled,
   className = '',
+  isIconOnly = false,
 }: ButtonStyleOptions): string {
   return [
     baseStyles,
     variantStyles[variant],
     disabled ? disabledStyles : '',
     className,
+    isIconOnly ? iconBtnOnlyStyles[variant] : '',
   ]
     .filter(Boolean)
     .join(' ');

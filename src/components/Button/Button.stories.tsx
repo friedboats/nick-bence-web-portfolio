@@ -10,12 +10,6 @@ const meta: Meta<typeof Button> = {
       control: 'select',
       options: ['primary', 'secondary', 'link'],
     },
-    iconLeft: {
-      description: 'Left icon for the button',
-    },
-    iconRight: {
-      description: 'Right icon for the button',
-    },
     className: {
       control: 'text',
       description: 'Custom class name for the button',
@@ -23,6 +17,14 @@ const meta: Meta<typeof Button> = {
     disabled: {
       control: 'boolean',
       description: 'Disables the button',
+    },
+    isIconOnly: {
+      control: 'boolean',
+      description: 'Only show icon, no text (requires aria-label)',
+    },
+    'aria-label': {
+      control: 'text',
+      description: 'Accessibility label (required for icon-only buttons)',
     },
   },
 };
@@ -33,7 +35,7 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    children: 'Click Me',
+    children: 'Primary',
     variant: 'primary',
   },
   parameters: {
@@ -47,7 +49,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    children: 'Click Me',
+    children: 'Secondary',
     variant: 'secondary',
   },
   parameters: {
@@ -61,7 +63,7 @@ export const Secondary: Story = {
 
 export const Link: Story = {
   args: {
-    children: 'Click Me',
+    children: 'Link',
     variant: 'link',
   },
   parameters: {
@@ -84,6 +86,24 @@ export const WithIcons: Story = {
     docs: {
       description: {
         story: 'This button has both left and right icons.',
+      },
+    },
+  },
+};
+
+export const IconOnly: Story = {
+  args: {
+    isIconOnly: true,
+    'aria-label': 'Open Instagram',
+    iconLeft: <Instagram />,
+    variant: 'primary',
+    className: 'p-2',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'This is an icon-only button. Ensure `aria-label` is provided for accessibility.',
       },
     },
   },

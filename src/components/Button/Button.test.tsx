@@ -1,5 +1,4 @@
-import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import Button from './Button';
 
 describe('Button component', () => {
@@ -63,5 +62,25 @@ describe('Button component', () => {
     render(<Button className="custom-class">Custom</Button>);
     const button = screen.getByRole('button');
     expect(button.className).toMatch(/custom-class/);
+  });
+
+  it('applies icon-only styles when isIconOnly is true', () => {
+    render(
+      <Button
+        iconLeft={<span>Icon</span>}
+        isIconOnly
+        variant="primary"
+        aria-label="Icon button"
+      />,
+    );
+
+    const button = screen.getByRole('button');
+    expect(screen.getByText('Icon')).toBeInTheDocument();
+
+    // Confirm it includes the !px-2 class from iconBtnOnlyStyles
+    expect(button.className).toMatch(/!px-2/);
+
+    // Confirm the text label is not present
+    expect(button).not.toHaveTextContent(/icon-only/i);
   });
 });

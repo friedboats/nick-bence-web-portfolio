@@ -4,9 +4,12 @@ import userEvent from '@testing-library/user-event';
 import LinkButton from './LinkButton';
 
 jest.mock('next/link', () => {
-  const mockedLink = ({ children, ...props }: any) => (
-    <a {...props}>{children}</a>
-  );
+  const mockedLink = ({
+    children,
+    ...props
+  }: React.PropsWithChildren<
+    React.AnchorHTMLAttributes<HTMLAnchorElement>
+  >) => <a {...props}>{children}</a>;
   mockedLink.displayName = 'MockLink';
   return mockedLink;
 });
@@ -94,5 +97,26 @@ describe('LinkButton', () => {
     // Get the link element (it will be an <a> tag due to the mock)
     const linkElement = screen.getByRole('link', { name: /about us/i });
     expect(linkElement).toHaveClass('custom-class');
+  });
+
+  it('applies icon-only styles when isIconOnly is true', () => {
+    render(
+      <LinkButton
+        href="/icon-only"
+        iconLeft={<span>Icon</span>}
+        isIconOnly
+        variant="primary"
+      />,
+    );
+
+    const link = screen.getByRole('link');
+
+    expect(screen.getByText('Icon')).toBeInTheDocument();
+
+    // Confirm it includes the !px-2 class from iconBtnOnlyStyles
+    expect(link.className).toMatch(/!px-2/);
+
+    // Confirm the text label is not present
+    expect(link).not.toHaveTextContent(/icon-only/i);
   });
 });

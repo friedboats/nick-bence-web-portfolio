@@ -5,12 +5,14 @@ import React from 'react';
 import { getButtonClassNames } from './buttonStyles';
 
 const Button: React.FC<ButtonProps> = ({
+  children,
   variant = 'primary',
   disabled = false,
   iconLeft,
   iconRight,
   isIconOnly = false,
   className = '',
+  'aria-label': ariaLabel,
   ...props
 }) => {
   const finalClassName = getButtonClassNames({
@@ -22,10 +24,11 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
+      type="button"
       className={finalClassName}
       disabled={disabled}
       aria-disabled={disabled}
-      aria-label={props['aria-label']}
+      aria-label={ariaLabel}
       {...props}
     >
       {iconLeft && (
@@ -33,7 +36,7 @@ const Button: React.FC<ButtonProps> = ({
           {iconLeft}
         </span>
       )}
-      {!isIconOnly && <span>{props.children}</span>}
+      {!isIconOnly && <span>{children}</span>}
       {iconRight && (
         <span className={`${isIconOnly ? 'ml-0' : 'ml-2'} flex items-center`}>
           {iconRight}
