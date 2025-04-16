@@ -7,10 +7,20 @@ import LinkButton from '@/components/Button/LinkButton';
 import CircleImage from '@/components/CircleImage';
 import Heading from '@/components/Heading';
 import { ArrowDoubleDown, ArrowRight, Figma } from '@/components/SVGComponents';
-import { useRef } from 'react';
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useRef } from 'react';
 
 export default function Home() {
   const featuredWorkRef = useRef<HTMLDivElement>(null);
+  const searchParams = useSearchParams();
+
+  // We want to check URL params and scroll to featured work if that was the intention from the route action
+  useEffect(() => {
+    if (searchParams?.get('scrollToFeaturedWork') === 'true') {
+      scrollToFeaturedWork();
+    }
+  }, [searchParams]);
 
   const scrollToFeaturedWork = () => {
     if (featuredWorkRef.current) {
@@ -73,11 +83,13 @@ export default function Home() {
           <div className="w-full bg-border-primary h-1"></div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <AssetContainer
-            alt="starbucks for life"
-            src="/starbucks-featured.png"
-            size="large"
-          />
+          <Link href="/starbucks">
+            <AssetContainer
+              alt="starbucks for life"
+              src="/starbucks-featured.png"
+              size="large"
+            />
+          </Link>
           <AssetContainer
             alt="dynatrace navigation upgrade"
             src="/dynatrace-navigation-featured.png"
