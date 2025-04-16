@@ -17,7 +17,7 @@ export default function Home() {
       const topPosition =
         featuredWorkRef.current.getBoundingClientRect().top +
         window.pageYOffset;
-      const offset = 60;
+      const offset = 48;
 
       window.scrollTo({
         top: topPosition - offset,
@@ -28,12 +28,12 @@ export default function Home() {
 
   return (
     <main className="fade-in">
-      <div className="pt-5 md:pt-0 px-3 mx-auto md:max-w-[902px]">
+      <div className="pt-5 md:pt-0 mx-auto md:max-w-[902px]">
         <div
-          className="flex justify-center mb-11 flex-col-reverse lg:flex-row
+          className="flex justify-between mb-11 flex-col-reverse lg:flex-row
 "
         >
-          <div className="pr-0 lg:pr-8 pt-0 lg:pt-10 text-center lg:text-left justify-center lg:flex-row lg:block">
+          <div className="pt-0 lg:pt-10 text-center lg:text-left lg:flex-row lg:block">
             <Heading
               className="text-[2.5rem] sm:text-[64px] text-center lg:text-left"
               as="h1"
