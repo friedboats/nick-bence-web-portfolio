@@ -15,7 +15,7 @@ const Navigation = () => {
   const router = useRouter();
 
   const seeMoreWorkClick = () => {
-    router.push('/');
+    router.push('/?scrollToFeaturedWork=true');
   };
 
   return (
