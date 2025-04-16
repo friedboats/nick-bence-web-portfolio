@@ -277,6 +277,7 @@ const config: Config = {
       },
       backgroundColor: {
         'surface-background-primary': 'var(--surface-primary)',
+        'surface-background-info': 'var(--surface-info)',
         'surface-button-primary-default':
           'var(--surface-button-primary-default)',
         'surface-button-primary-hover': 'var(--surface-button-primary-hover)',
