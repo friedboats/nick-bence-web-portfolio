@@ -17,7 +17,7 @@ export default function Home() {
       const topPosition =
         featuredWorkRef.current.getBoundingClientRect().top +
         window.pageYOffset;
-      const offset = 48;
+      const offset = 28;
 
       window.scrollTo({
         top: topPosition - offset,
