@@ -6,4 +6,5 @@ export { default as Close } from './Close';
 export { default as Figma } from './Figma';
 export { default as Instagram } from './Instagram';
 export { default as LinkedIn } from './LinkedIn';
+export { default as Quotation } from './Quotation';
 export { default as Spinner } from './Spinner';

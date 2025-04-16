@@ -1,47 +1,44 @@
 'use client';
 
-import React, { ReactNode } from 'react';
-import { getButtonClassNames, ButtonVariants } from './buttonStyles';
-
-interface ButtonProps {
-  children: React.ReactNode;
-  variant?: ButtonVariants;
-  disabled?: boolean;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  iconLeft?: ReactNode;
-  iconRight?: ReactNode;
-  className?: string;
-  type?: 'button' | 'submit' | 'reset';
-}
+import { ButtonProps } from '@/types/buttons';
+import React from 'react';
+import { getButtonClassNames } from './buttonStyles';
 
 const Button: React.FC<ButtonProps> = ({
-  children,
   variant = 'primary',
   disabled = false,
-  onClick,
   iconLeft,
   iconRight,
+  isIconOnly = false,
   className = '',
-  type = 'button',
-  ...rest
+  ...props
 }) => {
   const finalClassName = getButtonClassNames({
     variant,
     disabled,
+    isIconOnly,
     className,
   });
 
   return (
     <button
-      type={type}
-      disabled={disabled}
-      onClick={onClick}
       className={finalClassName}
-      {...rest}
+      disabled={disabled}
+      aria-disabled={disabled}
+      aria-label={props['aria-label']}
+      {...props}
     >
-      {iconLeft && <span className="mr-2 flex items-center">{iconLeft}</span>}
-      <span>{children}</span>
-      {iconRight && <span className="ml-2 flex items-center">{iconRight}</span>}
+      {iconLeft && (
+        <span className={`${isIconOnly ? 'mr-0' : 'mr-2'} flex items-center`}>
+          {iconLeft}
+        </span>
+      )}
+      {!isIconOnly && <span>{props.children}</span>}
+      {iconRight && (
+        <span className={`${isIconOnly ? 'ml-0' : 'ml-2'} flex items-center`}>
+          {iconRight}
+        </span>
+      )}
     </button>
   );
 };
