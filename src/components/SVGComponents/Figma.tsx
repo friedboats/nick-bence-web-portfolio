@@ -1,4 +1,3 @@
-import * as React from 'react';
 import type { SVGProps } from 'react';
 const SvgFigma = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -7,6 +6,8 @@ const SvgFigma = (props: SVGProps<SVGSVGElement>) => (
     height="24px"
     fill="none"
     viewBox="0 0 24 24"
+    aria-hidden="false"
+    aria-label="Figma icon, indicating that this icon represents Figma"
     {...props}
   >
     <path fill="#24CB71" d="M4 19.992a4 4 0 0 1 4-4h4v4a4 4 0 0 1-8 0" />

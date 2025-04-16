@@ -6,6 +6,8 @@ const SvgInstagram = (props: SVGProps<SVGSVGElement>) => (
     height="24px"
     fill="none"
     viewBox="0 0 25 24"
+    aria-hidden="false"
+    aria-label="Instagram icon, indicating that this icon represents Instagram"
     {...props}
   >
     <g clipPath="url(#instagram_svg__a)">

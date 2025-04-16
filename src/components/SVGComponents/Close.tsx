@@ -6,6 +6,8 @@ const SvgClose = (props: SVGProps<SVGSVGElement>) => (
     height="24px"
     fill="none"
     viewBox="0 0 25 24"
+    aria-hidden="false"
+    aria-label="Close icon, indicating that this icon closes"
     {...props}
   >
     <path

@@ -6,6 +6,8 @@ const SvgArrowRight = (props: SVGProps<SVGSVGElement>) => (
     height="24px"
     fill="none"
     viewBox="0 0 25 24"
+    aria-hidden="false"
+    aria-label="Right arrow, indicating that this icon takes you backward"
     {...props}
   >
     <path

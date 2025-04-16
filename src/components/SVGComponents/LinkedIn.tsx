@@ -6,6 +6,8 @@ const SvgLinkedIn = (props: SVGProps<SVGSVGElement>) => (
     height="24px"
     fill="none"
     viewBox="0 0 24 24"
+    aria-hidden="false"
+    aria-label="LinkedIn icon, indicating that this icon represents LinkedIn"
     {...props}
   >
     <g clipPath="url(#linkedIn_svg__a)">

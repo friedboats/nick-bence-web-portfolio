@@ -6,6 +6,8 @@ const SvgSpinner = (props: SVGProps<SVGSVGElement>) => (
     height="24px"
     fill="none"
     viewBox="0 0 24 24"
+    aria-hidden="false"
+    aria-label="Spinner icon, indicating that this icon represents loading"
     {...props}
   >
     <g clipPath="url(#spinner_svg__a)">

@@ -6,6 +6,8 @@ const SvgArrowLeft = (props: SVGProps<SVGSVGElement>) => (
     height="24px"
     fill="none"
     viewBox="0 0 25 24"
+    aria-hidden="false"
+    aria-label="Left arrow, indicating that this icon takes you forward"
     {...props}
   >
     <path

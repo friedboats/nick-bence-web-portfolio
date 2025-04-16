@@ -1,7 +1,6 @@
-import * as React from 'react';
 import type { SVGProps } from 'react';
-import tailwindConfig from '../../../tailwind.config';
 import resolveConfig from 'tailwindcss/resolveConfig';
+import tailwindConfig from '../../../tailwind.config';
 
 const fullConfig = resolveConfig(tailwindConfig);
 const primary = fullConfig.theme?.fill?.primary as string;
