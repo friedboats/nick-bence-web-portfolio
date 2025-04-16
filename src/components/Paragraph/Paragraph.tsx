@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface ParagraphProps {
   variant?:
     | 'p'
@@ -8,7 +6,8 @@ interface ParagraphProps {
     | 'small-bold'
     | 'x-small'
     | 'x-small-bold';
-  color?: 'text-body-primary' | 'text-body-secondary' | 'text-header-inverse';
+  color?: 'text-body-primary' | 'text-body-secondary' | 'text-body-inverse';
+  className?: string;
   children: React.ReactNode;
 }
 
@@ -24,14 +23,27 @@ const variantStyles: Record<
   'x-small-bold': 'text-x-small-bold-mobile sm:text-x-small-bold',
 };
 
+function getParagraphClassNames({
+  variant = 'p',
+  color = 'text-body-primary',
+  className = '',
+}: Omit<ParagraphProps, 'children'>): string {
+  return [variantStyles[variant], color, className].filter(Boolean).join(' ');
+}
+
 const Paragraph = ({
   variant = 'p',
   color = 'text-body-primary',
+  className = '',
   children,
 }: ParagraphProps) => {
-  return (
-    <p className={`${variantStyles[variant] || ''} ${color}`}>{children}</p>
-  );
+  const paragraphClassNames = getParagraphClassNames({
+    variant,
+    color,
+    className,
+  });
+
+  return <p className={paragraphClassNames}>{children}</p>;
 };
 
 export default Paragraph;
