@@ -4,17 +4,16 @@ import LinkButton from '@/components/Button/LinkButton';
 import Heading from '@/components/Heading';
 import Paragraph from '@/components/Paragraph';
 import { LinkedIn } from '@/components/SVGComponents';
+import GlobalCopy from '@/copydeck/GlobalCopy';
 
 const Contact = () => {
   return (
     <div className="text-center w-full px-4 py-12 bg-surface-background-info">
       <Heading as="h2" color="text-header-inverse" className="pb-4">
-        Get in touch
+        {GlobalCopy.contact.title}
       </Heading>
       <Paragraph color="text-body-inverse" className="pb-6">
-        {`I'm always open to new opportunities and projects.`}
-        <br />
-        Connect with me on LinkedIn!
+        {GlobalCopy.contact.body}
       </Paragraph>
       <LinkButton
         variant="secondary"
@@ -22,7 +21,7 @@ const Contact = () => {
         iconRight={<LinkedIn />}
         className="whitespace-nowrap"
       >
-        {"Let's chat!"}
+        {GlobalCopy.buttons.contact}
       </LinkButton>
     </div>
   );

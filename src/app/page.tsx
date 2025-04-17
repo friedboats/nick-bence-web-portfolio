@@ -8,6 +8,8 @@ import FeaturedSection from '@/components/FeaturedSection/FeaturedSection';
 import Heading from '@/components/Heading';
 import { ArrowDoubleDown, ArrowRight, Figma } from '@/components/SVGComponents';
 import FeaturedCopy from '@/copydeck/FeaturedCopy';
+import GlobalCopy from '@/copydeck/GlobalCopy';
+import HomeCopy from '@/copydeck/HomeCopy';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 
@@ -48,23 +50,23 @@ export default function Home() {
               className="text-[2.5rem] sm:text-[64px] text-center lg:text-left"
               as="h1"
             >
-              Nick Bence
+              {HomeCopy.intro.name}
             </Heading>
             <Heading className="pb-1 text-center lg:text-left" as="h2">
-              Senior UI / UX Engineer
+              {HomeCopy.intro.title}
             </Heading>
             <Heading
               className="text-header-tertiary mb-3 text-center lg:text-left"
               as="h3"
             >
-              Based in Detroit, Mi
+              {HomeCopy.intro.location}
             </Heading>
             <Button
               variant="secondary"
               iconRight={<ArrowDoubleDown />}
               onClick={scrollToFeaturedWork}
             >
-              See my work
+              {GlobalCopy.buttons.myWork}
             </Button>
           </div>
 
@@ -88,12 +90,8 @@ export default function Home() {
             iconLeft={<Figma />}
             iconRight={<ArrowRight />}
           >
-            <span className="hidden sm:block">
-              {"Check out my site's design system"}
-            </span>
-            <span className="block sm:hidden">
-              {'Check out my design system'}
-            </span>
+            <span className="hidden sm:block">{HomeCopy.figmaLabel}</span>
+            <span className="block sm:hidden">{HomeCopy.figmaLabelMobile}</span>
           </LinkButton>
         </div>
         <BlockQuote

@@ -1,5 +1,6 @@
 'use client';
 
+import GlobalCopy from '@/copydeck/GlobalCopy';
 import { usePathname, useRouter } from 'next/navigation';
 import Button from '../Button';
 import LinkButton from '../Button/LinkButton';
@@ -31,7 +32,7 @@ const Navigation = () => {
                 variant="link"
                 iconLeft={<ArrowLeft />}
               >
-                See more work
+                {GlobalCopy.buttons.allWork}
               </Button>
             </div>
           ) : null}
@@ -42,7 +43,7 @@ const Navigation = () => {
             iconRight={<LinkedIn />}
             className="whitespace-nowrap hidden sm:flex"
           >
-            {"Let's chat!"}
+            {GlobalCopy.buttons.contact}
           </LinkButton>
           <LinkButton
             variant="primary"
@@ -61,7 +62,7 @@ const Navigation = () => {
             variant="link"
             iconLeft={<ArrowLeft />}
           >
-            See more work
+            {GlobalCopy.buttons.allWork}
           </Button>
         </div>
       ) : null}
