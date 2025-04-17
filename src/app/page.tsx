@@ -1,13 +1,13 @@
 'use client';
 
-import AssetContainer from '@/components/AssetContainer';
 import BlockQuote from '@/components/BlockQuote';
 import Button from '@/components/Button';
 import LinkButton from '@/components/Button/LinkButton';
 import CircleImage from '@/components/CircleImage';
+import FeaturedSection from '@/components/FeaturedSection/FeaturedSection';
 import Heading from '@/components/Heading';
 import { ArrowDoubleDown, ArrowRight, Figma } from '@/components/SVGComponents';
-import Link from 'next/link';
+import FeaturedCopy from '@/copydeck/FeaturedCopy';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useRef } from 'react';
 
@@ -72,40 +72,13 @@ export default function Home() {
             <CircleImage name="nick-bence" size="large" />
           </div>
         </div>
-        <div
+
+        <FeaturedSection
           ref={featuredWorkRef}
-          className=" flex gap-2 justify-center items-center h-6 mt-16 mb-6"
-        >
-          <div className="w-full bg-border-primary h-1"></div>
-          <Heading as="h2" className="w-full text-center whitespace-nowrap">
-            Featured Work
-          </Heading>
-          <div className="w-full bg-border-primary h-1"></div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <Link href="/starbucks">
-            <AssetContainer
-              alt="starbucks for life"
-              src="/starbucks-featured.png"
-              size="large"
-            />
-          </Link>
-          <AssetContainer
-            alt="dynatrace navigation upgrade"
-            src="/dynatrace-navigation-featured.png"
-            size="large"
-          />
-          <AssetContainer
-            alt="dynatrace platform page"
-            src="/dynatrace-platform-featured.png"
-            size="large"
-          />
-          <AssetContainer
-            alt="nathans hot dogs"
-            src="/nathans-hotdogs-featured.png"
-            size="large"
-          />
-        </div>
+          heading={FeaturedCopy.heading}
+          data={FeaturedCopy.projects}
+        />
+
         <div className="flex justify-center w-full mt-6 mb-16">
           <LinkButton
             variant="link"
