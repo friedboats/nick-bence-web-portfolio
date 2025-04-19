@@ -5,7 +5,7 @@ import Heading from '../Heading';
 
 interface FeaturedSectionData {
   alt: string;
-  imgSrc: string;
+  src: string;
   href: string;
 }
 
@@ -26,9 +26,9 @@ const FeaturedSection = forwardRef<HTMLDivElement, FeaturedSectionProps>(
           <div className="w-full bg-border-primary h-1"></div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {data.map(({ alt, href, imgSrc }, idx) => (
+          {data.map(({ alt, href, src }, idx) => (
             <Link href={href} key={idx}>
-              <AssetContainer alt={alt} src={imgSrc} size="large" />
+              <AssetContainer alt={alt} src={src} width={427} height={288} />
             </Link>
           ))}
         </div>

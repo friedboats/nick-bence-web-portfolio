@@ -4,12 +4,12 @@ import FeaturedSection from './FeaturedSection';
 const mockData = [
   {
     alt: 'Starbucks project',
-    imgSrc: '/starbucks-featured.png',
+    src: '/starbucks-featured.png',
     href: '/starbucks',
   },
   {
     alt: 'Dynatrace navigation',
-    imgSrc: '/dynatrace-navigation-featured.png',
+    src: '/dynatrace-navigation-featured.png',
     href: '/dynatrace-navigation',
   },
 ];
