@@ -84,9 +84,7 @@ export default function Home() {
         <div className="flex justify-center w-full mt-6 mb-16">
           <LinkButton
             variant="link"
-            href={
-              'https://www.figma.com/design/BX2uza7zulVKHbu0RyZQOO/nickbence-design-system?node-id=6-746&t=pPvP7BaTcziDOmlw-1'
-            }
+            href={GlobalCopy.urls.figma}
             iconLeft={<Figma />}
             iconRight={<ArrowRight />}
           >
@@ -94,10 +92,7 @@ export default function Home() {
             <span className="block sm:hidden">{HomeCopy.figmaLabelMobile}</span>
           </LinkButton>
         </div>
-        <BlockQuote
-          quote={`I'd say, without question, he is one of my top "go to" guys for any questions on development. A trusted and 
-enthusiastic source.`}
-        />
+        <BlockQuote quote={GlobalCopy.quotes.goToGuys} />
       </div>
     </main>
   );
