@@ -3,6 +3,7 @@ import Navigation from '@/components/Navigation';
 import { AnimatedBackground } from '@/components/SVGComponents';
 import type { Metadata } from 'next';
 import '../styles/globals.css';
+import { museo, quicksand } from './fonts';
 
 export const metadata: Metadata = {
   title: 'Nick Bence | Senior UI / UX Engineer',
@@ -17,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-primary bg-surface-background-primary">
+      <body
+        className={`${museo.className} ${quicksand.className} bg-surface-background-primary`}
+      >
         <div className="relative">
           <AnimatedBackground className="w-full h-screen fixed top-0 left-0" />
           <div className="relative z-5 mx-3">
