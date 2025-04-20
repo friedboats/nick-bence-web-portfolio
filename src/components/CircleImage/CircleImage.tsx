@@ -1,5 +1,5 @@
-import React from 'react';
 import Image from 'next/image';
+import React from 'react';
 
 interface CircleImageProps extends React.HTMLAttributes<HTMLDivElement> {
   name: 'nick-bence' | 'starbucks' | 'dynatrace' | 'nathans';
@@ -16,7 +16,7 @@ const imageSizeMap = {
   large: 377,
 };
 
-const CircleImage = ({ name, size = 'small', ...rest }: CircleImageProps) => {
+const CircleImage = ({ name, size = 'small' }: CircleImageProps) => {
   const src = `/circle-${name}.png`;
   const alt = `${
     name.charAt(0).toUpperCase() + name.slice(1).replace('-', ' ')
@@ -36,7 +36,6 @@ const CircleImage = ({ name, size = 'small', ...rest }: CircleImageProps) => {
         width: containerSize,
         borderRadius: '50%',
       }}
-      {...rest}
     >
       <Image
         src={src}
