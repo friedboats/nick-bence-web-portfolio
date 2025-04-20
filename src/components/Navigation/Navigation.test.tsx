@@ -22,7 +22,7 @@ describe('Navigation', () => {
     render(<Navigation />);
 
     expect(screen.getByLabelText('Nick Bence Logo')).toBeInTheDocument();
-    expect(screen.getAllByText('See more work')).toHaveLength(2);
+    expect(screen.getAllByText('See all work')).toHaveLength(2);
     expect(screen.getByText("Let's chat!")).toBeInTheDocument();
   });
 
