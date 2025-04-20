@@ -1,53 +1,24 @@
 'use client';
 
-import React from 'react';
-import { ImageProps } from 'next/image';
-
-interface AssetContainerProps extends ImageProps {
+import Image from 'next/image';
+type AssetContainerProps = {
   src: string;
   alt: string;
-  size: 'small' | 'large';
-  backgroundPosition?: string;
-  backgroundSize?: string;
-}
-
-const sizeMap = {
-  small: {
-    width: '190px',
-    height: '192px',
-    aspectRatio: 190 / 192,
-  },
-  large: {
-    width: '100%',
-    height: 'auto',
-    aspectRatio: 427 / 288,
-  },
+  width: number;
+  height: number;
 };
 
-const AssetContainer = ({
-  src,
-  alt,
-  size = 'large',
-  backgroundPosition = 'center center',
-  backgroundSize = 'cover',
-  ...props
-}: AssetContainerProps) => {
-  const { aspectRatio } = sizeMap[size] ?? sizeMap['large'];
-
+const AssetContainer = ({ src, alt, width, height }: AssetContainerProps) => {
   return (
-    <div
-      className="relative rounded-3xl border-2 border-border-primary w-full"
-      style={{
-        paddingTop: `${100 / aspectRatio}%`,
-        backgroundImage: `url(${src})`,
-        backgroundSize,
-        backgroundPosition,
-        backgroundRepeat: 'no-repeat',
-      }}
-      role="img"
-      aria-label={alt}
-      {...props}
-    />
+    <div className="relative rounded-3xl border-2 border-border-primary w-full overflow-hidden">
+      <Image
+        src={src}
+        overrideSrc={src}
+        alt={alt}
+        width={width}
+        height={height}
+      />
+    </div>
   );
 };
 

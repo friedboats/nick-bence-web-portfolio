@@ -1,54 +1,38 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import AssetContainer from './AssetContainer';
 
 describe('AssetContainer', () => {
   const src = '/01_sb_holiday_intro.jpg';
   const alt = 'Starbucks';
+  const width = 192;
+  const height = 192;
 
-  it('renders with the correct background image for small size', () => {
-    render(<AssetContainer src={src} alt={alt} size="small" />);
+  it('renders the image with correct src, alt, width, and height', () => {
+    render(
+      <AssetContainer src={src} alt={alt} width={width} height={height} />,
+    );
 
-    const container = screen.getByRole('img');
-    expect(container).toHaveStyle(`background-image: url(${src})`);
+    const image = screen.getByRole('img', { name: alt });
+
+    expect(image).toBeInTheDocument();
+    expect(image).toHaveAttribute('src', expect.stringContaining(src));
+    expect(image).toHaveAttribute('alt', alt);
   });
 
-  it('renders with the correct background image for large size', () => {
-    render(<AssetContainer src={src} alt={alt} size="large" />);
+  it('renders the container with expected class names', () => {
+    render(
+      <AssetContainer src={src} alt={alt} width={width} height={height} />,
+    );
 
-    const container = screen.getByRole('img');
-    expect(container).toHaveStyle(`background-image: url(${src})`);
-  });
+    const container = screen.getByRole('img', { name: alt }).parentElement;
 
-  it('applies the correct paddingTop for small size to maintain aspect ratio', () => {
-    render(<AssetContainer src={src} alt={alt} size="small" />);
-
-    const container = screen.getByRole('img');
-    const paddingTopValue = 100 / (190 / 192);
-    expect(container).toHaveStyle(`padding-top: ${paddingTopValue}%`);
-  });
-
-  it('applies the correct paddingTop for large size to maintain aspect ratio', () => {
-    render(<AssetContainer src={src} alt={alt} size="large" />);
-
-    const container = screen.getByRole('img');
-    const paddingTopValue = 100 / (427 / 288); // (100 / aspect ratio for large)
-    expect(container).toHaveStyle(`padding-top: ${paddingTopValue}%`);
-  });
-
-  it('sets the correct aria-label based on the alt prop', () => {
-    render(<AssetContainer src={src} alt={alt} size="small" />);
-
-    const container = screen.getByRole('img');
-    expect(container).toHaveAttribute('aria-label', alt);
-  });
-
-  it('renders the correct class names for styling', () => {
-    render(<AssetContainer src={src} alt={alt} size="small" />);
-
-    const container = screen.getByRole('img');
     expect(container).toHaveClass(
-      'relative rounded-3xl border-2 border-border-primary w-full',
+      'relative',
+      'rounded-3xl',
+      'border-2',
+      'border-border-primary',
+      'w-full',
+      'overflow-hidden',
     );
   });
 });
