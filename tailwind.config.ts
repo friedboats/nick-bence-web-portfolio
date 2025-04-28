@@ -271,6 +271,8 @@ const config: Config = {
         'btn-border-secondary-hover': 'var(--border-button-secondary-hover)',
         'btn-border-secondary-active': 'var(--border-button-secondary-active)',
         'border-primary': 'var(--border-primary)',
+        'border-secondary': 'var(--border-secondary)',
+        'border-info': 'var(--border-info)',
       },
       borderRadius: {
         '3xl': 'var(--border-radius-3xl)',
