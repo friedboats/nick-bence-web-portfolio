@@ -12,7 +12,7 @@ describe('CircleImage Component', () => {
     // Check if the image src is correct
     expect(image).toHaveAttribute(
       'src',
-      expect.stringContaining('/circle-starbucks.png'),
+      expect.stringContaining('/starbucks-circle.png'),
     );
   });
 
@@ -37,7 +37,7 @@ describe('CircleImage Component', () => {
     // Check if the image src is correct
     expect(image).toHaveAttribute(
       'src',
-      expect.stringContaining('/circle-nick-bence.png'),
+      expect.stringContaining('/nick-bence-circle.png'),
     );
   });
 });

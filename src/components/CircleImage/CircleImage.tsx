@@ -17,7 +17,7 @@ const imageSizeMap = {
 };
 
 const CircleImage = ({ name, size = 'small' }: CircleImageProps) => {
-  const src = `/circle-${name}.png`;
+  const src = `/${name}-circle.png`;
   const alt = `${
     name.charAt(0).toUpperCase() + name.slice(1).replace('-', ' ')
   } logo`;
