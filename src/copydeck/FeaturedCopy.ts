@@ -9,7 +9,7 @@ const FeaturedCopy = {
     {
       alt: 'Dynatrace navigation upgrade project',
       src: '/dynatrace-navigation-featured-main.png',
-      href: '/dynatrace-navigation',
+      href: '/dynatrace-nav',
     },
     {
       alt: 'Dynatrace platform page project',
@@ -18,7 +18,7 @@ const FeaturedCopy = {
     },
     {
       alt: 'Nathans hot dogs project',
-      src: '/nathans-hotdogs-featured-main.png',
+      src: '/nathans-featured-main.png',
       href: '/nathans',
     },
   ],
