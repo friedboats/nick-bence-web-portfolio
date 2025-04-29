@@ -27,7 +27,9 @@ export default function RootLayout({
             <div className="mx-auto max-w-[1138px] pt-1 md:pt-4 pb-4 md:pb-15 transform scale-[0.95] sm:scale-100">
               <Navigation />
             </div>
-            {children}
+            <main className="fade-in w-full max-w-[902px] mx-auto">
+              {children}
+            </main>
           </div>
           <div className="relative mt-16">
             <Footer />

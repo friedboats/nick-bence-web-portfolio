@@ -39,61 +39,56 @@ export default function Home() {
   };
 
   return (
-    <main className="fade-in">
-      <div className="pt-5 md:pt-0 mx-auto md:max-w-[902px]">
-        <div
-          className="flex justify-between mb-11 flex-col-reverse lg:flex-row
-"
-        >
-          <div className="pt-0 lg:pt-10 text-center lg:text-left lg:flex-row lg:block">
-            <Heading
-              className="text-[2.5rem] sm:text-[64px] text-center lg:text-left"
-              as="h1"
-            >
-              {HomeCopy.intro.name}
-            </Heading>
-            <Heading className="pb-1 text-center lg:text-left" as="h2">
-              {HomeCopy.intro.title}
-            </Heading>
-            <Heading
-              className="text-header-tertiary mb-3 text-center lg:text-left"
-              as="h3"
-            >
-              {HomeCopy.intro.location}
-            </Heading>
-            <Button
-              variant="secondary"
-              iconRight={<ArrowDoubleDown />}
-              onClick={scrollToFeaturedWork}
-            >
-              {GlobalCopy.buttons.myWork}
-            </Button>
-          </div>
-
-          <div className="flex justify-center pb-4 lg:pb-0">
-            <CircleImage name="nick-bence" size="large" />
-          </div>
-        </div>
-
-        <FeaturedSection
-          ref={featuredWorkRef}
-          heading={FeaturedCopy.heading}
-          data={FeaturedCopy.projects}
-        />
-
-        <div className="flex justify-center w-full mt-6 mb-16">
-          <LinkButton
-            variant="link"
-            href={GlobalCopy.urls.figma}
-            iconLeft={<Figma />}
-            iconRight={<ArrowRight />}
+    <div className="pt-5 md:pt-0 mx-auto md:max-w-[902px]">
+      <div className="flex justify-between mb-11 flex-col-reverse lg:flex-row">
+        <div className="pt-0 lg:pt-10 text-center lg:text-left lg:flex-row lg:block">
+          <Heading
+            className="text-[2.5rem] sm:text-[64px] text-center lg:text-left"
+            as="h1"
           >
-            <span className="hidden sm:block">{HomeCopy.figmaLabel}</span>
-            <span className="block sm:hidden">{HomeCopy.figmaLabelMobile}</span>
-          </LinkButton>
+            {HomeCopy.intro.name}
+          </Heading>
+          <Heading className="pb-1 text-center lg:text-left" as="h2">
+            {HomeCopy.intro.title}
+          </Heading>
+          <Heading
+            className="text-header-tertiary mb-3 text-center lg:text-left"
+            as="h3"
+          >
+            {HomeCopy.intro.location}
+          </Heading>
+          <Button
+            variant="secondary"
+            iconRight={<ArrowDoubleDown />}
+            onClick={scrollToFeaturedWork}
+          >
+            {GlobalCopy.buttons.myWork}
+          </Button>
         </div>
-        <BlockQuote quote={GlobalCopy.quotes.goToGuys} />
+
+        <div className="flex justify-center pb-4 lg:pb-0">
+          <CircleImage name="nick-bence" size="large" />
+        </div>
       </div>
-    </main>
+
+      <FeaturedSection
+        ref={featuredWorkRef}
+        heading={FeaturedCopy.heading}
+        data={FeaturedCopy.projects}
+      />
+
+      <div className="flex justify-center w-full mt-6 mb-16">
+        <LinkButton
+          variant="link"
+          href={GlobalCopy.urls.figma}
+          iconLeft={<Figma />}
+          iconRight={<ArrowRight />}
+        >
+          <span className="hidden sm:block">{HomeCopy.figmaLabel}</span>
+          <span className="block sm:hidden">{HomeCopy.figmaLabelMobile}</span>
+        </LinkButton>
+      </div>
+      <BlockQuote quote={GlobalCopy.quotes.goToGuys} />
+    </div>
   );
 }
