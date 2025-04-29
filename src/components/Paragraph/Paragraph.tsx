@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface ParagraphProps {
   variant?:
     | 'p'
@@ -43,7 +45,20 @@ const Paragraph = ({
     className,
   });
 
-  return <p className={paragraphClassNames}>{children}</p>;
+  const renderContent = (content: React.ReactNode) => {
+    if (typeof content === 'string') {
+      const lines = content.split('\n');
+      return lines.map((line, idx) => (
+        <React.Fragment key={idx}>
+          {line}
+          {idx !== lines.length - 1 && <br />}
+        </React.Fragment>
+      ));
+    }
+    return content;
+  };
+
+  return <p className={paragraphClassNames}>{renderContent(children)}</p>;
 };
 
 export default Paragraph;
