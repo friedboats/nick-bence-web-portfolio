@@ -1,6 +1,6 @@
 'use client';
 
-import { ButtonProps } from '@/types/buttons';
+import { ButtonProps } from '@/types/Buttons';
 import React from 'react';
 import { getButtonClassNames } from './buttonStyles';
 

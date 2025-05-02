@@ -1,4 +1,4 @@
-import { ButtonProps } from '@/types/buttons';
+import { ButtonProps } from '@/types/Buttons';
 import Link from 'next/link';
 import { getButtonClassNames } from './buttonStyles';
 
