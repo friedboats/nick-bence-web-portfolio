@@ -44,6 +44,7 @@ const config: Config = {
         {
           lineHeight: 'var(--line-height-display-desktop)',
           fontWeight: 'var(--font-weight-light)',
+          letterSpacing: 'var(--font-letter-spacing-display)',
         },
       ],
       'display-size-mobile': [
@@ -51,6 +52,7 @@ const config: Config = {
         {
           lineHeight: 'var(--line-height-display-mobile)',
           fontWeight: 'var(--font-weight-light)',
+          letterSpacing: 'var(--font-letter-spacing-display)',
         },
       ],
       h1: [
@@ -58,6 +60,7 @@ const config: Config = {
         {
           lineHeight: 'var(--line-height-heading-xxl-desktop)',
           fontWeight: 'var(--font-weight-light)',
+          letterSpacing: 'var(--font-letter-spacing-h1)',
         },
       ],
       'h1-mobile': [
@@ -65,6 +68,7 @@ const config: Config = {
         {
           lineHeight: 'var(--line-height-heading-xxl-mobile)',
           fontWeight: 'var(--font-weight-light)',
+          letterSpacing: 'var(--font-letter-spacing-h1)',
         },
       ],
       h2: [
@@ -72,6 +76,7 @@ const config: Config = {
         {
           lineHeight: 'var(--line-height-heading-xl-desktop)',
           fontWeight: 'var(--font-weight-light)',
+          letterSpacing: 'var(--font-letter-spacing-h2)',
         },
       ],
       'h2-mobile': [
@@ -79,6 +84,7 @@ const config: Config = {
         {
           lineHeight: 'var(--line-height-heading-xl-mobile)',
           fontWeight: 'var(--font-weight-light)',
+          letterSpacing: 'var(--font-letter-spacing-h2)',
         },
       ],
       h3: [
@@ -86,6 +92,7 @@ const config: Config = {
         {
           lineHeight: 'var(--line-height-heading-lg-desktop)',
           fontWeight: 'var(--font-weight-light)',
+          letterSpacing: 'var(--font-letter-spacing-h3)',
         },
       ],
       'h3-mobile': [
@@ -93,6 +100,7 @@ const config: Config = {
         {
           lineHeight: 'var(--line-height-heading-lg-mobile)',
           fontWeight: 'var(--font-weight-light)',
+          letterSpacing: 'var(--font-letter-spacing-h3)',
         },
       ],
       h4: [
@@ -100,6 +108,7 @@ const config: Config = {
         {
           lineHeight: 'var(--line-height-heading-md-desktop)',
           fontWeight: 'var(--font-weight-medium)',
+          letterSpacing: 'var(--font-letter-spacing-h4)',
         },
       ],
       'h4-mobile': [
@@ -107,6 +116,7 @@ const config: Config = {
         {
           lineHeight: 'var(--line-height-heading-md-mobile)',
           fontWeight: 'var(--font-weight-medium)',
+          letterSpacing: 'var(--font-letter-spacing-h4)',
         },
       ],
       h5: [
@@ -114,6 +124,7 @@ const config: Config = {
         {
           lineHeight: 'var(--line-height-heading-sm-desktop)',
           fontWeight: 'var(--font-weight-regular)',
+          letterSpacing: 'var(--font-letter-spacing-h5)',
         },
       ],
       'h5-mobile': [
@@ -121,6 +132,7 @@ const config: Config = {
         {
           lineHeight: 'var(--line-height-heading-sm-mobile)',
           fontWeight: 'var(--font-weight-regular)',
+          letterSpacing: 'var(--font-letter-spacing-h5)',
         },
       ],
       h6: [
@@ -128,6 +140,7 @@ const config: Config = {
         {
           lineHeight: 'var(--line-height-heading-xs-desktop)',
           fontWeight: 'var(--font-weight-medium)',
+          letterSpacing: 'var(--font-letter-spacing-h6)',
         },
       ],
       'h6-mobile': [
@@ -135,6 +148,7 @@ const config: Config = {
         {
           lineHeight: 'var(--line-height-heading-xs-mobile)',
           fontWeight: 'var(--font-weight-medium)',
+          letterSpacing: 'var(--font-letter-spacing-h6)',
         },
       ],
       p: [

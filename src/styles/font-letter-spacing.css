@@ -1,0 +1,10 @@
+:root {
+  /* font letter spacing */
+  --font-letter-spacing-display: 0.075em;
+  --font-letter-spacing-h1: 0.035em;
+  --font-letter-spacing-h2: 0.045em;
+  --font-letter-spacing-h3: 0.04em;
+  --font-letter-spacing-h4: 0.075em;
+  --font-letter-spacing-h5: 0.03em;
+  --font-letter-spacing-h6: 0.0125em;
+}
