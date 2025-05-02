@@ -23,25 +23,11 @@ const meta: Meta<typeof Paragraph> = {
       options: [
         'text-body-primary',
         'text-body-secondary',
-        'text-header-inverse',
+        'text-body-inverse',
       ],
       description: 'Text color for the paragraph (based on design system)',
     },
   },
-  decorators: [
-    (Story, context) => {
-      const isInverse = context.args.color === 'text-header-inverse';
-      return (
-        <div
-          className={`${
-            isInverse ? 'bg-black' : 'bg-transparent'
-          } p-2 rounded-lg`}
-        >
-          <Story />
-        </div>
-      );
-    },
-  ],
 };
 
 export default meta;
