@@ -10,10 +10,7 @@ describe('CircleImage Component', () => {
     const image = screen.getByAltText('Starbucks logo');
 
     // Check if the image src is correct
-    expect(image).toHaveAttribute(
-      'src',
-      expect.stringContaining('/starbucks-circle.png'),
-    );
+    expect(image.getAttribute('src')).toMatch(/starbucks-circle\.png/);
   });
 
   it('renders the alt text correctly for the given type', () => {
@@ -35,9 +32,6 @@ describe('CircleImage Component', () => {
     const image = screen.getByAltText('Nick bence logo');
 
     // Check if the image src is correct
-    expect(image).toHaveAttribute(
-      'src',
-      expect.stringContaining('/nick-bence-circle.png'),
-    );
+    expect(image.getAttribute('src')).toMatch(/nick-bence-circle\.png/);
   });
 });
