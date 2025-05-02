@@ -7,6 +7,7 @@ const ProjectHeader = ({ copy }: ProjectHeaderCopyProps) => {
   return (
     <div className="m-auto text-center flex flex-col items-center">
       <CircleImage
+        size="large"
         className="mb-4"
         name={copy.projectHeader.imageID}
       ></CircleImage>
