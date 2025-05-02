@@ -40,7 +40,8 @@ const CircleImage = ({
         isLarge ? largeStyles : ''
       } ${className}`}
       style={{
-        width: containerSize,
+        maxWidth: containerSize,
+        width: '100%',
         borderRadius: '50%',
       }}
     >
