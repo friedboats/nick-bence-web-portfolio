@@ -1,11 +1,12 @@
 'use client';
 
-import CircleImage from '@/components/CircleImage';
+import ProjectHeader from '@/components/ProjectHeader';
+import StarbucksCopy from '@/copydeck/StarbucksCopy';
 
 export default function Starbucks() {
   return (
-    <div className="flex justify-center">
-      <CircleImage name="starbucks"></CircleImage>
-    </div>
+    <>
+      <ProjectHeader copy={StarbucksCopy} />
+    </>
   );
 }
