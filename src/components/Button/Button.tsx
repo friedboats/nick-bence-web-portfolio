@@ -36,7 +36,7 @@ const Button: React.FC<ButtonProps> = ({
           {iconLeft}
         </span>
       )}
-      {!isIconOnly && <span>{children}</span>}
+      {!isIconOnly && <>{children}</>}
       {iconRight && (
         <span className={`${isIconOnly ? 'ml-0' : 'ml-2'} flex items-center`}>
           {iconRight}
