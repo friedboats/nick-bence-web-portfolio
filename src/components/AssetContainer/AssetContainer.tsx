@@ -60,12 +60,12 @@ const AssetContainer = ({
   ${isInteractive ? `cursor-${interactiveCursor}` : ''}
   ${
     isInteractive
-      ? 'hover:ring-4 hover:ring-border-primary hover:ring-offset-2'
+      ? 'hover:ring-4 hover:ring-border-primary hover:ring-offset-4 hover:ring-offset-offset-primary'
       : ''
   }
   ${
     isInteractive
-      ? 'focus-visible:ring-4 focus-visible:ring-border-primary focus-visible:ring-offset-2'
+      ? 'focus-visible:ring-4 focus-visible:ring-focus focus-visible:ring-offset-4 focus-visible:ring-offset-offset-primary'
       : ''
   }
   outline-none

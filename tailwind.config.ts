@@ -287,6 +287,11 @@ const config: Config = {
         'border-primary': 'var(--border-primary)',
         'border-secondary': 'var(--border-secondary)',
         'border-info': 'var(--border-info)',
+        'offset-primary': 'var(--surface-primary)',
+        focus: 'var(--color-focus-primary)',
+      },
+      ringColor: {
+        DEFAULT: 'var(--color-focus-primary)',
       },
       borderRadius: {
         '3xl': 'var(--border-radius-3xl)',

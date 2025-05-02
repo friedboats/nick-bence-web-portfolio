@@ -26,3 +26,15 @@
     opacity: 1;
   }
 }
+
+@layer base {
+  /* Add ring styles to common interactive elements */
+  button,
+  a,
+  input,
+  textarea,
+  select,
+  [tabindex]:not([tabindex='-1']) {
+    @apply focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-focus focus-visible:ring-offset-4 focus-visible:ring-offset-offset-primary;
+  }
+}
