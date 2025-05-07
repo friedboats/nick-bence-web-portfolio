@@ -11,6 +11,7 @@ const GlobalCopy = {
   copyright: 'Nick Bence. All rights reserved.',
   quotes: {
     goToGuys: `I'd say, without question, he is one of my top "go to" guys for any questions on development. A trusted and enthusiastic source.`,
+    whatHesAccomplished: `What he's accomplished with code to bring creative to life is second to none. He strives for the best. He'll gather and communicate between teams to find the best solutions. \nHe's truly a leader.`,
   },
   urls: {
     figma:
