@@ -50,28 +50,44 @@ const AssetContainer = ({
 }: AssetContainerProps) => {
   const isInteractive =
     typeof onClick === 'function' || typeof href === 'string';
+  const isVideo = src.endsWith('.mp4') || src.endsWith('.webm');
   const aspectRatioClass = `aspect-[${width}/${height}]`;
   const interactiveCursor = cursor || (href ? 'pointer' : 'zoom-in');
 
   const sharedClasses = `
-  relative flex justify-center items-center overflow-hidden rounded-3xl border-2 border-border-primary
-  transition-all duration-300 box-border
-  ${aspectRatioClass} ${className}
-  ${isInteractive ? `cursor-${interactiveCursor}` : ''}
-  ${
-    isInteractive
-      ? 'hover:ring-4 hover:ring-border-primary hover:ring-offset-4 hover:ring-offset-offset-primary'
-      : ''
-  }
-  ${
-    isInteractive
-      ? 'focus-visible:ring-4 focus-visible:ring-focus focus-visible:ring-offset-4 focus-visible:ring-offset-offset-primary'
-      : ''
-  }
-  outline-none
-`;
+    relative flex justify-center items-center overflow-hidden rounded-3xl border-2 border-border-primary
+    transition-all duration-300 box-border
+    ${aspectRatioClass} ${className}
+    ${isInteractive ? `cursor-${interactiveCursor}` : ''}
+    ${
+      isInteractive
+        ? 'hover:ring-4 hover:ring-border-primary hover:ring-offset-4 hover:ring-offset-offset-primary'
+        : ''
+    }
+    ${
+      isInteractive
+        ? 'focus-visible:ring-4 focus-visible:ring-focus focus-visible:ring-offset-4 focus-visible:ring-offset-offset-primary'
+        : ''
+    }
+    outline-none
+  `;
 
-  const content = (
+  const content = isVideo ? (
+    <video
+      src={src}
+      width={width}
+      height={height}
+      autoPlay
+      muted
+      loop
+      playsInline
+      aria-label={alt}
+      className={`
+        object-cover transition-all duration-300 z-[5] relative
+        ${isInteractive ? 'hover:scale-[1.06]' : ''}
+      `.trim()}
+    />
+  ) : (
     <Image
       src={src}
       alt={alt}
