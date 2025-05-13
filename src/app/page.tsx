@@ -48,15 +48,19 @@ export default function Home() {
           >
             {HomeCopy.intro.name}
           </Heading>
-          <Heading className="pb-1 text-center lg:text-left" as="h2">
-            {HomeCopy.intro.title}
-          </Heading>
-          <Heading
-            className="text-header-tertiary mb-3 text-center lg:text-left"
-            as="h3"
-          >
-            {HomeCopy.intro.location}
-          </Heading>
+          <div className="pb-1">
+            <Heading className="text-center lg:text-left" as="h2">
+              {HomeCopy.intro.title}
+            </Heading>
+          </div>
+          <div className=" mb-3 ">
+            <Heading
+              className="text-header-tertiary text-center lg:text-left"
+              as="h3"
+            >
+              {HomeCopy.intro.location}
+            </Heading>
+          </div>
           <Button
             variant="secondary"
             iconRight={<ArrowDoubleDown />}
