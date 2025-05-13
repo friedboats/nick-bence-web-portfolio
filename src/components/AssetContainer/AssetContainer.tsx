@@ -1,41 +1,13 @@
 'use client';
 
+import { AssetContainerProps } from '@/types/AssetContainer';
 import Image from 'next/image';
 import Link from 'next/link';
 
-type CursorType =
-  | 'auto'
-  | 'default'
-  | 'pointer'
-  | 'wait'
-  | 'text'
-  | 'move'
-  | 'help'
-  | 'not-allowed'
-  | 'none'
-  | 'context-menu'
-  | 'progress'
-  | 'cell'
-  | 'crosshair'
-  | 'vertical-text'
-  | 'alias'
-  | 'copy'
-  | 'grab'
-  | 'grabbing'
-  | 'zoom-in'
-  | 'zoom-out';
-
-type AssetContainerProps = {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  className?: string;
-  onClick?: () => void;
-  href?: string;
-  cursor?: CursorType;
-  ariaLabel?: string;
-};
+interface ExtendedAssetContainerProps extends AssetContainerProps {
+  fullWidth?: boolean;
+  layout?: 'fill' | 'fixed';
+}
 
 const AssetContainer = ({
   src,
@@ -47,7 +19,9 @@ const AssetContainer = ({
   href,
   cursor,
   ariaLabel,
-}: AssetContainerProps) => {
+  fullWidth = false,
+  layout = 'fixed',
+}: ExtendedAssetContainerProps) => {
   const isInteractive =
     typeof onClick === 'function' || typeof href === 'string';
   const isVideo = src.endsWith('.mp4') || src.endsWith('.webm');
@@ -75,15 +49,23 @@ const AssetContainer = ({
   const content = isVideo ? (
     <video
       src={src}
-      width={width}
-      height={height}
       autoPlay
       muted
       loop
       playsInline
       aria-label={alt}
       className={`
-        object-cover transition-all duration-300 z-[5] relative
+        object-cover absolute inset-0 w-full h-full transition-all duration-300 z-[5]
+        ${isInteractive ? 'hover:scale-[1.06]' : ''}
+      `.trim()}
+    />
+  ) : layout === 'fill' ? (
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      className={`
+        object-cover transition-all duration-300 z-[5]
         ${isInteractive ? 'hover:scale-[1.06]' : ''}
       `.trim()}
     />
@@ -94,7 +76,7 @@ const AssetContainer = ({
       width={width}
       height={height}
       className={`
-        transition-all duration-300 z-[5] relative
+        object-cover transition-all duration-300 z-[5]
         ${isInteractive ? 'hover:scale-[1.06]' : ''}
       `.trim()}
     />
@@ -106,7 +88,7 @@ const AssetContainer = ({
         href={href}
         aria-label={ariaLabel || alt}
         className={sharedClasses.trim()}
-        style={{ maxWidth: width }}
+        style={fullWidth ? undefined : { maxWidth: width }}
       >
         {content}
       </Link>
@@ -125,7 +107,7 @@ const AssetContainer = ({
         'aria-label': ariaLabel || alt,
       })}
       className={sharedClasses.trim()}
-      style={{ maxWidth: width }}
+      style={fullWidth ? undefined : { maxWidth: width }}
     >
       {content}
     </div>
