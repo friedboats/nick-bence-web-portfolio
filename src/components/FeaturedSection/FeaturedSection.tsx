@@ -2,16 +2,16 @@ import { forwardRef } from 'react';
 import AssetContainer from '../AssetContainer';
 import Heading from '../Heading';
 
-interface FeaturedSectionData {
+type FeaturedSectionData = {
   alt: string;
   src: string;
   href: string;
-}
+};
 
-interface FeaturedSectionProps {
+type FeaturedSectionProps = {
   heading: string;
   data: FeaturedSectionData[];
-}
+};
 
 const FeaturedSection = forwardRef<HTMLDivElement, FeaturedSectionProps>(
   ({ heading, data }, ref) => {
