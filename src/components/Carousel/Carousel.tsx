@@ -59,7 +59,7 @@ const Carousel = ({ data }: CarouselProps) => {
             ))}
           </div>
         </div>
-        <div className="flex justify-center mt-2">
+        <div className="flex justify-center my-2">
           {/* Pagination dots */}
           <div className="flex gap-1">
             {[...Array(numSlides)].map((_, i) => {
