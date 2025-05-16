@@ -1,7 +1,9 @@
 'use client';
 
+import BlockQuote from '@/components/BlockQuote';
 import { Carousel } from '@/components/Carousel';
 import ProjectHeader from '@/components/ProjectHeader';
+import GlobalCopy from '@/copydeck/GlobalCopy';
 import StarbucksCopy from '@/copydeck/StarbucksCopy';
 
 const testCarousel = [
@@ -37,7 +39,9 @@ export default function Starbucks() {
         height={760}
         src="/starbucks_app_video.mp4"
       /> */}
-      {/* <BlockQuote quote={GlobalCopy.quotes.whatHesAccomplished} /> */}
+      <div className="my-16">
+        <BlockQuote quote={GlobalCopy.quotes.whatHesAccomplished} />
+      </div>
     </>
   );
 }

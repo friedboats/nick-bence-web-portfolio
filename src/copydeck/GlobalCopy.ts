@@ -12,6 +12,7 @@ const GlobalCopy = {
   quotes: {
     goToGuys: `I'd say, without question, he is one of my top "go to" guys for any questions on development. A trusted and enthusiastic source.`,
     whatHesAccomplished: `What he's accomplished with code to bring creative to life is second to none. He strives for the best. He'll gather and communicate between teams to find the best solutions. \nHe's truly a leader.`,
+    professionalism: `I am impressed - haven't come across this level of professionalism recently at Dynatrace.`,
   },
   urls: {
     figma:
