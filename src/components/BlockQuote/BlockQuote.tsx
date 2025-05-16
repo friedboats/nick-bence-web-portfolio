@@ -16,9 +16,6 @@ const BlockQuote = ({ quote }: BlockQuoteProps) => {
         className="text-center"
         color="text-body-secondary"
       >{`${quote}`}</Paragraph>
-      {/* <p className="text-block-quote-mobile sm:text-block-quote text-body-secondary text-center">
-        {`${quote}`}
-      </p> */}
     </div>
   );
 };
