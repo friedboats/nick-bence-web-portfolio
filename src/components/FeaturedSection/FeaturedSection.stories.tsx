@@ -7,6 +7,13 @@ const meta: Meta<typeof FeaturedSection> = {
   argTypes: {
     heading: { control: 'text' },
   },
+  decorators: [
+    (Story) => (
+      <div className="w-full max-w-[902px] mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default meta;

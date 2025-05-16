@@ -4,6 +4,13 @@ import ThumbGrid from './ThumbGrid';
 const meta: Meta<typeof ThumbGrid> = {
   title: 'Components/ThumbGrid',
   component: ThumbGrid,
+  decorators: [
+    (Story) => (
+      <div className="w-full max-w-[902px] mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default meta;
@@ -13,52 +20,36 @@ export const Default: Story = {
   args: {
     items: [
       {
-        src: '/dt-nav-home-screen.jpg',
+        src: '/dynatrace-navigation-featured-thumb.png',
         alt: 'Dynatrace',
-        backgroundPosition: '-40px top',
-        backgroundSize: '250%',
       },
       {
-        src: '/dt-nav-home-screen.jpg',
+        src: '/dynatrace-navigation-featured-thumb.png',
         alt: 'Dynatrace',
-        backgroundPosition: '-40px top',
-        backgroundSize: '250%',
       },
       {
-        src: '/dt-nav-home-screen.jpg',
+        src: '/dynatrace-navigation-featured-thumb.png',
         alt: 'Dynatrace',
-        backgroundPosition: '-40px top',
-        backgroundSize: '250%',
       },
       {
-        src: '/dt-nav-home-screen.jpg',
+        src: '/dynatrace-navigation-featured-thumb.png',
         alt: 'Dynatrace',
-        backgroundPosition: '-40px top',
-        backgroundSize: '250%',
       },
       {
-        src: '/dt-nav-home-screen.jpg',
+        src: '/dynatrace-navigation-featured-thumb.png',
         alt: 'Dynatrace',
-        backgroundPosition: '-40px top',
-        backgroundSize: '250%',
       },
       {
-        src: '/dt-nav-home-screen.jpg',
+        src: '/dynatrace-navigation-featured-thumb.png',
         alt: 'Dynatrace',
-        backgroundPosition: '-40px top',
-        backgroundSize: '250%',
       },
       {
-        src: '/dt-nav-home-screen.jpg',
+        src: '/dynatrace-navigation-featured-thumb.png',
         alt: 'Dynatrace',
-        backgroundPosition: '-40px top',
-        backgroundSize: '250%',
       },
       {
-        src: '/dt-nav-home-screen.jpg',
+        src: '/dynatrace-navigation-featured-thumb.png',
         alt: 'Dynatrace',
-        backgroundPosition: '-40px top',
-        backgroundSize: '250%',
       },
     ],
   },
