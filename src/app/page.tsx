@@ -75,11 +75,13 @@ export default function Home() {
         </div>
       </div>
 
-      <FeaturedSection
-        ref={featuredWorkRef}
-        heading={FeaturedCopy.heading}
-        data={FeaturedCopy.projects}
-      />
+      <div className="mt-16">
+        <FeaturedSection
+          ref={featuredWorkRef}
+          heading={FeaturedCopy.heading}
+          data={FeaturedCopy.projects}
+        />
+      </div>
 
       <div className="flex justify-center w-full mt-6 mb-16">
         <LinkButton
