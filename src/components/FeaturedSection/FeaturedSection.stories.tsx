@@ -15,22 +15,22 @@ type Story = StoryObj<typeof FeaturedSection>;
 const mockData = [
   {
     alt: 'Starbucks for life project',
-    src: '/starbucks-featured.png',
+    src: '/starbucks-featured-main.png',
     href: '/starbucks',
   },
   {
     alt: 'Dynatrace navigation upgrade project',
-    src: '/dynatrace-navigation-featured.png',
+    src: '/dynatrace-navigation-featured-main.png',
     href: '/dynatrace-navigation',
   },
   {
     alt: 'Dynatrace platform page project',
-    src: '/dynatrace-platform-featured.png',
+    src: '/dynatrace-platform-featured-main.png',
     href: '/dynatrace-platform',
   },
   {
     alt: 'Nathans hot dogs project',
-    src: '/nathans-hotdogs-featured.png',
+    src: '/nathans-featured-main.png',
     href: '/nathans',
   },
 ];
