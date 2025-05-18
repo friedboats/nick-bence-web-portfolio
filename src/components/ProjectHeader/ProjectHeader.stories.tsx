@@ -5,6 +5,13 @@ import ProjectHeader from './ProjectHeader';
 const meta: Meta<typeof ProjectHeader> = {
   title: 'Components/ProjectHeader',
   component: ProjectHeader,
+  decorators: [
+    (Story) => (
+      <div className="w-full max-w-[902px] mx-auto">
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     docs: {
       description: {
