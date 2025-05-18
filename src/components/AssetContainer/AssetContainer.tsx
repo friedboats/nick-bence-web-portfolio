@@ -55,7 +55,7 @@ const AssetContainer = ({
       playsInline
       aria-label={alt}
       className={`
-        object-cover absolute inset-0 w-full h-full transition-all duration-300 z-[5]
+        object-cover transition-all duration-300 z-[5] relative
         ${isInteractive ? 'hover:scale-[1.06]' : ''}
       `.trim()}
     />
