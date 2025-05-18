@@ -6,13 +6,13 @@ const GlobalCopy = {
   },
   contact: {
     title: 'Get in touch',
-    body: "I'm always open to new opportunities and projects. \nConnect with me on LinkedIn!",
+    body: "<p>I'm always open to new opportunities and projects.</br>Connect with me on LinkedIn!</p>",
   },
   copyright: 'Nick Bence. All rights reserved.',
   quotes: {
-    goToGuys: `I'd say, without question, he is one of my top "go to" guys for any questions on development. A trusted and enthusiastic source.`,
-    whatHesAccomplished: `What he's accomplished with code to bring creative to life is second to none. He strives for the best. He'll gather and communicate between teams to find the best solutions. \nHe's truly a leader.`,
-    professionalism: `I am impressed - haven't come across this level of professionalism recently at Dynatrace.`,
+    goToGuys: `<p>I'd say, without question, he is one of my top "go to" guys for any questions on development. A trusted and enthusiastic source.</p>`,
+    whatHesAccomplished: `<p>What he's accomplished with code to bring creative to life is second to none. He strives for the best. He'll gather and communicate between teams to find the best solutions.</br>He's truly a leader.</p>`,
+    professionalism: `<p>I am impressed - haven't come across this level of professionalism recently at Dynatrace.</p>`,
   },
   urls: {
     figma:
