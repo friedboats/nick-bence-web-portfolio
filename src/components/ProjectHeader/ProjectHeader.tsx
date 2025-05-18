@@ -1,7 +1,7 @@
 import { ProjectHeaderCopyProps } from '@/types/ProjectHeaderCopy';
+import BodyContent from '../BodyContent';
 import CircleImage from '../CircleImage';
 import Heading from '../Heading';
-import Paragraph from '../Paragraph';
 
 const ProjectHeader = ({ copy }: ProjectHeaderCopyProps) => {
   return (
@@ -17,7 +17,7 @@ const ProjectHeader = ({ copy }: ProjectHeaderCopyProps) => {
           {copy.projectHeader.role}
         </Heading>
       </div>
-      <Paragraph>{copy.projectHeader.description}</Paragraph>
+      <BodyContent>{copy.projectHeader.description}</BodyContent>
     </div>
   );
 };

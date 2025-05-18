@@ -1,4 +1,4 @@
-import Paragraph from '../Paragraph';
+import BodyContent from '../BodyContent';
 import { QuotationMark } from '../SVGComponents';
 
 interface BlockQuoteProps {
@@ -11,11 +11,11 @@ const BlockQuote = ({ quote }: BlockQuoteProps) => {
       <div className="flex items-center h-7 pb-1">
         <QuotationMark className="text-body-secondary w-[32px] h-[26px]" />
       </div>
-      <Paragraph
+      <BodyContent
         variant="quote"
         className="text-center"
         color="text-body-secondary"
-      >{`${quote}`}</Paragraph>
+      >{`${quote}`}</BodyContent>
     </div>
   );
 };
