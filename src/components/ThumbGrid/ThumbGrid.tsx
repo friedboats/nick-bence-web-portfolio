@@ -1,13 +1,9 @@
+import { MediaAsset } from '@/types/MediaAsset';
 import AssetContainer from '../AssetContainer';
 
-interface Item {
-  src: string;
-  alt: string;
-}
-
-interface ThumbGridProps {
-  items: Item[];
-}
+type ThumbGridProps = {
+  items: readonly MediaAsset[];
+};
 
 const ThumbGrid = ({ items }: ThumbGridProps) => {
   return (

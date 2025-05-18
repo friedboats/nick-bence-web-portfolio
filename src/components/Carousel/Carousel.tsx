@@ -1,18 +1,14 @@
 'use client';
 
+import { MediaAsset } from '@/types/MediaAsset';
 import { useState } from 'react';
 import AssetContainer from '../AssetContainer';
 import Button from '../Button';
 import { ArrowLeft, ArrowRight } from '../SVGComponents';
 import PaginationDot from './PaginationDot';
 
-type CarouselData = {
-  alt: string;
-  src: string;
-};
-
 type CarouselProps = {
-  data: CarouselData[];
+  data: readonly MediaAsset[];
 };
 
 const Carousel = ({ data }: CarouselProps) => {

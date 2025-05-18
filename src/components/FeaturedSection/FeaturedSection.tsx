@@ -1,12 +1,11 @@
+import { MediaAsset } from '@/types/MediaAsset';
 import { forwardRef } from 'react';
 import AssetContainer from '../AssetContainer';
 import Heading from '../Heading';
 
 type FeaturedSectionData = {
-  alt: string;
-  src: string;
   href: string;
-};
+} & MediaAsset;
 
 type FeaturedSectionProps = {
   heading: string;
