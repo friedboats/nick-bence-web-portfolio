@@ -15,49 +15,48 @@ export default function Starbucks() {
         <Carousel data={StarbucksCopy.projectHeader.carousel} />
       </div>
 
-      <div className="my-16">
+      <div className="section-spacing">
         <TextSection
           layout="right"
           title={StarbucksCopy.planning.title}
           body={StarbucksCopy.planning.body}
           images={StarbucksCopy.planning.assets}
         ></TextSection>
-
-        <div className="my-16">
-          <TextSection
-            layout="left"
-            title={StarbucksCopy.collab.title}
-            body={StarbucksCopy.collab.body}
-            images={StarbucksCopy.collab.assets}
-          ></TextSection>
-        </div>
-
-        <div className="my-16">
-          <TextSection
-            layout="right"
-            title={StarbucksCopy.development.title}
-            body={StarbucksCopy.development.body}
-            images={StarbucksCopy.development.assets}
-          ></TextSection>
-        </div>
-
-        <div className="my-16">
-          <TextSection
-            layout="left"
-            title={StarbucksCopy.efficiency.title}
-            body={StarbucksCopy.efficiency.body}
-            images={StarbucksCopy.efficiency.assets}
-          ></TextSection>
-        </div>
-
-        <div className="my-16">
-          <TextSection
-            title={StarbucksCopy.impact.title}
-            body={StarbucksCopy.impact.body}
-          ></TextSection>
-        </div>
       </div>
-      <div className="my-16">
+      <div className="section-spacing">
+        <TextSection
+          layout="left"
+          title={StarbucksCopy.collab.title}
+          body={StarbucksCopy.collab.body}
+          images={StarbucksCopy.collab.assets}
+        ></TextSection>
+      </div>
+
+      <div className="section-spacing">
+        <TextSection
+          layout="right"
+          title={StarbucksCopy.development.title}
+          body={StarbucksCopy.development.body}
+          images={StarbucksCopy.development.assets}
+        ></TextSection>
+      </div>
+
+      <div className="section-spacing">
+        <TextSection
+          layout="left"
+          title={StarbucksCopy.efficiency.title}
+          body={StarbucksCopy.efficiency.body}
+          images={StarbucksCopy.efficiency.assets}
+        ></TextSection>
+      </div>
+
+      <div className="section-spacing">
+        <TextSection
+          title={StarbucksCopy.impact.title}
+          body={StarbucksCopy.impact.body}
+        ></TextSection>
+      </div>
+      <div className="section-spacing">
         <BlockQuote quote={GlobalCopy.quotes.whatHesAccomplished} />
       </div>
     </>

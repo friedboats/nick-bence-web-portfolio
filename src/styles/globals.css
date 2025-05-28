@@ -18,6 +18,10 @@
   animation: fadeIn 1s ease-in-out forwards;
 }
 
+.section-spacing {
+  @apply my-12 md:my-16;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

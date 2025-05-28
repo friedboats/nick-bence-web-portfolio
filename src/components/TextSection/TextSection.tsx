@@ -47,9 +47,7 @@ const TextSection = ({
               <div className="mb-2">
                 <Heading as="h2">{title}</Heading>
               </div>
-              <div className="mb-6">
-                <BodyContent>{body}</BodyContent>
-              </div>
+              <BodyContent>{body}</BodyContent>
               {button && <div className="mt-5">{button}</div>}
             </div>
           </div>
