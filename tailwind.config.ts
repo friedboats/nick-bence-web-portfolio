@@ -246,7 +246,7 @@ const config: Config = {
         'var(--font-size-block-quote-mobile)',
         {
           lineHeight: 'var(--line-height-block-quote-mobile)',
-          fontWeight: 'var(--font-weight-light)',
+          fontWeight: 'var(--font-weight-regular)',
         },
       ],
     },
