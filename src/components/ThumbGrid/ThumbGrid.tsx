@@ -7,7 +7,7 @@ type ThumbGridProps = {
 
 const ThumbGrid = ({ items }: ThumbGridProps) => {
   return (
-    <div className="flex flex-wrap justify-center gap-[44px] mx-auto w-fit">
+    <div className="grid grid-cols-2 sm:grid-cols-none sm:flex sm:flex-wrap lg:justify-center gap-x-[6vw] gap-y-[6vw] sm:gap-x-[44px] sm:gap-y-[44px] w-full">
       {items.map((item, index) => (
         <AssetContainer
           key={index}
@@ -15,6 +15,9 @@ const ThumbGrid = ({ items }: ThumbGridProps) => {
           alt={item.alt}
           width={192}
           height={192}
+          layout="fill"
+          fullWidth
+          className="w-full aspect-square sm:w-[192px] sm:aspect-[192/192]"
         />
       ))}
     </div>
