@@ -3,7 +3,7 @@ const StarbucksCopy = {
     imageID: 'starbucks',
     title: 'Starbucks for Life',
     role: 'Senior Interface Developer',
-    description: `<p>As a Senior Web Engineer, I contributed to developing the Starbucks for Life website, a gamified platform that boosted user engagement by integrating Starbucks' rewards program with an interactive, visually engaging experience. The project focused on creating a user-friendly interface aligned with Starbucks’ brand, offering a smooth journey for participants and exciting prizes, including free coffee for life.</p>`,
+    description: `<p>As Senior Interface Developer, I helped bring the Starbucks for Life website to life — a gamified digital experience that drove engagement by merging Starbucks Rewards with an interactive prize-based platform. I focused on building a branded, user-friendly interface that offered a seamless experience for participants and showcased exciting incentives like free coffee for life.</p>`,
     carousel: [
       {
         alt: 'Starbucks for life project',
