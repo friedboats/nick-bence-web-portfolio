@@ -1,3 +1,9 @@
+'use client';
+
+import { Element as DomHandlerElement } from 'domhandler';
+import parse, { DOMNode, domToReact } from 'html-react-parser';
+import React from 'react';
+
 interface HeadingProps extends React.HTMLAttributes<HTMLElement> {
   as?: keyof typeof variantStyles;
   color?:
@@ -21,17 +27,41 @@ export const variantStyles = {
 const Heading = ({
   as: Tag = 'h1',
   color = 'text-header-primary',
-  className,
+  className = '',
   children,
   ...rest
 }: HeadingProps) => {
   const Component = Tag === 'display' ? 'h2' : Tag;
+  const headingClasses = `${
+    variantStyles[Tag] || ''
+  } ${color} ${className}`.trim();
+
+  const renderChildren = (content: React.ReactNode) => {
+    if (typeof content !== 'string') return content;
+
+    const replace = (node: DOMNode): React.ReactElement | null => {
+      if (node.type === 'tag' && 'name' in node && 'children' in node) {
+        const el = node as DomHandlerElement;
+
+        if (el.name === 'span') {
+          const className = el.attribs?.class || '';
+          return (
+            <span className={className}>
+              {domToReact(el.children as DOMNode[], { replace })}
+            </span>
+          );
+        }
+      }
+
+      return null;
+    };
+
+    return parse(content, { replace });
+  };
+
   return (
-    <Component
-      className={`${variantStyles[Tag] || ''} ${color} ${className}`}
-      {...rest}
-    >
-      {children}
+    <Component className={headingClasses} {...rest}>
+      {renderChildren(children)}
     </Component>
   );
 };
