@@ -17,7 +17,6 @@ export default function Starbucks() {
 
       <div className="section-spacing">
         <TextSection
-          layout="right"
           title={StarbucksCopy.planning.title}
           body={StarbucksCopy.planning.body}
           images={StarbucksCopy.planning.assets}
@@ -25,7 +24,6 @@ export default function Starbucks() {
       </div>
       <div className="section-spacing">
         <TextSection
-          layout="left"
           title={StarbucksCopy.collab.title}
           body={StarbucksCopy.collab.body}
           images={StarbucksCopy.collab.assets}
@@ -43,7 +41,6 @@ export default function Starbucks() {
 
       <div className="section-spacing">
         <TextSection
-          layout="left"
           title={StarbucksCopy.efficiency.title}
           body={StarbucksCopy.efficiency.body}
           images={StarbucksCopy.efficiency.assets}
