@@ -49,15 +49,15 @@ export default function Home() {
             {HomeCopy.intro.name}
           </Heading>
           <div className="pb-1">
-            <Heading className="text-center lg:text-left" as="h2">
-              {HomeCopy.intro.title}
-            </Heading>
-          </div>
-          <div className=" mb-3 ">
             <Heading
               className="text-header-tertiary text-center lg:text-left"
               as="h3"
             >
+              {HomeCopy.intro.title}
+            </Heading>
+          </div>
+          <div className=" mb-3 ">
+            <Heading className="text-center lg:text-left" as="h4">
               {HomeCopy.intro.location}
             </Heading>
           </div>
@@ -70,7 +70,7 @@ export default function Home() {
           </Button>
         </div>
 
-        <div className="flex justify-center pb-4 lg:pb-0">
+        <div className="flex justify-center px-4 pb-4 lg:pb-0">
           <CircleImage name="nick-bence" size="large" />
         </div>
       </div>
