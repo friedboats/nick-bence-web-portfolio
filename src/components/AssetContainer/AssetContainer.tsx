@@ -7,6 +7,7 @@ import Link from 'next/link';
 interface ExtendedAssetContainerProps extends AssetContainerProps {
   fullWidth?: boolean;
   layout?: 'fill' | 'fixed';
+  style?: React.CSSProperties;
 }
 
 const AssetContainer = ({
@@ -21,11 +22,12 @@ const AssetContainer = ({
   ariaLabel,
   fullWidth = false,
   layout = 'fixed',
+  style,
 }: ExtendedAssetContainerProps) => {
   const isInteractive =
     typeof onClick === 'function' || typeof href === 'string';
   const isVideo = src.endsWith('.mp4') || src.endsWith('.webm');
-  const aspectRatioClass = `aspect-[${width}/${height}]`;
+  const aspectRatioClass = !isVideo ? `aspect-[${width}/${height}]` : '';
   const interactiveCursor = cursor || (href ? 'pointer' : 'zoom-in');
 
   const sharedClasses = `
@@ -107,7 +109,10 @@ const AssetContainer = ({
         'aria-label': ariaLabel || alt,
       })}
       className={sharedClasses.trim()}
-      style={fullWidth ? undefined : { maxWidth: width }}
+      style={{
+        ...(fullWidth ? undefined : { maxWidth: width }),
+        ...style,
+      }}
     >
       {content}
     </div>

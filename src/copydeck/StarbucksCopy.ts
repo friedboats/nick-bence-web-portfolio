@@ -77,6 +77,10 @@ const StarbucksCopy = {
       {
         src: '/starbucks_app_video.mp4',
         alt: 'Starbucks for life project',
+        style: {
+          maxHeight: '725px',
+          alignItems: 'flex-start',
+        },
       },
     ],
   },
