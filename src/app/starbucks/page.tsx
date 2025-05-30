@@ -14,7 +14,6 @@ export default function Starbucks() {
       <div className="mt-5">
         <Carousel data={StarbucksCopy.projectHeader.carousel} />
       </div>
-
       <div className="section-spacing">
         <TextSection
           title={StarbucksCopy.planning.title}
@@ -29,7 +28,6 @@ export default function Starbucks() {
           images={StarbucksCopy.collab.assets}
         ></TextSection>
       </div>
-
       <div className="section-spacing">
         <TextSection
           layout="right"
@@ -38,7 +36,6 @@ export default function Starbucks() {
           images={StarbucksCopy.development.assets}
         ></TextSection>
       </div>
-
       <div className="section-spacing">
         <TextSection
           title={StarbucksCopy.efficiency.title}
@@ -46,7 +43,6 @@ export default function Starbucks() {
           images={StarbucksCopy.efficiency.assets}
         ></TextSection>
       </div>
-
       <div className="section-spacing">
         <TextSection
           title={StarbucksCopy.impact.title}
