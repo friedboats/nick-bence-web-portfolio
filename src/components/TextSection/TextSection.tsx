@@ -35,6 +35,7 @@ const TextSection = ({
             alt={images[0].alt}
             width={427}
             height={288}
+            fullWidth
             style={images[0].style}
           />
         );
@@ -45,7 +46,7 @@ const TextSection = ({
               layout === 'right' ? 'md:flex-row-reverse' : ''
             }`}
           >
-            <div className="md:w-1/2">{image}</div>
+            <div className="flex justify-center md:w-1/2">{image}</div>
             <div className="md:w-1/2">
               <div className="mb-2">
                 <Heading as="h2">{title}</Heading>
@@ -60,15 +61,17 @@ const TextSection = ({
       // === CASE: Single image, no layout specified ===
       // Full-width image below content, default layout
       return (
-        <AssetContainer
-          src={images[0].src}
-          alt={images[0].alt}
-          width={427}
-          height={288}
-          style={images[0].style}
-          fullWidth
-          layout="fill"
-        />
+        <div className="aspect-[427/288]">
+          <AssetContainer
+            src={images[0].src}
+            alt={images[0].alt}
+            width={427}
+            height={288}
+            style={images[0].style}
+            fullWidth
+            layout="fill"
+          />
+        </div>
       );
     }
 
@@ -80,10 +83,13 @@ const TextSection = ({
           {images.map((img, i) => (
             <AssetContainer
               key={i}
+              className="sm:w-1/2"
               src={img.src}
               alt={img.alt}
               width={427}
               height={288}
+              fullWidth
+              layout="fill"
               style={img.style}
             />
           ))}
