@@ -49,4 +49,17 @@ describe('TextSection', () => {
     const images = screen.getAllByAltText('Test Image');
     expect(images).toHaveLength(2);
   });
+
+  it('renders heading and body when layout is not left or right', () => {
+    render(
+      <TextSection
+        title="Standalone Title"
+        body="<p>Default layout content</p>"
+        images={[mockImage]}
+      />,
+    );
+
+    expect(screen.getByText('Standalone Title')).toBeInTheDocument();
+    expect(screen.getByText('Default layout content')).toBeInTheDocument();
+  });
 });
