@@ -64,7 +64,7 @@ const BodyContent = ({
 
         if (el.name === 'ul') {
           return (
-            <ul className="list-disc pl-5 my-4">
+            <ul className="list-disc pl-5 mb-4">
               {domToReact(el.children as DOMNode[], { replace })}
             </ul>
           );
