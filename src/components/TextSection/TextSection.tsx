@@ -25,28 +25,29 @@ const TextSection = ({
   const renderImages = () => {
     if (!images || images.length === 0) return null;
 
+    const image = (
+      <AssetContainer
+        src={images[0].src}
+        alt={images[0].alt}
+        width={427}
+        height={288}
+        fullWidth
+        layout="fill"
+        style={images[0].style}
+      />
+    );
+
     // === CASE: Single image with 'left' or 'right' layout ===
     // Image and text appear side-by-side on desktop, stacked on mobile
     if (images.length === 1) {
       if (layout === 'left' || layout === 'right') {
-        const image = (
-          <AssetContainer
-            src={images[0].src}
-            alt={images[0].alt}
-            width={427}
-            height={288}
-            fullWidth
-            style={images[0].style}
-          />
-        );
-
         return (
           <div
             className={`flex flex-col-reverse gap-6 md:flex-row mb-6 ${
               layout === 'right' ? 'md:flex-row-reverse' : ''
             }`}
           >
-            <div className="flex justify-center md:w-1/2">{image}</div>
+            <div className="aspect-[427/288] md:w-1/2">{image}</div>
             <div className="md:w-1/2">
               <div className="mb-2">
                 <Heading as="h2">{title}</Heading>
@@ -60,19 +61,7 @@ const TextSection = ({
 
       // === CASE: Single image, no layout specified ===
       // Full-width image below content, default layout
-      return (
-        <div className="aspect-[427/288]">
-          <AssetContainer
-            src={images[0].src}
-            alt={images[0].alt}
-            width={427}
-            height={288}
-            style={images[0].style}
-            fullWidth
-            layout="fill"
-          />
-        </div>
-      );
+      return <div className="aspect-[427/288]">{image}</div>;
     }
 
     // === CASE: Two images ===
@@ -81,17 +70,9 @@ const TextSection = ({
       return (
         <div className="flex flex-col sm:flex-row gap-4 mb-6">
           {images.map((img, i) => (
-            <AssetContainer
-              key={i}
-              className="sm:w-1/2"
-              src={img.src}
-              alt={img.alt}
-              width={427}
-              height={288}
-              fullWidth
-              layout="fill"
-              style={img.style}
-            />
+            <div key={i} className="sm:w-1/2">
+              {image}
+            </div>
           ))}
         </div>
       );
