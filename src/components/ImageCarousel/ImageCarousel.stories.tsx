@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Carousel from './Carousel';
+import ImageCarousel from './ImageCarousel';
 
-const meta: Meta<typeof Carousel> = {
-  title: 'Components/Carousel',
-  component: Carousel,
+const meta: Meta<typeof ImageCarousel> = {
+  title: 'Components/ImageCarousel',
+  component: ImageCarousel,
   decorators: [
     (Story) => (
       <div className="w-full max-w-[902px] mx-auto">
@@ -14,7 +14,7 @@ const meta: Meta<typeof Carousel> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Carousel>;
+type Story = StoryObj<typeof ImageCarousel>;
 
 const mockData = [
   {

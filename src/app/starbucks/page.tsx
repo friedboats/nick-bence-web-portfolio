@@ -1,7 +1,7 @@
 'use client';
 
 import BlockQuote from '@/components/BlockQuote';
-import { Carousel } from '@/components/Carousel';
+import { ImageCarousel } from '@/components/ImageCarousel';
 import ProjectHeader from '@/components/ProjectHeader';
 import TextSection from '@/components/TextSection';
 import GlobalCopy from '@/copydeck/GlobalCopy';
@@ -12,7 +12,7 @@ export default function Starbucks() {
     <>
       <ProjectHeader copy={StarbucksCopy} />
       <div className="mt-5">
-        <Carousel data={StarbucksCopy.projectHeader.carousel} />
+        <ImageCarousel data={StarbucksCopy.projectHeader.carousel} />
       </div>
       <div className="section-spacing">
         <TextSection

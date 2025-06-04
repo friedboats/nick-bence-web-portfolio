@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import Carousel from './Carousel';
+import ImageCarousel from './ImageCarousel';
 
 const mockData = [
   {
@@ -20,21 +20,21 @@ const mockData = [
   },
 ];
 
-describe('Carousel', () => {
+describe('ImageCarousel', () => {
   it('renders the first image by default', () => {
-    render(<Carousel data={mockData} />);
+    render(<ImageCarousel data={mockData} />);
     expect(screen.getByAltText('Image 1')).toBeInTheDocument();
   });
 
   it('navigates to the next image on right arrow click', () => {
-    render(<Carousel data={mockData} />);
+    render(<ImageCarousel data={mockData} />);
     const rightArrow = screen.getByLabelText(/click the right arrow/i);
     fireEvent.click(rightArrow);
     expect(screen.getByAltText('Image 2')).toBeInTheDocument();
   });
 
   it('navigates to the previouse image on left arrow click', () => {
-    render(<Carousel data={mockData} />);
+    render(<ImageCarousel data={mockData} />);
     const rightArrow = screen.getByLabelText(/click the right arrow/i);
     fireEvent.click(rightArrow);
 
@@ -44,7 +44,7 @@ describe('Carousel', () => {
   });
 
   it('clicking a pagination dot updates the slide', () => {
-    render(<Carousel data={mockData} />);
+    render(<ImageCarousel data={mockData} />);
     const dots = screen.getAllByRole('button');
     fireEvent.click(dots[2]);
     expect(screen.getByAltText('Image 3')).toBeInTheDocument();

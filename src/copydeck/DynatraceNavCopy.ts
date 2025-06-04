@@ -98,9 +98,40 @@ const DynatraceNavCopy = {
       },
     ],
   },
-  efficiency: {
-    title: 'Boosting Efficiency',
-    body: '<p>Managing frequent content updates and new animations was a key challenge for the Starbucks for Life promotion. To address this, my colleague and I developed a custom HTML canvas tool that enabled quick and seamless animation updates. This innovation significantly reduced the time and effort required for content management, proving to be a major time saver and an invaluable asset for future campaigns.</p>',
+  infoArch: {
+    title: 'Information Architecture & Wireframes',
+    body: `
+      <p>I used findings from user research to create nine distinct Information Architecture (IA) variations, each designed to guide users through the platform while clearly highlighting its value.</p>
+      <p>Wireframes were iteratively refined based on feedback from user research and stakeholders, ensuring alignment with user needs and business objectives while maintaining simplicity and usability.</p>
+      <div classname="ul-group">
+        <strong>The IA addressed key sections:</strong>
+        <ul>
+          <li><strong>Our Platform:</strong> Showcasing core functionality and capabilities.</li>
+          <li><strong>What We Solve:</strong> Clearly communicating the problems the platform addresses.</li>
+          <li><strong>Resources:</strong> Providing easy access to educational materials and guides.</li>
+          <li><strong>About Us:</strong> Building transparency and trust with users.</li>
+          <li><strong>Pricing:</strong> Simplifying purchasing information.</li>
+          <li><strong>Support:</strong> Offering straightforward troubleshooting and help.</li>
+          <li><strong>Sign Up:</strong> Streamlined CTAs for seamless onboarding.</li>
+        </ul>
+      </div>
+    `,
+    assets: [
+      {
+        src: '/dynatrace-navigation-featured-main.png',
+        alt: 'Starbucks for life project',
+      },
+      {
+        src: '/dynatrace-navigation-featured-main.png',
+        alt: 'Starbucks for life project',
+      },
+    ],
+  },
+  highFidelity: {
+    title: 'High Fidelity Designs',
+    body: `
+      <p>Following the wireframing and IA validation, I transitioned into creating High Fidelity Designs in Figma to bring the navigation system to life. The designs focused on crafting an intuitive and visually appealing interface that not only met the usability requirements but also aligned with Dynatrace’s brand identity.</p>
+    `,
     assets: [
       {
         src: '/dynatrace-navigation-featured-main.png',
@@ -108,15 +139,23 @@ const DynatraceNavCopy = {
       },
     ],
   },
+  usabilityTesting: {
+    title: 'Usability Testing',
+    body: `
+      <p>After finalizing the UI designs for the new navigation system, we conducted usability testing to gather feedback directly from users. This allowed us to identify areas that needed refinement based on real user experiences. We collected qualitative responses through user interviews, which provided key insights into how users interacted with the new navigation system and helped inform changes to improve usability.</p>
+      <p>Usability testing revealed that users found the navigation clean, simple, and intuitive, with Module titles and the Our Platform section being well understood. However, some struggled with sections like Resources, mistakenly thinking it was for current users only. Additionally, Calls to Action like "Get started free" and "Free trial" resonated better when aligned with industry norms.</p>
+      <p>Overall, these insights played a key role in refining the navigation, ensuring that it was not only visually appealing but also aligned with user expectations for seamless interaction.</p>
+    `,
+  },
   impact: {
     title: 'Results, Impact & Key Takeaways',
     body: `
-    <p>This project highlighted the importance of seamless collaboration across design, development, and project management to deliver a high-impact experience.</p>
+    <p>The redesigned Dynatrace navigation improved user satisfaction and operational efficiency, highlighting the value of user-centered design and iterative testing. By balancing user preferences, business goals, and technical constraints, we delivered a solution that enhanced the user experience while meeting stakeholder objectives.</p>
 
     <ul>
-      <li><strong>30% increase in user engagement:</strong> Gamified experience boosted interaction.</li>
-      <li><strong>20% increase in sign-ups:</strong> Higher conversion rate from visitors to participants.</li>
-      <li><strong>Positive feedback:</strong> Enthusiastic reviews earned the project a gold star.</li>
+      <li><strong>25% fewer support requests:</strong> Simplified navigation reduced the need for assistance.</li>
+      <li><strong>15% higher user engagement:</strong> Intuitive design boosted interactions.</li>
+      <li><strong>Lower cognitive load:</strong> Users easily found key information, ensuring project success.</li>
     </ul>
   `,
   },

@@ -11,7 +11,7 @@ type CarouselProps = {
   data: readonly MediaAsset[];
 };
 
-const Carousel = ({ data }: CarouselProps) => {
+const ImageCarousel = ({ data }: CarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const numSlides = data.length;
 
@@ -83,4 +83,4 @@ const Carousel = ({ data }: CarouselProps) => {
   );
 };
 
-export default Carousel;
+export default ImageCarousel;
