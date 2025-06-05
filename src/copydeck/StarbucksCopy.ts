@@ -101,9 +101,9 @@ const StarbucksCopy = {
     <p>This project highlighted the importance of seamless collaboration across design, development, and project management to deliver a high-impact experience.</p>
 
     <ul>
-      <li><strong>30% increase in user engagement:</strong> Gamified experience boosted interaction.</li>
-      <li><strong>20% increase in sign-ups:</strong> Higher conversion rate from visitors to participants.</li>
-      <li><strong>Positive feedback:</strong> Enthusiastic reviews earned the project a gold star.</li>
+      <li><b>30% increase in user engagement:</b> Gamified experience boosted interaction.</li>
+      <li><b>20% increase in sign-ups:</b> Higher conversion rate from visitors to participants.</li>
+      <li><b>Positive feedback:</b> Enthusiastic reviews earned the project a gold star.</li>
     </ul>
   `,
   },

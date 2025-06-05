@@ -54,9 +54,17 @@ const BodyContent = ({
       if (node.type === 'tag' && 'name' in node && 'children' in node) {
         const el = node as DomHandlerElement;
 
-        if (el.name === 'b' || el.name === 'strong') {
+        const isBold = el.name === 'b' || el.name === 'strong';
+        if (isBold) {
+          let colorUtilityClass = '';
+
+          if (el.name === 'b') {
+            colorUtilityClass = `text-body-secondary`;
+          } else if (el.name === 'strong') {
+            colorUtilityClass = `text-body-tertiary`;
+          }
           return (
-            <span className="text-body-secondary font-bold">
+            <span className={`${colorUtilityClass} font-bold`}>
               {domToReact(el.children as DOMNode[], { replace })}
             </span>
           );
