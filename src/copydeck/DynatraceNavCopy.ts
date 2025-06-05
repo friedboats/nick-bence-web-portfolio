@@ -4,22 +4,10 @@ const DynatraceNavCopy = {
     title: 'Dynatrace Nav Refresh',
     role: 'Lead UX Engineer / UI Design',
     description: `<p>As the UX Lead at Dynatrace, I spearheaded the redesign of the platform's navigation to enhance user experience, simplify workflows, and make critical features more accessible. The primary objectives were to improve the intuitiveness of the navigation system, reduce cognitive load, and ensure that the new design aligned with both user needs and business goals.</p>`,
-    carousel: [
+    assets: [
       {
         alt: 'Dynatrace navigation upgrade project',
         src: '/dynatrace-navigation-featured-main.png',
-      },
-      {
-        alt: 'Starbucks for life project',
-        src: '/starbucks-featured-main.png',
-      },
-      {
-        alt: 'Dynatrace platform page project',
-        src: '/dynatrace-platform-featured-main.png',
-      },
-      {
-        alt: 'Nathans hot dogs project',
-        src: '/nathans-featured-main.png',
       },
     ],
   },
@@ -39,8 +27,8 @@ const DynatraceNavCopy = {
     <p>To ensure our redesign aligned with industry standards and best practices, I conducted a competitive analysis by examining the navigation structures of key players in both our industry and related markets.</p>
 
     <ul>
-      <li><strong>Industry Leaders:</strong> DataDog, Splunk, and New Relic provided insights into the functionalities and common patterns in the data monitoring and performance management space.</li>
-      <li><strong>Market Inspiration:</strong> We also looked to successful user-centric products like Asana, Nike, Figma, Wedevs, and Dribbble for ideas on clean, intuitive navigation, as well as innovative approaches to layout and design.</li>
+      <li><b>Industry Leaders:</b> DataDog, Splunk, and New Relic provided insights into the functionalities and common patterns in the data monitoring and performance management space.</li>
+      <li><b>Market Inspiration:</b> We also looked to successful user-centric products like Asana, Nike, Figma, Wedevs, and Dribbble for ideas on clean, intuitive navigation, as well as innovative approaches to layout and design.</li>
     </ul>
   `,
     assets: [
@@ -106,13 +94,13 @@ const DynatraceNavCopy = {
       <div classname="ul-group">
         <strong>The IA addressed key sections:</strong>
         <ul>
-          <li><strong>Our Platform:</strong> Showcasing core functionality and capabilities.</li>
-          <li><strong>What We Solve:</strong> Clearly communicating the problems the platform addresses.</li>
-          <li><strong>Resources:</strong> Providing easy access to educational materials and guides.</li>
-          <li><strong>About Us:</strong> Building transparency and trust with users.</li>
-          <li><strong>Pricing:</strong> Simplifying purchasing information.</li>
-          <li><strong>Support:</strong> Offering straightforward troubleshooting and help.</li>
-          <li><strong>Sign Up:</strong> Streamlined CTAs for seamless onboarding.</li>
+          <li><b>Our Platform:</b> Showcasing core functionality and capabilities.</li>
+          <li><b>What We Solve:</b> Clearly communicating the problems the platform addresses.</li>
+          <li><b>Resources:</b> Providing easy access to educational materials and guides.</li>
+          <li><b>About Us:</b> Building transparency and trust with users.</li>
+          <li><b>Pricing:</b> Simplifying purchasing information.</li>
+          <li><b>Support:</b> Offering straightforward troubleshooting and help.</li>
+          <li><b>Sign Up:</b> Streamlined CTAs for seamless onboarding.</li>
         </ul>
       </div>
     `,
@@ -143,9 +131,43 @@ const DynatraceNavCopy = {
     title: 'Usability Testing',
     body: `
       <p>After finalizing the UI designs for the new navigation system, we conducted usability testing to gather feedback directly from users. This allowed us to identify areas that needed refinement based on real user experiences. We collected qualitative responses through user interviews, which provided key insights into how users interacted with the new navigation system and helped inform changes to improve usability.</p>
+      <strong>User Insights</strong>
       <p>Usability testing revealed that users found the navigation clean, simple, and intuitive, with Module titles and the Our Platform section being well understood. However, some struggled with sections like Resources, mistakenly thinking it was for current users only. Additionally, Calls to Action like "Get started free" and "Free trial" resonated better when aligned with industry norms.</p>
       <p>Overall, these insights played a key role in refining the navigation, ensuring that it was not only visually appealing but also aligned with user expectations for seamless interaction.</p>
     `,
+    quotes: [
+      {
+        quote:
+          "One word titles doesn't mean much so having the text is REALLY nice.",
+        author: 'Grant W.',
+        title: 'Devops Engineer at Juniper Education Group',
+      },
+      {
+        quote:
+          'I thought the layout was good and consistent with the other tabs, which I liked.',
+        author: 'Richard D.',
+        title:
+          'Senior Site Reliability Engineer SRE at JPMorgan Chase & Co. Careers',
+      },
+      {
+        quote:
+          "I’ve seen the phrase 'Get started free' elsewhere, and it feels more in line with what I expect, compared to 'Free trial.'",
+        author: 'Julius M.',
+        title: 'Devops Engineer at 2cana Solutions',
+      },
+      {
+        quote:
+          'I think the Solutions section is where I can get an overview of what Dynatrace provides.',
+        author: 'Jean P.',
+        title: 'Cloud Architect',
+      },
+      {
+        quote:
+          "I like that you're demonstrating how you touch all parts of the world.",
+        author: 'Joe Mah.',
+        title: 'CEO & Founder',
+      },
+    ],
   },
   impact: {
     title: 'Results, Impact & Key Takeaways',
@@ -153,9 +175,9 @@ const DynatraceNavCopy = {
     <p>The redesigned Dynatrace navigation improved user satisfaction and operational efficiency, highlighting the value of user-centered design and iterative testing. By balancing user preferences, business goals, and technical constraints, we delivered a solution that enhanced the user experience while meeting stakeholder objectives.</p>
 
     <ul>
-      <li><strong>25% fewer support requests:</strong> Simplified navigation reduced the need for assistance.</li>
-      <li><strong>15% higher user engagement:</strong> Intuitive design boosted interactions.</li>
-      <li><strong>Lower cognitive load:</strong> Users easily found key information, ensuring project success.</li>
+      <li><b>25% fewer support requests:</b> Simplified navigation reduced the need for assistance.</li>
+      <li><b>15% higher user engagement:</b> Intuitive design boosted interactions.</li>
+      <li><b>Lower cognitive load:</b> Users easily found key information, ensuring project success.</li>
     </ul>
   `,
   },
