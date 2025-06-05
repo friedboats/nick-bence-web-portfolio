@@ -1,8 +1,7 @@
 import BlockQuote from '@/components/BlockQuote';
-import BodyContent from '@/components/BodyContent';
 import Button from '@/components/Button';
-import { ImageCarousel } from '@/components/ImageCarousel';
 import ProjectHeader from '@/components/ProjectHeader';
+import RotatingQuotes from '@/components/RotatingQuotes/RotatingQuotes';
 import TextSection from '@/components/TextSection';
 import DynatraceNavCopy from '@/copydeck/DynatraceNavCopy';
 import GlobalCopy from '@/copydeck/GlobalCopy';
@@ -12,11 +11,16 @@ export default function DynatraceNav() {
     <>
       <ProjectHeader copy={DynatraceNavCopy} />
       <div className="mt-5">
-        <ImageCarousel data={DynatraceNavCopy.projectHeader.carousel} />
+        <TextSection
+          title=""
+          body=""
+          images={DynatraceNavCopy.projectHeader.assets}
+          button={<Button variant="secondary">View webpage</Button>}
+        ></TextSection>
       </div>
       <div className="section-spacing">
         <TextSection
-          layout="right"
+          layout="left"
           title={DynatraceNavCopy.challenge.title}
           body={DynatraceNavCopy.challenge.body}
           images={DynatraceNavCopy.challenge.assets}
@@ -58,8 +62,7 @@ export default function DynatraceNav() {
           title={DynatraceNavCopy.usabilityTesting.title}
           body={DynatraceNavCopy.usabilityTesting.body}
         ></TextSection>
-        {/* TODO */}
-        <BodyContent>Quote go here...</BodyContent>
+        <RotatingQuotes quotes={DynatraceNavCopy.usabilityTesting.quotes} />
       </div>
       <div className="section-spacing">
         <TextSection
