@@ -1,7 +1,7 @@
 'use client';
 
 import BlockQuote from '@/components/BlockQuote';
-import Button from '@/components/Button';
+import { Button } from '@/components/Button';
 import LinkButton from '@/components/Button/LinkButton';
 import CircleImage from '@/components/CircleImage';
 import FeaturedSection from '@/components/FeaturedSection/FeaturedSection';

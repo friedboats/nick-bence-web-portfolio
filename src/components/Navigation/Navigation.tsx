@@ -2,8 +2,7 @@
 
 import GlobalCopy from '@/copydeck/GlobalCopy';
 import { usePathname, useRouter } from 'next/navigation';
-import Button from '../Button';
-import LinkButton from '../Button/LinkButton';
+import { Button, LinkButton } from '../Button';
 import PersonalLogo from '../PersonalLogo';
 import { ArrowLeft, LinkedIn } from '../SVGComponents';
 import ThemeToggle from '../ThemeToggle';

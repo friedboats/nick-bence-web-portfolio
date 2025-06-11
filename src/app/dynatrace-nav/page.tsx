@@ -1,5 +1,6 @@
 import BlockQuote from '@/components/BlockQuote';
-import Button from '@/components/Button';
+import { Button } from '@/components/Button';
+import PageNavigator from '@/components/PageNavigator';
 import ProjectHeader from '@/components/ProjectHeader';
 import RotatingQuotes from '@/components/RotatingQuotes';
 import TextSection from '@/components/TextSection';
@@ -72,6 +73,9 @@ export default function DynatraceNav() {
       </div>
       <div className="section-spacing">
         <BlockQuote quote={GlobalCopy.quotes.professionalism} />
+      </div>
+      <div className="section-spacing">
+        <PageNavigator />
       </div>
     </>
   );

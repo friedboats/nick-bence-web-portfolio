@@ -3,7 +3,7 @@
 import { MediaAsset } from '@/types/MediaAsset';
 import { useState } from 'react';
 import AssetContainer from '../AssetContainer';
-import Button from '../Button';
+import { Button } from '../Button';
 import { ArrowLeft, ArrowRight } from '../SVGComponents';
 import PaginationDot from './PaginationDot';
 

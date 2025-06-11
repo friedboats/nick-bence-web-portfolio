@@ -1,5 +1,6 @@
 import BlockQuote from '@/components/BlockQuote';
-import Button from '@/components/Button';
+import { Button } from '@/components/Button';
+import PageNavigator from '@/components/PageNavigator';
 import ProjectHeader from '@/components/ProjectHeader';
 import TextSection from '@/components/TextSection';
 import DynatracePlatformCopy from '@/copydeck/DynatracePlatformCopy';
@@ -67,6 +68,9 @@ export default function DynatracePlatform() {
       </div>
       <div className="section-spacing">
         <BlockQuote quote={GlobalCopy.quotes.teamSport} />
+      </div>
+      <div className="section-spacing">
+        <PageNavigator />
       </div>
     </>
   );
