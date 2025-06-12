@@ -1,3 +1,4 @@
+import usePageNavigationStore from '@/stores';
 import { MediaAsset } from '@/types/MediaAsset';
 import { forwardRef } from 'react';
 import AssetContainer from '../AssetContainer';
@@ -33,6 +34,9 @@ const FeaturedSection = forwardRef<HTMLDivElement, FeaturedSectionProps>(
               width={427}
               height={288}
               cursor="pointer"
+              onClick={() => {
+                usePageNavigationStore.getState().setPageIndex(idx);
+              }}
             />
           ))}
         </div>
