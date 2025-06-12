@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { combine } from 'zustand/middleware';
 
-const usePageNavigationStore = create(
+const usePageNavigatorStore = create(
   combine(
     {
       currentPageIndex: 0,
@@ -33,4 +33,4 @@ const usePageNavigationStore = create(
   ),
 );
 
-export default usePageNavigationStore;
+export default usePageNavigatorStore;

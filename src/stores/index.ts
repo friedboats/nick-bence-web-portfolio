@@ -1,1 +1,2 @@
-export { default } from './pageNavigatorStore';
+export { default as useModalGalleryStore } from './modalGalleryStore';
+export { default as usePageNavigatorStore } from './pageNavigatorStore';

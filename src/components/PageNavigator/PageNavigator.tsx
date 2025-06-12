@@ -1,6 +1,6 @@
 'use client';
 
-import usePageNavigationStore from '@/stores';
+import usePageNavigatorStore from '@/stores/pageNavigatorStore';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { Button } from '../Button';
@@ -11,7 +11,7 @@ const PageNavigator = () => {
   const pathname = usePathname();
 
   const { currentPageList, currentPageIndex, setPageIndex } =
-    usePageNavigationStore();
+    usePageNavigatorStore();
 
   useEffect(() => {
     if (!currentPageList.length) return;

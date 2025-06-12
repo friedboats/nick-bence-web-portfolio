@@ -1,10 +1,10 @@
 'use client';
 
-import usePageNavigationStore from '@/stores';
+import { usePageNavigatorStore } from '@/stores';
 import { useEffect } from 'react';
 
 const GlobalStateInit = () => {
-  const setPageNames = usePageNavigationStore((s) => s.setPageNames);
+  const setPageNames = usePageNavigatorStore((s) => s.setPageNames);
 
   useEffect(() => {
     setPageNames([
