@@ -1,7 +1,7 @@
 const GlobalCopy = {
   buttons: {
     contact: "Let's chat!",
-    allWork: 'See all work',
+    allWork: 'All projects',
     myWork: 'See my work',
   },
   contact: {

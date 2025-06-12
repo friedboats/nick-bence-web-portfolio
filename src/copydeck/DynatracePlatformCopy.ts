@@ -1,7 +1,7 @@
 const DynatracePlatformCopy = {
   projectHeader: {
     imageID: 'dynatrace',
-    title: 'Dynatrace Nav Refresh',
+    title: 'Dynatrace Platform',
     role: 'Lead UX Engineer',
     description: `<p>As the UX Lead at Dynatrace, I spearheaded the redesign of the platform's navigation to enhance user experience, simplify workflows, and make critical features more accessible. The primary objectives were to improve the intuitiveness of the navigation system, reduce cognitive load, and ensure that the new design aligned with both user needs and business goals.</p>`,
     assets: [
