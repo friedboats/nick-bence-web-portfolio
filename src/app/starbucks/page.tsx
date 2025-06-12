@@ -2,6 +2,7 @@
 
 import BlockQuote from '@/components/BlockQuote';
 import { ImageCarousel } from '@/components/ImageCarousel';
+import PageNavigator from '@/components/PageNavigator';
 import ProjectHeader from '@/components/ProjectHeader';
 import TextSection from '@/components/TextSection';
 import GlobalCopy from '@/copydeck/GlobalCopy';
@@ -51,6 +52,9 @@ export default function Starbucks() {
       </div>
       <div className="section-spacing">
         <BlockQuote quote={GlobalCopy.quotes.whatHesAccomplished} />
+      </div>
+      <div className="section-spacing">
+        <PageNavigator />
       </div>
     </>
   );
