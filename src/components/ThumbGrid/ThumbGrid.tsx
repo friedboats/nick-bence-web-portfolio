@@ -1,4 +1,4 @@
-import { useModalGalleryStore } from '@/stores';
+import { useModalGalleryStore } from '@/stores/modalGalleryStore';
 import { MediaAsset } from '@/types/MediaAsset';
 import AssetContainer from '../AssetContainer';
 

@@ -8,19 +8,51 @@ type ModalGalleryState = {
   assets: MediaAsset[] | null;
   initialIndex: number;
   mode: GalleryMode;
-  openModal: (assets: MediaAsset[], mode: GalleryMode, index?: number) => void;
+  carouselId?: string;
+  carouselIndexMap: Record<string, number>;
+  openModal: (
+    assets: MediaAsset[],
+    mode: GalleryMode,
+    index: number,
+    carouselId?: string,
+  ) => void;
   closeModal: () => void;
+  setCarouselIndex: (carouselId: string, index: number) => void;
 };
 
-const useModalGalleryStore = create<ModalGalleryState>((set) => ({
+export const useModalGalleryStore = create<ModalGalleryState>((set) => ({
   isOpen: false,
   assets: null,
   initialIndex: 0,
   mode: 'single',
-  openModal: (assets, mode, index = 0) =>
-    set({ isOpen: true, assets, initialIndex: index, mode }),
+  carouselId: undefined,
+  carouselIndexMap: {},
+  openModal: (assets, mode, index, carouselId) =>
+    set((state) => ({
+      isOpen: true,
+      assets,
+      initialIndex: index,
+      mode,
+      carouselId,
+      carouselIndexMap: {
+        ...state.carouselIndexMap,
+        [carouselId ?? 'default']: index,
+      },
+    })),
   closeModal: () =>
-    set({ isOpen: false, assets: null, initialIndex: 0, mode: 'single' }),
+    set((state) => ({
+      isOpen: false,
+      assets: null,
+      initialIndex: 0,
+      mode: 'single',
+      carouselId: undefined,
+      carouselIndexMap: { ...state.carouselIndexMap },
+    })),
+  setCarouselIndex: (carouselId, index) =>
+    set((state) => ({
+      carouselIndexMap: {
+        ...state.carouselIndexMap,
+        [carouselId]: index,
+      },
+    })),
 }));
-
-export default useModalGalleryStore;

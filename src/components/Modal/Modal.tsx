@@ -1,6 +1,6 @@
 'use client';
 
-import { useModalGalleryStore } from '@/stores';
+import { useModalGalleryStore } from '@/stores/modalGalleryStore';
 import { FocusTrap } from 'focus-trap-react';
 import { useEffect, useRef } from 'react';
 import AssetContainer from '../AssetContainer';
@@ -9,11 +9,10 @@ import { ImageCarousel } from '../ImageCarousel';
 import { Close } from '../SVGComponents';
 
 export default function Modal() {
-  const { isOpen, assets, initialIndex, mode, closeModal } =
+  const { isOpen, assets, initialIndex, mode, closeModal, carouselId } =
     useModalGalleryStore();
   const modalRef = useRef<HTMLDivElement>(null);
 
-  // Close on ESC key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeModal();
@@ -22,7 +21,6 @@ export default function Modal() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [closeModal]);
 
-  // Close when clicking outside the modal content
   const handleOutsideClick = (e: React.MouseEvent) => {
     if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
       closeModal();
@@ -51,6 +49,7 @@ export default function Modal() {
               data={assets}
               initialIndex={initialIndex}
               isInModal
+              id={carouselId}
             />
           ) : isVideo ? (
             <div

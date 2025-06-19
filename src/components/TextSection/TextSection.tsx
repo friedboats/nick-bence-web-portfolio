@@ -1,6 +1,6 @@
 'use client';
 
-import { useModalGalleryStore } from '@/stores';
+import { useModalGalleryStore } from '@/stores/modalGalleryStore';
 import { MediaAsset } from '@/types/MediaAsset';
 import { ReactNode } from 'react';
 import AssetContainer from '../AssetContainer';

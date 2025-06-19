@@ -1,8 +1,7 @@
 'use client';
 
-import { useModalGalleryStore } from '@/stores';
+import { useModalGalleryStore } from '@/stores/modalGalleryStore';
 import { MediaAsset } from '@/types/MediaAsset';
-import { useState } from 'react';
 import AssetContainer from '../AssetContainer';
 import { Button } from '../Button';
 import { ArrowLeft, ArrowRight } from '../SVGComponents';
@@ -12,23 +11,32 @@ type CarouselProps = {
   data: readonly MediaAsset[];
   initialIndex?: number;
   isInModal?: boolean;
+  id?: string;
 };
 
 const ImageCarousel = ({
   data,
-  initialIndex = 0,
   isInModal = false,
+  id = 'default',
 }: CarouselProps) => {
-  const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const openModal = useModalGalleryStore((state) => state.openModal);
+  const setCarouselIndex = useModalGalleryStore(
+    (state) => state.setCarouselIndex,
+  );
+  const currentIndex = useModalGalleryStore(
+    (state) => state.carouselIndexMap[id] ?? 0,
+  );
+
   const numSlides = data.length;
 
   const goToPrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? numSlides - 1 : prev - 1));
+    const next = currentIndex === 0 ? numSlides - 1 : currentIndex - 1;
+    setCarouselIndex(id, next);
   };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev === numSlides - 1 ? 0 : prev + 1));
+    const next = currentIndex === numSlides - 1 ? 0 : currentIndex + 1;
+    setCarouselIndex(id, next);
   };
 
   return (
@@ -50,12 +58,12 @@ const ImageCarousel = ({
           }`}
           tabIndex={isInModal ? -1 : 0}
           onClick={() =>
-            !isInModal && openModal([...data], 'carousel', currentIndex)
+            !isInModal && openModal([...data], 'carousel', currentIndex, id)
           }
           onKeyDown={(e) => {
             if (!isInModal && (e.key === 'Enter' || e.key === ' ')) {
               e.preventDefault();
-              openModal([...data], 'carousel', currentIndex);
+              openModal([...data], 'carousel', currentIndex, id);
             }
           }}
           role="button"
@@ -88,7 +96,7 @@ const ImageCarousel = ({
               <PaginationDot
                 key={i}
                 isActive={currentIndex === i}
-                onClick={() => setCurrentIndex(i)}
+                onClick={() => setCarouselIndex(id, i)}
               />
             ))}
           </div>
