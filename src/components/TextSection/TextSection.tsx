@@ -1,3 +1,6 @@
+'use client';
+
+import { useModalGalleryStore } from '@/stores';
 import { MediaAsset } from '@/types/MediaAsset';
 import { ReactNode } from 'react';
 import AssetContainer from '../AssetContainer';
@@ -25,6 +28,7 @@ export default function TextSection({
   const isSingleImage = images?.length === 1 && !layout;
   const isDoubleImage = images?.length === 2;
   const isGallery = images && images.length > 2;
+  const openModal = useModalGalleryStore((state) => state.openModal);
 
   return (
     <div>
@@ -56,6 +60,7 @@ export default function TextSection({
               fullWidth
               layout="fill"
               style={images[0].style}
+              onClick={() => openModal([...images], 'single', 0)}
             />
           </div>
           <div className="md:w-1/2">
@@ -79,6 +84,7 @@ export default function TextSection({
             fullWidth
             layout="fill"
             style={images[0].style}
+            onClick={() => openModal([...images], 'single', 0)}
           />
         </div>
       )}
@@ -96,6 +102,7 @@ export default function TextSection({
                 fullWidth
                 layout="fill"
                 style={img.style}
+                onClick={() => openModal([...images], 'single', i)}
               />
             </div>
           ))}

@@ -1,5 +1,6 @@
 'use client';
 
+import { useModalGalleryStore } from '@/stores';
 import { MediaAsset } from '@/types/MediaAsset';
 import { useState } from 'react';
 import AssetContainer from '../AssetContainer';
@@ -9,10 +10,17 @@ import PaginationDot from './PaginationDot';
 
 type CarouselProps = {
   data: readonly MediaAsset[];
+  initialIndex?: number;
+  isInModal?: boolean;
 };
 
-const ImageCarousel = ({ data }: CarouselProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const ImageCarousel = ({
+  data,
+  initialIndex = 0,
+  isInModal = false,
+}: CarouselProps) => {
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const openModal = useModalGalleryStore((state) => state.openModal);
   const numSlides = data.length;
 
   const goToPrev = () => {
@@ -30,43 +38,59 @@ const ImageCarousel = ({ data }: CarouselProps) => {
         onClick={goToPrev}
         className="hidden sm:inline-flex"
         iconLeft={<ArrowLeft />}
-        isIconOnly={true}
-        aria-label="Click the left arrow to show next image"
-      ></Button>
-
-      <div className="flex-grow relative overflow-hidden">
-        <div className="w-full pt-[67.44%] relative">
-          <div
-            className="absolute top-0 left-0 h-full w-full flex transition-transform duration-300 ease-in-out"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-          >
-            {data.map((slide, index) => (
-              <div key={index} className="min-w-full h-full">
-                <AssetContainer
-                  src={slide.src}
-                  alt={slide.alt}
-                  width={427}
-                  height={288}
-                  className="w-full h-full"
-                  fullWidth
-                  layout="fill"
-                />
-              </div>
-            ))}
+        isIconOnly
+        aria-label="Click the left arrow to show previous image"
+      />
+      <div className="flex-grow">
+        <div
+          className={`flex-grow relative overflow-hidden rounded-3xl ${
+            !isInModal
+              ? 'hover:ring-4 hover:ring-border-primary hover:ring-offset-4 hover:ring-offset-offset-primary focus-visible:ring-4 focus-visible:ring-focus focus-visible:ring-offset-4 focus-visible:ring-offset-offset-primary'
+              : ''
+          }`}
+          tabIndex={isInModal ? -1 : 0}
+          onClick={() =>
+            !isInModal && openModal([...data], 'carousel', currentIndex)
+          }
+          onKeyDown={(e) => {
+            if (!isInModal && (e.key === 'Enter' || e.key === ' ')) {
+              e.preventDefault();
+              openModal([...data], 'carousel', currentIndex);
+            }
+          }}
+          role="button"
+          aria-label="Open image gallery carousel"
+        >
+          <div className="w-full pt-[67.44%] relative">
+            <div
+              className="absolute top-0 left-0 h-full w-full flex transition-transform duration-300 ease-in-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+              {data.map((slide, index) => (
+                <div key={index} className="min-w-full h-full">
+                  <AssetContainer
+                    src={slide.src}
+                    alt={slide.alt}
+                    width={427}
+                    height={288}
+                    className="w-full h-full"
+                    fullWidth
+                    layout="fill"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <div className="flex justify-center my-2">
-          {/* Pagination dots */}
           <div className="flex gap-1">
-            {[...Array(numSlides)].map((_, i) => {
-              return (
-                <PaginationDot
-                  key={i}
-                  isActive={currentIndex === i}
-                  onClick={() => setCurrentIndex(i)}
-                />
-              );
-            })}
+            {data.map((_, i) => (
+              <PaginationDot
+                key={i}
+                isActive={currentIndex === i}
+                onClick={() => setCurrentIndex(i)}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -76,9 +100,9 @@ const ImageCarousel = ({ data }: CarouselProps) => {
         onClick={goToNext}
         className="hidden sm:inline-flex"
         iconLeft={<ArrowRight />}
-        isIconOnly={true}
+        isIconOnly
         aria-label="Click the right arrow to show next image"
-      ></Button>
+      />
     </div>
   );
 };

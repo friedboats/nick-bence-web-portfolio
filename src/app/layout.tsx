@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer';
 import GlobalStateInit from '@/components/GlobalStateInit';
+import Modal from '@/components/Modal/Modal';
 import Navigation from '@/components/Navigation';
 import { AnimatedBackground } from '@/components/SVGComponents';
 import type { Metadata } from 'next';
@@ -37,6 +38,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </div>
+        <Modal />
       </body>
     </html>
   );

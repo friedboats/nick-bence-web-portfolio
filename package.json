@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
+    "focus-trap-react": "^11.0.4",
     "html-react-parser": "^5.2.5",
     "next": "^15.3.2",
     "react": "^19.0.0",
