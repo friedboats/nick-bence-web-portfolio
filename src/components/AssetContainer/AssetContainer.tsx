@@ -58,7 +58,7 @@ const AssetContainer = ({
       aria-label={alt}
       className={`
         w-full object-cover transition-all duration-300 z-[5] relative
-        ${isInteractive ? 'hover:scale-[1.06]' : ''}
+        ${isInteractive ? 'hover:scale-[1.02]' : ''}
       `.trim()}
     />
   ) : layout === 'fill' ? (
@@ -68,7 +68,7 @@ const AssetContainer = ({
       fill
       className={`
         object-cover transition-all duration-300 z-[5]
-        ${isInteractive ? 'hover:scale-[1.06]' : ''}
+        ${isInteractive ? 'hover:scale-[1.02]' : ''}
       `.trim()}
     />
   ) : (
@@ -79,7 +79,7 @@ const AssetContainer = ({
       height={height}
       className={`
         object-cover transition-all duration-300 z-[5]
-        ${isInteractive ? 'hover:scale-[1.06]' : ''}
+        ${isInteractive ? 'hover:scale-[1.02]' : ''}
       `.trim()}
     />
   );
