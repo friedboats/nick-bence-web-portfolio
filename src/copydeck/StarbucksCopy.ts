@@ -28,7 +28,7 @@ const StarbucksCopy = {
     body: '<p>Collaborating with the UX team, we defined an intuitive user flow to guide potential players through the onboarding process, maximizing engagement. Wireframes were created to visualize and refine these flows. Additionally, I mapped out backend calls to establish clear integration points and data flow, ensuring smooth and efficient connectivity between our platform and external systems.</p>',
     assets: [
       {
-        src: '/dynatrace-navigation-featured-thumb.png',
+        src: '/starbucks-navigation-featured-thumb.png',
         alt: 'Starbucks for life project',
       },
       {

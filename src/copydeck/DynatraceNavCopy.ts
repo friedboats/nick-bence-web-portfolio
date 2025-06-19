@@ -77,7 +77,7 @@ const DynatraceNavCopy = {
     `,
     assets: [
       {
-        src: '/dynatrace-navigation-featured-main.png',
+        src: '/starbucks-featured-main.png',
         alt: 'Starbucks for life project',
       },
       {
