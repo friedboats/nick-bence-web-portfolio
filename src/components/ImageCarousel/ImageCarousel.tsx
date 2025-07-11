@@ -44,7 +44,7 @@ const ImageCarousel = ({
       <Button
         variant="secondary"
         onClick={goToPrev}
-        className="hidden sm:inline-flex"
+        className="hidden sm:inline-flex mb-5"
         iconLeft={<ArrowLeft />}
         isIconOnly
         aria-label="Click the left arrow to show previous image"
@@ -106,7 +106,7 @@ const ImageCarousel = ({
       <Button
         variant="secondary"
         onClick={goToNext}
-        className="hidden sm:inline-flex"
+        className="hidden sm:inline-flex mb-5"
         iconLeft={<ArrowRight />}
         isIconOnly
         aria-label="Click the right arrow to show next image"
