@@ -34,15 +34,15 @@ export default function Modal() {
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-white/70 dark:bg-black/70 backdrop-blur-sm flex justify-center items-center"
+      className="fixed inset-0 bg-white/90 dark:bg-black/70 backdrop-blur-sm flex justify-center items-center"
       onClick={handleOutsideClick}
     >
-      <FocusTrap>
+      <FocusTrap focusTrapOptions={{ allowOutsideClick: true }}>
         <div
           ref={modalRef}
           className={`relative ${
-            isVideo ? 'max-w-[50vh]' : 'max-w-[125vh]'
-          } w-full mx-10 rounded-3xl shadow-lg`}
+            isVideo ? 'max-w-[50vh]' : 'max-w-[150vh]'
+          } w-full mx-4 rounded-3xl`}
         >
           {mode === 'carousel' ? (
             <ImageCarousel
@@ -84,7 +84,7 @@ export default function Modal() {
             isIconOnly
             onClick={closeModal}
             aria-label="Close modal"
-            className="absolute top-0 -right-7 z-10 text-body-inverse w-auto"
+            className="absolute top-[-45px] sm:top-[-7px] right-[-15px] z-10 text-body-inverse w-max"
           />
         </div>
       </FocusTrap>
