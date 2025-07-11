@@ -31,6 +31,7 @@ export default function Modal() {
 
   const asset = assets[initialIndex];
   const isVideo = asset.src.endsWith('.mp4') || asset.src.endsWith('.webm');
+  const isCarousel = mode === 'carousel';
 
   return (
     <div
@@ -40,9 +41,9 @@ export default function Modal() {
       <FocusTrap focusTrapOptions={{ allowOutsideClick: true }}>
         <div
           ref={modalRef}
-          className={`relative ${
-            isVideo ? 'max-w-[50vh]' : 'max-w-[150vh]'
-          } w-full mx-4 rounded-3xl`}
+          className={`relative mx-2 sm:mx-4 ${
+            isVideo ? 'max-w-[50vh]' : 'max-w-[125vh]'
+          } w-full rounded-3xl`}
         >
           {mode === 'carousel' ? (
             <ImageCarousel
@@ -81,11 +82,18 @@ export default function Modal() {
           <Button
             variant="link"
             iconRight={<Close />}
-            isIconOnly
             onClick={closeModal}
             aria-label="Close modal"
-            className="absolute top-[-45px] sm:top-[-7px] right-[-15px] z-10 text-body-inverse w-max"
-          />
+            className={`absolute z-10 text-body-inverse w-max ${
+              isVideo
+                ? 'top-[-45px] right-0'
+                : isCarousel
+                ? 'top-[-45px] right-0 sm:right-[75px]'
+                : 'top-[-45px] right-0'
+            }`}
+          >
+            Close
+          </Button>
         </div>
       </FocusTrap>
     </div>
