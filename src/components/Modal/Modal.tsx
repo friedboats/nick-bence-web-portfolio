@@ -41,6 +41,7 @@ export default function Modal() {
       <FocusTrap focusTrapOptions={{ allowOutsideClick: true }}>
         <div
           ref={modalRef}
+          data-testid="modal-content"
           className={`relative mx-2 sm:mx-4 ${
             isVideo ? 'max-w-[50vh]' : 'max-w-[125vh]'
           } w-full rounded-3xl`}
