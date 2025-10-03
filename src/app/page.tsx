@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <div className="pt-5 md:pt-0">
-      <div className="flex justify-between mb-11 flex-col-reverse lg:flex-row">
+      <div className="flex justify-between mb-11 flex-col-reverse lg:flex-row w-full max-w-[902px] mx-auto">
         <div className="pt-0 lg:pt-10 text-center lg:text-left lg:flex-row lg:block">
           <Heading
             className="text-[2.5rem] sm:text-[64px] text-center lg:text-left"

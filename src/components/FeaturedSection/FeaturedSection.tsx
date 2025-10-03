@@ -16,8 +16,8 @@ type FeaturedSectionProps = {
 const FeaturedSection = forwardRef<HTMLDivElement, FeaturedSectionProps>(
   ({ heading, data }, ref) => {
     return (
-      <div ref={ref}>
-        <div className=" flex gap-2 justify-center items-center mb-6">
+      <div ref={ref} className="w-full max-w-[902px] mx-auto">
+        <div className="flex gap-2 justify-center items-center mb-6">
           <div className="w-full bg-border-primary h-1"></div>
           <Heading as="h2" className="w-full text-center whitespace-nowrap">
             {heading || 'Featured Work'}
