@@ -32,9 +32,19 @@ const Heading = ({
   ...rest
 }: HeadingProps) => {
   const Component = Tag === 'display' ? 'h2' : Tag;
-  const headingClasses = `${
-    variantStyles[Tag] || ''
-  } ${color} ${className}`.trim();
+
+  // Check if user provided a color class manually
+  const colorToken = /\btext-header-(primary|secondary|tertiary|inverse)\b/;
+  const hasCustomColor =
+    typeof className === 'string' && colorToken.test(className);
+
+  const headingClasses = [
+    variantStyles[Tag] || '',
+    hasCustomColor ? '' : color,
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ');
 
   const renderChildren = (content: React.ReactNode) => {
     if (typeof content !== 'string') return content;
@@ -44,15 +54,14 @@ const Heading = ({
         const el = node as DomHandlerElement;
 
         if (el.name === 'span') {
-          const className = el.attribs?.class || '';
+          const spanClass = el.attribs?.class || '';
           return (
-            <span className={className}>
+            <span className={spanClass}>
               {domToReact(el.children as DOMNode[], { replace })}
             </span>
           );
         }
       }
-
       return null;
     };
 

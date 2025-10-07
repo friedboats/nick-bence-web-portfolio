@@ -33,8 +33,14 @@ function getBodyContentClassNames({
   color = 'text-body-primary',
   className = '',
 }: Omit<BodyContentProps, 'children'>): string {
-  const base = [variantStyles[variant], color].filter(Boolean).join(' ');
-  return className ? `${base} ${className}` : base;
+  // detect if user already provided a text-body-* class
+  const colorToken = /\btext-body-(primary|secondary|inverse)\b/;
+  const hasCustomColor =
+    typeof className === 'string' && colorToken.test(className);
+
+  return [variantStyles[variant], hasCustomColor ? '' : color, className]
+    .filter(Boolean)
+    .join(' ');
 }
 
 const BodyContent = ({
@@ -48,9 +54,7 @@ const BodyContent = ({
   const renderContent = (content: React.ReactNode) => {
     if (typeof content !== 'string') return content;
 
-    const replace = (
-      node: DOMNode,
-    ): string | boolean | void | object | React.ReactElement | null => {
+    const replace = (node: DOMNode): React.ReactElement | null => {
       if (node.type === 'tag' && 'name' in node && 'children' in node) {
         const el = node as DomHandlerElement;
 
@@ -59,9 +63,9 @@ const BodyContent = ({
           let colorUtilityClass = '';
 
           if (el.name === 'b') {
-            colorUtilityClass = `text-body-secondary`;
+            colorUtilityClass = 'text-body-secondary';
           } else if (el.name === 'strong') {
-            colorUtilityClass = `text-body-tertiary`;
+            colorUtilityClass = 'text-body-tertiary';
           }
           return (
             <span className={`${colorUtilityClass} font-bold`}>
