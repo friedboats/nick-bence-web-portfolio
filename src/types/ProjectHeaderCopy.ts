@@ -6,7 +6,7 @@ export type ProjectHeaderCopyProps = {
       imageID: ProjectNames;
       title: string;
       role: string;
-      description: string;
+      description?: string;
     };
   };
 };
