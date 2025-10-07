@@ -2,22 +2,16 @@ const DynatraceNavCopy = {
   projectHeader: {
     imageID: 'dynatrace',
     title: 'Dynatrace Navigation',
-    role: 'Lead UX Engineer / UI Design',
-    description: `<p>As the UX Lead at Dynatrace, I spearheaded the redesign of the platform's navigation to enhance user experience, simplify workflows, and make critical features more accessible. The primary objectives were to improve the intuitiveness of the navigation system, reduce cognitive load, and ensure that the new design aligned with both user needs and business goals.</p>`,
-    assets: [
-      {
-        alt: 'Dynatrace navigation upgrade project',
-        src: '/dynatrace-navigation-featured-main.png',
-      },
-    ],
+    role: 'Lead UX Designer / UI Design',
   },
-  challenge: {
-    title: 'The Challenge',
-    body: '<p>The existing navigation system at Dynatrace made it difficult for users to find key information, leading to frustration and an increase in support requests. The confusing information architecture hindered access to valuable resources, ultimately risking decreased user engagement and conversions.</p>',
+  projectOverview: {
+    title: 'Project Overview',
+    body: `<p>The Dynatrace navigation was overly complex and confusing, making it difficult for users to locate key features and information. This led to higher support requests, slower workflows, and frustration, while the fragmented information architecture risked decreased adoption and engagement.</p>
+  <p>The redesign aimed to make the navigation clear and intuitive — streamlining workflows, reducing cognitive load, and ensuring critical features were easily accessible. By aligning the system with both user mental models and business priorities, the goal was to improve satisfaction, adoption, and overall engagement.</p>`,
     assets: [
       {
-        src: '/dynatrace-navigation-featured-main.png',
-        alt: 'Starbucks for life project',
+        src: '/old-nav-1-platform.png',
+        alt: 'Old Dynatrace navigation',
       },
     ],
   },

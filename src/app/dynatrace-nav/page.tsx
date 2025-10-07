@@ -11,20 +11,12 @@ export default function DynatraceNav() {
   return (
     <>
       <ProjectHeader copy={DynatraceNavCopy} />
-      <div className="mt-5">
-        <TextSection
-          title=""
-          body=""
-          images={DynatraceNavCopy.projectHeader.assets}
-          button={<Button variant="secondary">View webpage</Button>}
-        ></TextSection>
-      </div>
       <div className="section-spacing">
         <TextSection
           layout="left"
-          title={DynatraceNavCopy.challenge.title}
-          body={DynatraceNavCopy.challenge.body}
-          images={DynatraceNavCopy.challenge.assets}
+          title={DynatraceNavCopy.projectOverview.title}
+          body={DynatraceNavCopy.projectOverview.body}
+          images={DynatraceNavCopy.projectOverview.assets}
         ></TextSection>
       </div>
       <div className="section-spacing">
