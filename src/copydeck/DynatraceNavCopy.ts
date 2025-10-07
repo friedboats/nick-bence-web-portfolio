@@ -10,8 +10,28 @@ const DynatraceNavCopy = {
   <p>The redesign aimed to make the navigation clear and intuitive — streamlining workflows, reducing cognitive load, and ensuring critical features were easily accessible. By aligning the system with both user mental models and business priorities, the goal was to improve satisfaction, adoption, and overall engagement.</p>`,
     assets: [
       {
-        src: '/old-nav-1-platform.png',
-        alt: 'Old Dynatrace navigation',
+        src: '/old-nav-platform.webp',
+        alt: 'Old navigation with platform links',
+      },
+      {
+        src: '/old-nav-solutions.webp',
+        alt: 'Old navigation with solution links',
+      },
+      {
+        src: '/old-nav-resources.webp',
+        alt: 'Old navigation with resource links',
+      },
+      {
+        src: '/old-nav-services-and-support.webp',
+        alt: 'Old navigation with services and support links',
+      },
+      {
+        src: '/old-nav-about.webp',
+        alt: 'Old navigation with about links',
+      },
+      {
+        src: '/old-nav-search',
+        alt: 'Old navigation with search',
       },
     ],
   },
