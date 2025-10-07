@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type="button"
-      className={finalClassName + ' w-full sm:w-auto'}
+      className={finalClassName}
       disabled={disabled}
       aria-disabled={disabled}
       aria-label={ariaLabel}
