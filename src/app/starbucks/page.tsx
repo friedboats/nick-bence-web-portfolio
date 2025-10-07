@@ -12,9 +12,14 @@ export default function Starbucks() {
   return (
     <>
       <ProjectHeader copy={StarbucksCopy} />
-      <div className="mt-5">
-        <ImageCarousel data={StarbucksCopy.projectHeader.carousel} />
+      <div className="section-spacing">
+        <TextSection
+          title={StarbucksCopy.projectOverview.title}
+          body={StarbucksCopy.projectOverview.body}
+        ></TextSection>
+        <ImageCarousel data={StarbucksCopy.projectOverview.carousel} />
       </div>
+
       <div className="section-spacing">
         <TextSection
           title={StarbucksCopy.planning.title}
