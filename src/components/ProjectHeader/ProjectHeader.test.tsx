@@ -6,27 +6,28 @@ const mockCopy = {
     imageID: 'starbucks',
     title: 'Starbucks for Life',
     role: 'Senior Interface Developer',
-    description: 'I built this thing and it was awesome.',
   },
 } as const;
 
 describe('ProjectHeader', () => {
-  it('renders the title, role, and description', () => {
+  it('renders the title and role', () => {
     render(<ProjectHeader copy={mockCopy} />);
 
+    // Title
     expect(
       screen.getByRole('heading', { name: mockCopy.projectHeader.title }),
     ).toBeInTheDocument();
+
+    // Role
     expect(
       screen.getByRole('heading', { name: mockCopy.projectHeader.role }),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(mockCopy.projectHeader.description),
     ).toBeInTheDocument();
   });
 
   it('renders the circle image', () => {
-    const { getByAltText } = render(<ProjectHeader copy={mockCopy} />);
-    expect(getByAltText(/starbucks/i)).toBeInTheDocument();
+    render(<ProjectHeader copy={mockCopy} />);
+
+    // Image alt text comes from CircleImage, so match loosely
+    expect(screen.getByAltText(/starbucks/i)).toBeInTheDocument();
   });
 });
