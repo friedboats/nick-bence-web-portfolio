@@ -13,7 +13,7 @@ export const baseStyles =
 export const iconBtnOnlyStyles: Record<ButtonVariants, string> = {
   primary: '!px-2',
   secondary: '!px-2',
-  link: '!px-2',
+  link: '0',
 };
 
 export const variantStyles: Record<ButtonVariants, string> = {

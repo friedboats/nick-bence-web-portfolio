@@ -84,6 +84,7 @@ export default function Modal() {
             variant="link"
             iconRight={<Close />}
             onClick={closeModal}
+            isIconOnly={true}
             aria-label="Close modal"
             className={`absolute z-10 text-body-inverse w-max ${
               isVideo
@@ -92,9 +93,7 @@ export default function Modal() {
                 ? 'top-[-45px] right-0 sm:right-[75px]'
                 : 'top-[-45px] right-0'
             }`}
-          >
-            Close
-          </Button>
+          ></Button>
         </div>
       </FocusTrap>
     </div>
