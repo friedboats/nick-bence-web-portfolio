@@ -1,3 +1,5 @@
+'use client';
+
 import BlockQuote from '@/components/BlockQuote';
 import { Button } from '@/components/Button';
 import PageNavigator from '@/components/PageNavigator';
@@ -6,8 +8,10 @@ import RotatingQuotes from '@/components/RotatingQuotes';
 import TextSection from '@/components/TextSection';
 import DynatraceNavCopy from '@/copydeck/DynatraceNavCopy';
 import GlobalCopy from '@/copydeck/GlobalCopy';
+import { useModalGalleryStore } from '@/stores/modalGalleryStore';
 
 export default function DynatraceNav() {
+  const openModal = useModalGalleryStore((s) => s.openModal);
   return (
     <>
       <ProjectHeader copy={DynatraceNavCopy} />
@@ -17,6 +21,21 @@ export default function DynatraceNav() {
           title={DynatraceNavCopy.projectOverview.title}
           body={DynatraceNavCopy.projectOverview.body}
           images={DynatraceNavCopy.projectOverview.assets}
+          button={
+            <Button
+              variant="secondary"
+              onClick={() =>
+                openModal(
+                  [...DynatraceNavCopy.projectOverview.carousel],
+                  'carousel',
+                  0,
+                  'dynatrace-overview',
+                )
+              }
+            >
+              {DynatraceNavCopy.projectOverview.buttonLabel}
+            </Button>
+          }
         ></TextSection>
       </div>
       <div className="section-spacing">

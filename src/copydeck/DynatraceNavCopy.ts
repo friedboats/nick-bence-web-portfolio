@@ -6,9 +6,17 @@ const DynatraceNavCopy = {
   },
   projectOverview: {
     title: 'Project Overview',
-    body: `<p>The Dynatrace navigation was overly complex and confusing, making it difficult for users to locate key features and information. This led to higher support requests, slower workflows, and frustration, while the fragmented information architecture risked decreased adoption and engagement.</p>
-  <p>The redesign aimed to make the navigation clear and intuitive — streamlining workflows, reducing cognitive load, and ensuring critical features were easily accessible. By aligning the system with both user mental models and business priorities, the goal was to improve satisfaction, adoption, and overall engagement.</p>`,
+    body: `
+      <p>Dynatrace’s navigation was confusing and hard to use, leading to frustration, extra support requests, and slower workflows, while a fragmented information architecture limited adoption and engagement. The redesign focused on making navigation clear and intuitive — streamlining workflows, reducing cognitive load, and aligning with user mental models and business priorities to boost satisfaction and adoption.</p>
+    `,
+    buttonLabel: `See the old navigation`,
     assets: [
+      {
+        src: '/old-nav-platform.webp',
+        alt: 'Old navigation with platform links',
+      },
+    ],
+    carousel: [
       {
         src: '/old-nav-platform.webp',
         alt: 'Old navigation with platform links',
@@ -30,7 +38,7 @@ const DynatraceNavCopy = {
         alt: 'Old navigation with about links',
       },
       {
-        src: '/old-nav-search',
+        src: '/old-nav-search.webp',
         alt: 'Old navigation with search',
       },
     ],
