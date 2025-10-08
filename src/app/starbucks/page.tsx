@@ -17,7 +17,10 @@ export default function Starbucks() {
           title={StarbucksCopy.projectOverview.title}
           body={StarbucksCopy.projectOverview.body}
         ></TextSection>
-        <ImageCarousel data={StarbucksCopy.projectOverview.carousel} />
+        <ImageCarousel
+          data={StarbucksCopy.projectOverview.carousel}
+          id="starbucks-new-site"
+        />
       </div>
 
       <div className="section-spacing">
