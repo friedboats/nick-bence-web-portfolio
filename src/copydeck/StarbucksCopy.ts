@@ -66,8 +66,8 @@ const StarbucksCopy = {
     body: '<p>I collaborated closely with the client’s design team to maintain a unified brand experience, ensuring all design elements were implemented with consistency and precision. As part of the development, I also created custom animations from hand-drawn icons, blending artistry with custom code to bring the site to life and enhance the overall user experience.</p>',
     assets: [
       {
-        src: '/dynatrace-navigation-featured-main.png',
-        alt: 'Starbucks for life project',
+        src: '/sbfl-devices.webp',
+        alt: 'Starbucks for life devices',
       },
     ],
   },
