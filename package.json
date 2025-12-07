@@ -15,9 +15,9 @@
     "autoprefixer": "^10.4.20",
     "focus-trap-react": "^11.0.4",
     "html-react-parser": "^5.2.5",
-    "next": "^15.3.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "next": "^15.5.7",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
     "zustand": "^5.0.4"
   },
   "devDependencies": {

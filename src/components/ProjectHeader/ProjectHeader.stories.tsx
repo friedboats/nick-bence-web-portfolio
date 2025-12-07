@@ -32,8 +32,8 @@ export const Default: Story = {
         imageID: 'starbucks' as ProjectNames,
         title: 'Starbucks for Life',
         role: 'Senior Interface Developer',
-        description:
-          'I contributed to the Starbucks for Life game by building frontend features and enhancing the user experience. It combined animation, reward systems, and interactive design.',
+        // description:
+        //   'I contributed to the Starbucks for Life game by building frontend features and enhancing the user experience. It combined animation, reward systems, and interactive design.',
       },
     },
   },
